@@ -10,7 +10,7 @@ class Message<T>
         this.content = content;
     }
 
-    private void validate(T content)
+    private void validate(Object content)
     {
         if (content == null)
         {
