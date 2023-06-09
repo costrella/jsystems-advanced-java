@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public class GenericsExample6NestedGenerics
+class GenericsExample6NestedGenerics
 {
     private static final Logger LOGGER = LoggerFactory.getLogger(GenericsExample6NestedGenerics.class);
 

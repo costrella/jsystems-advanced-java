@@ -3,7 +3,7 @@ package pl.jsystems.advancedjava.generics.exercises.e4genericmethods;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class GenericsExercise4GenericMethods
+class GenericsExercise4GenericMethods
 {
     private static final Logger LOGGER = LoggerFactory.getLogger(GenericsExercise4GenericMethods.class);
 

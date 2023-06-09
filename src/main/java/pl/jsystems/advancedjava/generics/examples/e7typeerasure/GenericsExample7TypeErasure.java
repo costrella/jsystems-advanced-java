@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class GenericsExample7TypeErasure
+class GenericsExample7TypeErasure
 {
     private static final Logger LOGGER = LoggerFactory.getLogger(GenericsExample7TypeErasure.class);
 
