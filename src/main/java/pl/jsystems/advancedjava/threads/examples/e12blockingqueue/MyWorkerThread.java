@@ -1,4 +1,4 @@
-package pl.jsystems.advancedjava.threads.examples.e10blockingqueue;
+package pl.jsystems.advancedjava.threads.examples.e12blockingqueue;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

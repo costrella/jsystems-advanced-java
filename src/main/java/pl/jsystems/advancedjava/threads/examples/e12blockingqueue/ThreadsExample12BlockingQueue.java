@@ -1,4 +1,4 @@
-package pl.jsystems.advancedjava.threads.examples.e10blockingqueue;
+package pl.jsystems.advancedjava.threads.examples.e12blockingqueue;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,16 +7,16 @@ import java.util.Scanner;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
-class ThreadsExample10Locks
+class ThreadsExample12BlockingQueue
 {
-    private static final Logger LOGGER = LoggerFactory.getLogger(ThreadsExample10Locks.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ThreadsExample12BlockingQueue.class);
 
     // alternative PriorityBlockingQueue
     private final BlockingQueue<String> blockingQueue = new ArrayBlockingQueue<>(2);
 
     public static void main(String[] args)
     {
-        new ThreadsExample10Locks().run();
+        new ThreadsExample12BlockingQueue().run();
     }
 
     private void run()
