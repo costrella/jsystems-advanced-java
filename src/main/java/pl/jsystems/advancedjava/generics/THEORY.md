@@ -75,3 +75,138 @@ Zmienna typu `List<String>` nie jest `reifiable`, bo podczas działania programu
 6. Nie można używać typów generycznych w połączeniu z blokiem `catch`, np.: `catch(T exception)`
 7. Nie można przeciążać metod, gdzie argumentem jest typ generyczny.
 
+
+### Dziedziczenie (inheritance) i typy wieloznaczne (wildcard)
+#### Dziedziczenie (inheritance)
+Dziedziczenie w przypadku typów generycznych jest mało intuicyjne.
+
+`List<Integer>` **nie dziedziczy** po `List<Number>`. Wynika to z tego, że nie zachodzi relacja 'jest' ('is a').
+
+`List<Integer>` jest listą **(!)tylko całkowitych(!)** liczb (nie może zawierać liczb zmiennoprzecinkowych).
+
+`List<Number>` jest listą **(!)dowolnych(!)** liczb.
+
+Lista **(!)tylko całkowitych(!)** liczb nie jest więc listą **(!)dowolnych(!)** liczb. Nie zachodzi relacja 'jest',
+więc nie jest to dziedziczenie. Jest to mało intuicyjne, bo `Integer` dziedziczy po `Number`.
+
+Zauważ, że do `List<Integer>` możemy dodawać liczby całkowite - tak samo jak w przypadku `List<Number>`.
+To co 'blokuje' dziedziczenie, to 'pobieranie' danych. Pobierając dane z `List<Integer>`
+spodziewamy się liczby całkowitej, a `List<Number>` może zwrócić dowolną liczbę.
+
+**Gdybyśmy tylko nie musieli odczytywać liczb z tej listy...** (ogranicznie 1, patrz niżej)
+
+Możemy się też zastanowić czy `List<Number>` dziedziczy po `List<Integer>`.
+Poniekąd, `List<Number>` rozszerza ('extends') przecież funkcjonalność `List<Integer>` -
+może zapisywać różnego typu liczby i je zwracać. Ale ponownie:
+
+Lista **(!)dowolnych(!)** liczb nie jest listą **(!)tylko całkowitych(!)** liczb. Dodając liczbę zmiennoprzecinkową,
+dodawalibyśmy ją do listy **(!)tylko całkowitych(!)** liczb.
+
+**Gdybyśmy tylko nie musieli dodawać liczb do tej listy...** (ograniczenie 2, patrz niżej)
+
+#### Typy wieloznaczne (wildcard)
+Żeby zapewnić jakiś poziom dziedziczenia - a co za tym idzie, reużywalności kodu - wprowadzono typy wieloznaczne.
+Istnieją dwa rodzaje typów wieloznacznych:
+1. ograniczone od góry `<? extends TYPE>` (upper bound) i
+2. ograniczone od dołu `<? super TYPE>` (lower bound)
+
+gdzie TYPE to dowolny typ w Javie.
+
+##### Typ ograniczony od góry `<? extends TYPE>` (upper bound)
+Na przykładzie listy - typ ograniczony od góry `<? extends TYPE>` oznacza,
+że mamy do czynienia z listą przechowującą obiekty, które dziedziczą po typie `TYPE`, tzn.
+`List<? extends Number>` przechowuje **(!)dowolne(!)** liczby. Nie wiemy jakie to liczby,
+ale możemy je **(!)pobierać(!)** i traktować jak **(!)dowolne(!)** liczby - obiekty typu `Number`.
+Do takiej listy **nie możemy jednak nic dodawać**.
+
+**Zapamiętaj!**
+
+**Typ `List<? extends Number>` pozwala tylko na odczyt liczb.**
+
+**Typ `List<? extends Number>` oznacza, że możesz bezpiecznie odczytywać obiekty typu Number.**
+
+Zdejmuje to z nas ograniczenie(1) wspomniane wyżej - w związku z tym lista **(!)tylko(!)** liczb całkowitych `List<Integer>`
+jest listą **(!)tylko do odczytu, jakichś (dowolnych)(!)** liczb `List<? extends Number>`, czyli `List<Integer> extends List<? extends Number>`.
+
+Przykład:
+```
+    // accepting a list of Numbers and things extending Number - Integers, Doubles, Longs etc..
+    private double sumNumbers(List<? extends Number> listOfNumbers)
+    {
+        double result = 0d;
+        for (Number number : listOfNumbers)
+        {
+            result += number.doubleValue();
+        }
+        return result;
+    }
+    
+    void someMethod()
+    {   
+        ...
+        List<Number> numbers = ...; // here we're using Number
+        double sum = sumNumbers(numbers);
+        ...
+        List<Integer> integers = ...; // here we're using Integer
+        double otherSum = sumNumbers(integers);
+        ...
+    }
+```
+
+##### Typ graniczony od dołu `<? super TYPE>` (lower bound)
+Na przykładzie listy - typ ograniczony od dołu `<? super TYPE>` oznacza,
+że mamy do czynienia z listą przechowującą obiekty typu `TYPE` lub takie, po których `TYPE` dziedziczy, np.
+`List<? super Integer>` oznacza, że lista przechowuje liczby całkowite,
+ale może też przechowywać inne liczby (typ `Number`), a także obiekty typ `Object`.
+W związku z tym nie możemy odczytać liczb z tej listy (bo nie wiemy czy są tam tylko liczby czy też inne obiekty),
+ale możemy bezpiecznie zapisać liczbę całkowitą do tej listy.
+
+**Zapamiętaj!**
+
+**Typ `List<? super Integer>` pozwala tylko na zapis / dostarczenie liczb całkowitych.**
+**Typ `List<? super Number>` pozwala tylko na zapis / dostarczenie dowolnych liczb.**
+
+Zdejmuje to z nas ograniczenie(2) wspomniane wyżej - w związku z tym lista **(!)jakichś, dowolnych(!)** liczb `List<Number>`
+jest listą **(!)tylko do zapisu, tylko całkowitych(!)** liczb `List<? super Integer>`, czyli `List<Number> extends List<? super Integer>`.
+
+Przykład:
+
+```
+    // accepting a list of Doubles, Numebrs, Objects.
+    void populateWithTemperatureReadingsFromStation(List<? super Double> resultList, Long stationId) {
+        List<Double> temperatureReadings = ...;
+        resultList.add(temperatureReadings.get(0));
+        resultList.add(temperatureReadings.get(1));
+        resultList.add(temperatureReadings.get(2));
+        ...
+    }
+    
+    void someMethod()
+    {   
+        ...
+        Long someStationId = ...;
+        List<Number> temperatureReadingsHolder = ...; // here we're using Number
+        populateWithTemperatureReadingsFromStation(temperatureReadingsHolder, someStationId);
+        ...
+    }
+    
+    void someOtherMethod()
+    {   
+        ...
+        Long someStationId = ...;
+        List<Double> temperatureReadingsHolder = ...; // here we're using Double
+        populateWithTemperatureReadingsFromStation(temperatureReadingsHolder, someStationId);
+        ...
+    }
+```
+
+##### Typ wieloznaczny (nieograniczony) (wildcard)
+
+Typ `<?>` jest równożnaczny typowi `<? extends Object>` jest równożnaczny typowi
+`<? extends Object>`, czyli jest tak naprawdę typem 'ograniczonym od góry'.
+Oznacza to, że nie wiemy co w sobie przechowuje - przechowuje jakiś obiekt.
+Z listy takiego typu możemy więc czytać obiekty, nie możemy ich jednak zapisywać.
+
+[Diagram dziedziczenia](https://docs.oracle.com/javase/tutorial/figures/java/generics-wildcardSubtyping.gif)
+
+[Informacje dodatkowe](https://docs.oracle.com/javase/tutorial/java/generics/inheritance.html)
