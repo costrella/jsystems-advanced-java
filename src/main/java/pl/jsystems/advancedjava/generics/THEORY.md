@@ -164,6 +164,7 @@ ale możemy bezpiecznie zapisać liczbę całkowitą do tej listy.
 **Zapamiętaj!**
 
 **Typ `List<? super Integer>` pozwala tylko na zapis / dostarczenie liczb całkowitych.**
+
 **Typ `List<? super Number>` pozwala tylko na zapis / dostarczenie dowolnych liczb.**
 
 Zdejmuje to z nas ograniczenie(2) wspomniane wyżej - w związku z tym lista **(!)jakichś, dowolnych(!)** liczb `List<Number>`
@@ -201,11 +202,23 @@ Przykład:
 ```
 
 ##### Typ wieloznaczny (nieograniczony) (wildcard)
-
 Typ `<?>` jest równożnaczny typowi `<? extends Object>` jest równożnaczny typowi
 `<? extends Object>`, czyli jest tak naprawdę typem 'ograniczonym od góry'.
 Oznacza to, że nie wiemy co w sobie przechowuje - przechowuje jakiś obiekt.
 Z listy takiego typu możemy więc czytać obiekty, nie możemy ich jednak zapisywać.
+
+##### Użycie typów wieloznacznych
+Zaleca się używanie typów wieloznacznych przy definiowaniu metod, ew. parametrów klas.
+Nie zaleca się zwracania typów wieloznacznych jako wynik wykonywania metody.
+Nie zaleca się stosowania ich jako zmiennych czy pól.
+
+##### Ograniczone parametry metod i klas generycznych
+Parametry generyczne metod i klas możemy ograniczać od góry - upper bound.
+Działanie jest takie samo jak w przypadku typów wieloznacznych, a zapis jest następujący:
+
+`<T extends TYPE>`, np. w sygnaturze metody:
+
+`<T extends Number> T doSomethingWith(T argument) {...}`
 
 [Diagram dziedziczenia](https://docs.oracle.com/javase/tutorial/figures/java/generics-wildcardSubtyping.gif)
 
