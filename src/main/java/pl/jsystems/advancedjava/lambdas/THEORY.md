@@ -27,7 +27,8 @@ Consumer<String> consumer = input -> System.out.println("New input: " + input);
 
 ### Składnia
 1. Argumenty wejściowe, wylistowane po przecinku, otoczone nawiasami `()`. 
-W przypadku jednego argumentu nawiasy można pominąć,
+W przypadku jednego argumentu nawiasy można pominą. Argumenty (wszystkie albo żaden) mogą być poprzedzone ich typami.
+Jest to jednak niepotrzebne, bo typ można wywnioskować z kontekstu.
 2. Strzałka w postaci `->`,
 3. Wyrażenie lub blok kodu ograniczony nawiasami `{}`. Zarówno wyrażenie jak i blok mogą coś zwracać, 
 z tym że w przypadku bloku kodu wymagane jest słowo kluczowe `return`, 
