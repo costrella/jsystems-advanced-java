@@ -1,16 +1,16 @@
-package pl.jsystems.advancedjava.lambdas.exercises.e8functioninterface;
+package pl.jsystems.advancedjava.lambdas.exercises.e9genericsrevision;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.jsystems.advancedjava.lambdas.exercises.e8functioninterface.contents.CargoMessageContent;
-import pl.jsystems.advancedjava.lambdas.exercises.e8functioninterface.contents.MessageContent;
-import pl.jsystems.advancedjava.lambdas.exercises.e8functioninterface.contents.VehicleMessageContent;
-import pl.jsystems.advancedjava.lambdas.exercises.e8functioninterface.message.Message;
+import pl.jsystems.advancedjava.lambdas.exercises.e9genericsrevision.contents.CargoMessageContent;
+import pl.jsystems.advancedjava.lambdas.exercises.e9genericsrevision.contents.MessageContent;
+import pl.jsystems.advancedjava.lambdas.exercises.e9genericsrevision.contents.VehicleMessageContent;
+import pl.jsystems.advancedjava.lambdas.exercises.e9genericsrevision.message.Message;
 
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.BiConsumer;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 class MessageLogger
@@ -19,10 +19,10 @@ class MessageLogger
     private static final Predicate<MessageContent> IS_VEHICLE_MESSAGE_CONTENT = content -> content instanceof VehicleMessageContent;
     private static final Predicate<MessageContent> IS_CARGO_MESSAGE_CONTENT = content -> content instanceof CargoMessageContent;
 
-    private static final BiConsumer<List<String>, VehicleMessageContent> VEHICLE_MESSAGE_LOGGER =
-            (details, content) -> details.add("Vehicle id: " + content.getVehicleId());
-    private static final BiConsumer<List<String>, CargoMessageContent> CARGO_MESSAGE_LOGGER =
-            (details, content) -> details.add("Vehicle id: " + content.getCargoId());
+    private static final Function<VehicleMessageContent, String> VEHICLE_MESSAGE_LOGGER =
+            content -> "Vehicle id: " + content.getVehicleId();
+    private static final Function<CargoMessageContent, String> CARGO_MESSAGE_LOGGER =
+            content -> "Content id: " + content.getCargoId();
 
     private final List<MessageDetailsExtractor> extractors = List.of(
             new MessageDetailsExtractor(IS_VEHICLE_MESSAGE_CONTENT, VEHICLE_MESSAGE_LOGGER),
@@ -35,7 +35,11 @@ class MessageLogger
 
         for (MessageDetailsExtractor extractor : extractors)
         {
-            extractor.extractInto(messageDetails, message.content());
+            String details = extractor.extractFrom(message.content());
+            if (details != null)
+            {
+                messageDetails.add(details);
+            }
         }
 
         LOGGER.info("Received new message with id {} of type {}. Sent at: {}, received at {}. Details: {}.",
@@ -49,20 +53,21 @@ class MessageLogger
     private static class MessageDetailsExtractor
     {
         private final Predicate<MessageContent> isKnownContent;
-        private final BiConsumer<List<String>, MessageContent> extractor;
+        private final Function<MessageContent, String> extractor;
 
-        MessageDetailsExtractor(Predicate<MessageContent> isKnownContent, BiConsumer<List<String>, ? extends MessageContent> extractor)
+        MessageDetailsExtractor(Predicate<MessageContent> isKnownContent, Function<? extends MessageContent, String> extractor)
         {
             this.isKnownContent = isKnownContent;
-            this.extractor = (BiConsumer<List<String>, MessageContent>) extractor;
+            this.extractor = (Function<MessageContent, String>) extractor;
         }
 
-        private void extractInto(List<String> messageDetails, MessageContent content)
+        private String extractFrom(MessageContent content)
         {
             if (isKnownContent.test(content))
             {
-                extractor.accept(messageDetails, content);
+                return extractor.apply(content);
             }
+            return null;
         }
     }
 }
