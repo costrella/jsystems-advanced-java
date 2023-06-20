@@ -1,0 +1,36 @@
+package pl.jsystems.advancedjava.streams.solutions.s7minmaxpeek.receivers;
+
+import pl.jsystems.advancedjava.streams.solutions.s7minmaxpeek.MessageReceiver;
+import pl.jsystems.advancedjava.streams.solutions.s7minmaxpeek.message.Message;
+import pl.jsystems.advancedjava.streams.solutions.s7minmaxpeek.message.MessageCreator;
+import pl.jsystems.advancedjava.streams.solutions.s7minmaxpeek.contents.CargoUnloadedMessageContent;
+
+import java.util.function.Consumer;
+
+public class CargoUnloadedMessageReceiver implements MessageReceiver<CargoUnloadedMessageContent>
+{
+    private final MessageCreator messageCreator = new MessageCreator();
+
+    @Override
+    public void startReceivingUsing(Consumer<Message<CargoUnloadedMessageContent>> messageConsumer)
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            waitABit();
+            Message<CargoUnloadedMessageContent> newMessage = messageCreator.createMessageUsing(new CargoUnloadedMessageContent());
+            messageConsumer.accept(newMessage);
+        }
+    }
+
+    private static void waitABit()
+    {
+        try
+        {
+            Thread.sleep(100);
+        } catch (InterruptedException e)
+        {
+            Thread.currentThread().interrupt();
+            throw new RuntimeException("Thread has been interrupted while waiting for new message.", e);
+        }
+    }
+}
