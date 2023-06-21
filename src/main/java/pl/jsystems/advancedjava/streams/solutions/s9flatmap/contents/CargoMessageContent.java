@@ -1,4 +1,4 @@
-package pl.jsystems.advancedjava.streams.exercises.e9flatmap.contents;
+package pl.jsystems.advancedjava.streams.solutions.s9flatmap.contents;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -12,7 +12,5 @@ public interface CargoMessageContent extends MessageContent
 
     List<CargoElement> getCargoElements();
 
-    record CargoElement(UUID id, BigDecimal weight)
-    {
-    }
+    record CargoElement(UUID id, BigDecimal weight) {}
 }
