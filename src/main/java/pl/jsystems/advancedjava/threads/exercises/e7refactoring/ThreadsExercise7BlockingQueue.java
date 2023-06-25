@@ -1,17 +1,17 @@
-package pl.jsystems.advancedjava.threads.solutions.s6blockingqueue;
+package pl.jsystems.advancedjava.threads.exercises.e7refactoring;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.jsystems.advancedjava.threads.solutions.s6blockingqueue.contents.CargoLoadedMessageContent;
-import pl.jsystems.advancedjava.threads.solutions.s6blockingqueue.contents.CargoUnloadedMessageContent;
-import pl.jsystems.advancedjava.threads.solutions.s6blockingqueue.contents.GPSTrackingMessageContent;
-import pl.jsystems.advancedjava.threads.solutions.s6blockingqueue.message.Message;
-import pl.jsystems.advancedjava.threads.solutions.s6blockingqueue.receivers.CargoLoadedMessageReceiver;
-import pl.jsystems.advancedjava.threads.solutions.s6blockingqueue.receivers.CargoUnloadedMessageReceiver;
-import pl.jsystems.advancedjava.threads.solutions.s6blockingqueue.receivers.GPSTrackingMessageReceiver;
-import pl.jsystems.advancedjava.threads.solutions.s6blockingqueue.repositories.CargoLoadedMessageRepository;
-import pl.jsystems.advancedjava.threads.solutions.s6blockingqueue.repositories.CargoUnloadedMessageRepository;
-import pl.jsystems.advancedjava.threads.solutions.s6blockingqueue.repositories.GPSTrackingMessageRepository;
+import pl.jsystems.advancedjava.threads.exercises.e7refactoring.contents.CargoLoadedMessageContent;
+import pl.jsystems.advancedjava.threads.exercises.e7refactoring.contents.CargoUnloadedMessageContent;
+import pl.jsystems.advancedjava.threads.exercises.e7refactoring.contents.GPSTrackingMessageContent;
+import pl.jsystems.advancedjava.threads.exercises.e7refactoring.message.Message;
+import pl.jsystems.advancedjava.threads.exercises.e7refactoring.receivers.CargoLoadedMessageReceiver;
+import pl.jsystems.advancedjava.threads.exercises.e7refactoring.receivers.CargoUnloadedMessageReceiver;
+import pl.jsystems.advancedjava.threads.exercises.e7refactoring.receivers.GPSTrackingMessageReceiver;
+import pl.jsystems.advancedjava.threads.exercises.e7refactoring.repositories.CargoLoadedMessageRepository;
+import pl.jsystems.advancedjava.threads.exercises.e7refactoring.repositories.CargoUnloadedMessageRepository;
+import pl.jsystems.advancedjava.threads.exercises.e7refactoring.repositories.GPSTrackingMessageRepository;
 
 import java.time.Instant;
 import java.util.List;
@@ -19,9 +19,9 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.function.Consumer;
 
-class ThreadsExercise6BlockingQueue
+class ThreadsExercise7BlockingQueue
 {
-    private static final Logger LOGGER = LoggerFactory.getLogger(ThreadsExercise6BlockingQueue.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ThreadsExercise7BlockingQueue.class);
 
     private static final CargoLoadedMessageRepository CARGO_LOADED_MESSAGE_REPOSITORY = new CargoLoadedMessageRepository();
     private static final CargoUnloadedMessageRepository CARGO_UNLOADED_MESSAGE_REPOSITORY = new CargoUnloadedMessageRepository();
@@ -29,7 +29,7 @@ class ThreadsExercise6BlockingQueue
 
     public static void main(String[] args)
     {
-        new ThreadsExercise6BlockingQueue().run();
+        new ThreadsExercise7BlockingQueue().run();
     }
 
     private void run()
