@@ -3,7 +3,6 @@ package pl.jsystems.advancedjava.threads.examples.e16morethreadpools;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -13,8 +12,6 @@ import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.random.RandomGenerator;
-import java.util.stream.IntStream;
 
 class ThreadsExample16MoreThreadPools
 {
@@ -40,20 +37,22 @@ class ThreadsExample16MoreThreadPools
         // this will also create a cached thread pool - this time we start with 10 threads, we go to max 20,
         // and the unused threads will live for about 2mins.
         executors = new ThreadPoolExecutor(10, 20,
-            120L, TimeUnit.SECONDS,
-            new SynchronousQueue<>());
+                120L, TimeUnit.SECONDS,
+                new SynchronousQueue<>());
         executors.shutdown();
 
         ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(5);
         scheduledExecutorService.schedule(() -> LOGGER.info("This will happen in 5sec"), 5, TimeUnit.SECONDS);
         LOGGER.info("We've planned something for the future!");
 
-        scheduledExecutorService.scheduleAtFixedRate(() -> {
+        scheduledExecutorService.scheduleAtFixedRate(() ->
+        {
             sleepFor(4000);
             LOGGER.info("At Fixed rate!");
         }, 5L, 5L, TimeUnit.SECONDS);
 
-        scheduledExecutorService.scheduleWithFixedDelay(() -> {
+        scheduledExecutorService.scheduleWithFixedDelay(() ->
+        {
             sleepFor(4000);
             LOGGER.info("With delay!");
         }, 5L, 5L, TimeUnit.SECONDS);
