@@ -11,4 +11,3 @@ i wykorzystaj go przy logowaniu informacji o odczycie wiadomości.
 w przypadku pustgeo pudełka.
 6. *Metoda powinna wyrzucać wyjątki typu `IllegalArgumentException`
 w przypadku, gdy pudełko lub nowa zawartość są równe `null`.
-7. *Dodaj testy do klasy `BoxContentReplacer`.

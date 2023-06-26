@@ -6,5 +6,4 @@ powinna również mieć 'getter' do pobierania treści
 oraz przesłoniętą metodę `toString()` (IntelliJ potrafi ją wygenerować).
 3. W klasie `GenericsExercise1GenericMessage` utwórz obiekt typu `Message<String>`.
 Wyświetl w logach ten obiekt, oraz niezależnie treść wiadomości (pobraną przez 'getter').
-4. *Napisz kod w duchu TDD.
-5. *Zapewnij, by treść wiadomości nie była pusta.
+4. *Zapewnij, by treść wiadomości nie była pusta.

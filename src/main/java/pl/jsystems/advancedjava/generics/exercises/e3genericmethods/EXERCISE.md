@@ -11,4 +11,3 @@ możesz dodać kilka własnych przykładów.
 5. *Zapewnij, aby id było unikalne (przyajmniej w kontekście działającej aplikacji).
 6. *Czy można utworzyć kolejną metodę `createUsing` z 1 argumentem generycznym, 
 ale tworzącą, zwracającą wiadomości z innym typem `id`? 
-7. *Dodaj test do klasy `MessageCreator`.
