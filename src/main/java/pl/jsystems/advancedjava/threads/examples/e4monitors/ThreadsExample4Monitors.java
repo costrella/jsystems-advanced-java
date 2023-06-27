@@ -20,18 +20,12 @@ class ThreadsExample4Monitors
     {
         LOGGER.info("So many things happening at the same time...");
 
-        Thread myFancyThread0 = new MyWorkerThread();
-        LOGGER.info("Created new thread 0.");
-        myFancyThread0.start();
-        LOGGER.info("Thread 0 started.");
-        Thread myFancyThread1 = new MyWorkerThread();
-        LOGGER.info("Created new thread 1.");
-        myFancyThread1.start();
-        LOGGER.info("Thread 1 started.");
-        Thread myFancyThread2 = new MyWorkerThread();
-        LOGGER.info("Created new thread 2.");
-        myFancyThread2.start();
-        LOGGER.info("Thread 2 started.");
+        new MyWorkerThread().start();
+        new MyWorkerThread().start();
+        new MyWorkerThread().start();
+        new MyWorkerThread().start();
+        new MyWorkerThread().start();
+        LOGGER.info("Created and started some threads");
 
         Scanner scanner = new Scanner(System.in);
         String input = null;
@@ -46,19 +40,13 @@ class ThreadsExample4Monitors
             }
         }
 
-        LOGGER.info("Lets see how notify all works now.");
-        Thread myFancyThread3 = new MyWorkerThread();
-        LOGGER.info("Created new thread 3.");
-        myFancyThread3.start();
-        LOGGER.info("Thread 3 started.");
-        Thread myFancyThread4 = new MyWorkerThread();
-        LOGGER.info("Created new thread 4.");
-        myFancyThread4.start();
-        LOGGER.info("Thread 4 started.");
-        Thread myFancyThread5 = new MyWorkerThread();
-        LOGGER.info("Created new thread 5.");
-        myFancyThread5.start();
-        LOGGER.info("Thread 5 started.");
+        // all previous threads might have died - creating new ones.
+        new MyWorkerThread().start();
+        new MyWorkerThread().start();
+        new MyWorkerThread().start();
+        new MyWorkerThread().start();
+        new MyWorkerThread().start();
+        LOGGER.info("Created and started more threads");
 
         input = null;
         while (!"q".equals(input))
@@ -76,7 +64,6 @@ class ThreadsExample4Monitors
 
     private static class MyWorkerThread extends Thread
     {
-
         @Override
         public void run()
         {
@@ -87,7 +74,7 @@ class ThreadsExample4Monitors
                 LOGGER.info("I GOT NOTIFIED!");
             }
 
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 5; i++)
             {
                 LOGGER.info("Doing stuff in my fancy thread! - loop {}", i);
                 pretendToDoStuff();

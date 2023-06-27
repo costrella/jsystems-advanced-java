@@ -1,7 +1,5 @@
 package pl.jsystems.advancedjava.threads.exercises.e6blockingqueue.receivers;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import pl.jsystems.advancedjava.threads.exercises.e6blockingqueue.MessageReceiver;
 import pl.jsystems.advancedjava.threads.exercises.e6blockingqueue.contents.CargoUnloadedMessageContent;
 import pl.jsystems.advancedjava.threads.exercises.e6blockingqueue.message.Message;
@@ -12,17 +10,29 @@ import java.util.stream.IntStream;
 
 public class CargoUnloadedMessageReceiver implements MessageReceiver<CargoUnloadedMessageContent>
 {
-    private static final Logger LOGGER = LoggerFactory.getLogger(CargoUnloadedMessageReceiver.class);
     private final MessageCreator messageCreator = new MessageCreator();
 
     @Override
-    public void startReceivingUsing(Consumer<Message<CargoUnloadedMessageContent>> messageConsumer)
+    public Thread startReceivingUsing(Consumer<Message<CargoUnloadedMessageContent>> messageConsumer)
     {
-        new ReceiverThread(messageConsumer).start();
+        Thread thread = new ReceiverThread(messageConsumer);
+        thread.start();
+        return thread;
     }
 
-    private class ReceiverThread extends Thread
+    private static void joinThread(final Thread thread)
     {
+        try
+        {
+            thread.join();
+        } catch (InterruptedException e)
+        {
+            Thread.currentThread().interrupt();
+            throw new RuntimeException("Thread has been interrupted while waiting to finish receiving new message.", e);
+        }
+    }
+
+    private class ReceiverThread extends Thread {
 
         private final Consumer<Message<CargoUnloadedMessageContent>> messageConsumer;
 
@@ -32,17 +42,14 @@ public class CargoUnloadedMessageReceiver implements MessageReceiver<CargoUnload
         }
 
         @Override
-        public void run()
-        {
+        public void run() {
             IntStream.range(0, 11)
                     .mapToObj(ignored -> messageCreator.createMessageUsing(new CargoUnloadedMessageContent()))
                     .forEach(message ->
                     {
-                        LOGGER.info("Sending new message: {}", message.id());
                         messageConsumer.accept(message);
                         waitABit();
                     });
-            LOGGER.info("Cargo Unloaded message receiver job is done.");
         }
     }
 
@@ -54,7 +61,6 @@ public class CargoUnloadedMessageReceiver implements MessageReceiver<CargoUnload
         } catch (InterruptedException e)
         {
             Thread.currentThread().interrupt();
-            LOGGER.error("Thread has been interrupted while waiting for new message.", e);
             throw new RuntimeException("Thread has been interrupted while waiting for new message.", e);
         }
     }

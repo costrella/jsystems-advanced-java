@@ -1,12 +1,12 @@
 ## Ćwiczenie 6.
 
 1. Zmień obsługę 'konsumera' w metodzie `receiveAndStore`,
-   tak aby korzystała z `BlockingQueue` (`ArrayBlockingQueue`) zamiast dotychcasowego rozwiązania.
-2. Zmień maksymalną zawartość kolejki na 1 i sprawdź jak się będzie zachowywał system.
-   Spróbuj usunąć/dodać nowe wątki do obsługi wiadomości. Zobacz jak zmieni się zachowanie systemu.
-   Zwróc uwagę na logi typu "Sending new message:" oraz "receiver job is done."
-3. *Spraw aby klasa `CargoLoadedMessageRepositoryNotifier` była generyczna,
-   potrafiła przyjąć dowolny typ wiadomości.
-4. *Przywróć pozostałe 'odbieracze' wiadomości - dla rozładunku i gps,
-   spraw by działały z wątkami, kolejką (kolejkami), zmienioną w poprzednim punkcie klasą.
-5. *Dodaj kilka wątków dla wiadomości typu `CargoLoaded`, albo skróć czas zapisu wiadomości w odpowiednim repozytorium.
+   tak by korzystała z kolejki `BlockingQueue`.
+   Jedyne co konsumer powinien robić to dodawać wiadomości do kolejki (metoda `put`).
+   Zainicjalizuj kolejkę z rozmiarem 1.
+2. Kod który był wcześniej używany w 'konsumerze',
+   powinien być przeniesiony do oddzielnego wątku, działać nieprzerwanie
+   i reagować na zdarzenia na kolejce (metoda `take`).
+3. *Sprawdź jak zachowuje się aplikacja - czemu obsługuje wiadomości tak wolno? Zmień ustawienia kolejki
+   sprawdź czy to pomoże.
+4. *Co możemy zrobić, aby usprawnić działanie / przyspieszyć obsługę wiadomości w tym konkretnym przypadku?

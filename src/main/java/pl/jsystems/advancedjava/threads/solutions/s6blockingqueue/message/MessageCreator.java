@@ -23,7 +23,7 @@ public class MessageCreator
                 content,
                 Instant.now().minus(delayInDays, ChronoUnit.DAYS));
 
-        LOGGER.trace("Created message with UUID: {}", message);
+        LOGGER.info("Created message with UUID: {}", message);
         return message;
     }
 }

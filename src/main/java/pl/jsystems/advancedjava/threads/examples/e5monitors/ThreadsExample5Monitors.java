@@ -4,12 +4,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Scanner;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 class ThreadsExample5Monitors
 {
     private static final Logger LOGGER = LoggerFactory.getLogger(ThreadsExample5Monitors.class);
-
-    private static final Object MY_THREADS_SYNCHRONIZATION_MONITOR = new Object();
 
     public static void main(String[] args)
     {
@@ -19,43 +20,39 @@ class ThreadsExample5Monitors
     private void run()
     {
         LOGGER.info("So many things happening at the same time...");
+        Lock lock = new ReentrantLock();
+        Condition condition = lock.newCondition();
+        Condition condition2 = lock.newCondition();
 
-        Thread myFancyThread0 = new MyWorkerThread();
-        LOGGER.info("Created new thread 0.");
-        myFancyThread0.start();
-        LOGGER.info("Thread 0 started.");
-        Thread myFancyThread1 = new MyWorkerThread();
-        LOGGER.info("Created new thread 1.");
-        myFancyThread1.start();
-        LOGGER.info("Thread 1 started.");
-        Thread myFancyThread2 = new MyWorkerThread();
-        LOGGER.info("Created new thread 2.");
-        myFancyThread2.start();
-        LOGGER.info("Thread 2 started.");
+        new MyWorkerThread(lock, condition).start();
+        new MyWorkerThread(lock, condition).start();
+        new MyWorkerThread(lock, condition2).start();
+        new MyWorkerThread(lock, condition2).start();
+        LOGGER.info("Threads started.");
 
         Scanner scanner = new Scanner(System.in);
         String input = null;
+
         while (!"q".equals(input))
         {
             input = scanner.nextLine();
 
-            if ("ONE".equals(input))
+            LOGGER.info("I got something to do for one thread.");
+            lock.lock();
+            try
             {
-                LOGGER.info("I got something to do for one thread.");
-                synchronized (MY_THREADS_SYNCHRONIZATION_MONITOR)
+                LOGGER.info("NOTIFYING SOMEONE");
+                if (input.startsWith("1"))
                 {
-                    LOGGER.info("NOTIFYING SOMEONE");
-                    MY_THREADS_SYNCHRONIZATION_MONITOR.notify();
+                    condition.signal();
                 }
-            }
-            if ("ALL".equals(input))
+                else
+                {
+                    condition2.signalAll();
+                }
+            } finally
             {
-                LOGGER.info("I got something to do for all threads.");
-                synchronized (MY_THREADS_SYNCHRONIZATION_MONITOR)
-                {
-                    LOGGER.info("NOTIFYING SOMEONE");
-                    MY_THREADS_SYNCHRONIZATION_MONITOR.notifyAll();
-                }
+                lock.unlock();
             }
         }
     }
@@ -63,18 +60,24 @@ class ThreadsExample5Monitors
 
     private static class MyWorkerThread extends Thread
     {
+        private final Lock lock;
+        private final Condition condition;
+
+        private MyWorkerThread(Lock lock, Condition condition)
+        {
+            this.lock = lock;
+            this.condition = condition;
+        }
 
         @Override
         public void run()
         {
             while (true)
             {
-                synchronized (MY_THREADS_SYNCHRONIZATION_MONITOR)
-                {
-                    LOGGER.info("Waiting for a new job!");
-                    waitingForSomeoneToNotifyMe();
-                    LOGGER.info("I GOT NOTIFIED!");
-                }
+
+                LOGGER.info("Waiting for a new job!");
+                waitingForSomeoneToNotifyMe();
+                LOGGER.info("I GOT NOTIFIED!");
 
                 for (int i = 0; i < 10; i++)
                 {
@@ -85,15 +88,19 @@ class ThreadsExample5Monitors
             }
         }
 
-        private static void waitingForSomeoneToNotifyMe()
+        private void waitingForSomeoneToNotifyMe()
         {
+            lock.lock();
             try
             {
-                MY_THREADS_SYNCHRONIZATION_MONITOR.wait();
+                condition.await();
             } catch (InterruptedException e)
             {
                 Thread.currentThread().interrupt();
                 throw new RuntimeException("Thread interrupted while waiting for a job.");
+            } finally
+            {
+                lock.unlock();
             }
         }
 

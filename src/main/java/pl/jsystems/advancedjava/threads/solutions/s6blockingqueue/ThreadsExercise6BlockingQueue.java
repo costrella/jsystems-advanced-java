@@ -3,34 +3,25 @@ package pl.jsystems.advancedjava.threads.solutions.s6blockingqueue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pl.jsystems.advancedjava.threads.solutions.s6blockingqueue.contents.CargoLoadedMessageContent;
-import pl.jsystems.advancedjava.threads.solutions.s6blockingqueue.contents.CargoUnloadedMessageContent;
-import pl.jsystems.advancedjava.threads.solutions.s6blockingqueue.contents.GPSTrackingMessageContent;
 import pl.jsystems.advancedjava.threads.solutions.s6blockingqueue.message.Message;
 import pl.jsystems.advancedjava.threads.solutions.s6blockingqueue.receivers.CargoLoadedMessageReceiver;
-import pl.jsystems.advancedjava.threads.solutions.s6blockingqueue.receivers.CargoUnloadedMessageReceiver;
-import pl.jsystems.advancedjava.threads.solutions.s6blockingqueue.receivers.GPSTrackingMessageReceiver;
 import pl.jsystems.advancedjava.threads.solutions.s6blockingqueue.repositories.CargoLoadedMessageRepository;
-import pl.jsystems.advancedjava.threads.solutions.s6blockingqueue.repositories.CargoUnloadedMessageRepository;
-import pl.jsystems.advancedjava.threads.solutions.s6blockingqueue.repositories.GPSTrackingMessageRepository;
 
 import java.time.Instant;
 import java.util.List;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
-import java.util.function.Consumer;
 
 class ThreadsExercise6BlockingQueue
 {
     private static final Logger LOGGER = LoggerFactory.getLogger(ThreadsExercise6BlockingQueue.class);
 
-    private static final CargoLoadedMessageRepository CARGO_LOADED_MESSAGE_REPOSITORY = new CargoLoadedMessageRepository();
-    private static final CargoUnloadedMessageRepository CARGO_UNLOADED_MESSAGE_REPOSITORY = new CargoUnloadedMessageRepository();
-    private static final GPSTrackingMessageRepository GPS_MESSAGE_REPOSITORY = new GPSTrackingMessageRepository();
-
     public static void main(String[] args)
     {
         new ThreadsExercise6BlockingQueue().run();
     }
+
+    private static final CargoLoadedMessageRepository CARGO_LOADED_MESSAGE_REPOSITORY = new CargoLoadedMessageRepository();
 
     private void run()
     {
@@ -40,103 +31,83 @@ class ThreadsExercise6BlockingQueue
         receiveAndStore(messageLogger);
 
         List<Message<CargoLoadedMessageContent>> cargoLoadedMessages = CARGO_LOADED_MESSAGE_REPOSITORY.findAll();
-        List<Message<CargoUnloadedMessageContent>> cargoUnloadedMessages = CARGO_UNLOADED_MESSAGE_REPOSITORY.findAll();
-        List<Message<GPSTrackingMessageContent>> gpsMessages = GPS_MESSAGE_REPOSITORY.findAll();
 
-        LOGGER.info("Cargo Loaded messages size {}", cargoLoadedMessages.size());
-        LOGGER.info("Cargo Unloaded messages size {}", cargoUnloadedMessages.size());
-        LOGGER.info("GPS messages size {}", gpsMessages.size());
+        // those logs are not ok - we'll fix that soon!
+        LOGGER.info("All messages - size {}: {}", cargoLoadedMessages.size(), cargoLoadedMessages);
         long endTime = Instant.now().toEpochMilli();
         LOGGER.info("Time spent processing (ms): {}", (endTime - startTime));
     }
 
 
-    private static void receiveAndStore(MessageLogger messageLogger)
+    private void receiveAndStore(MessageLogger messageLogger)
     {
-        BlockingQueue<Message<CargoLoadedMessageContent>> cargoLoadedMessageQueue = new ArrayBlockingQueue<>(20);
-        Consumer<Message<CargoLoadedMessageContent>> cargoLoadedMessageConsumer = message ->
-        {
-            messageLogger.logReceived(message);
-            CARGO_LOADED_MESSAGE_REPOSITORY.save(message);
-            LOGGER.info("Saved Cargo Loaded message: {}", message);
-        };
-        Thread cargoLoadedRepositoryWorkerThread1 = new MessageRepositoryWorkerThread<>(cargoLoadedMessageQueue, cargoLoadedMessageConsumer);
-        Thread cargoLoadedRepositoryWorkerThread2 = new MessageRepositoryWorkerThread<>(cargoLoadedMessageQueue, cargoLoadedMessageConsumer);
-        Thread cargoLoadedRepositoryWorkerThread3 = new MessageRepositoryWorkerThread<>(cargoLoadedMessageQueue, cargoLoadedMessageConsumer);
-        cargoLoadedRepositoryWorkerThread1.start();
-        cargoLoadedRepositoryWorkerThread2.start();
-        cargoLoadedRepositoryWorkerThread3.start();
+        BlockingQueue<Message<CargoLoadedMessageContent>> messagesToStore = new ArrayBlockingQueue<>(5);
+        new RepositoryStorageThread(messagesToStore, messageLogger).start();
+        new RepositoryStorageThread(messagesToStore, messageLogger).start();
+        new RepositoryStorageThread(messagesToStore, messageLogger).start();
+        Thread thread = new CargoLoadedMessageReceiver()
+                .startReceivingUsing(message ->
+                {
+                    try
+                    {
+                        messagesToStore.put(message);
+                    } catch (InterruptedException e)
+                    {
+                        Thread.currentThread().interrupt();
+                        LOGGER.error("Interrupted!", e);
+                        throw new RuntimeException("Interrupted!", e);
+                    }
+                });
 
-        BlockingQueue<Message<CargoUnloadedMessageContent>> cargoUnloadedMessageQueue = new ArrayBlockingQueue<>(20);
-        Consumer<Message<CargoUnloadedMessageContent>> cargoUnloadedMessageConsumer = message ->
-        {
-            messageLogger.logReceived(message);
-            CARGO_UNLOADED_MESSAGE_REPOSITORY.save(message);
-            LOGGER.info("Saved Cargo Loaded message: {}", message);
-        };
-        Thread cargoUnloadedRepositoryWorkerThread = new MessageRepositoryWorkerThread<>(cargoUnloadedMessageQueue, cargoUnloadedMessageConsumer);
-        cargoUnloadedRepositoryWorkerThread.start();
 
-        BlockingQueue<Message<GPSTrackingMessageContent>> gpsMessageQueue = new ArrayBlockingQueue<>(20);
-        Consumer<Message<GPSTrackingMessageContent>> gpsMessageConsumer = message ->
-        {
-            messageLogger.logReceived(message);
-            GPS_MESSAGE_REPOSITORY.save(message);
-            LOGGER.info("Saved Cargo Loaded message: {}", message);
-        };
-        Thread gpsRepositoryWorkerThread = new MessageRepositoryWorkerThread<>(gpsMessageQueue, gpsMessageConsumer);
-        gpsRepositoryWorkerThread.start();
-        new CargoLoadedMessageReceiver().startReceivingUsing(message ->
-        {
-            try
-            {
-                cargoLoadedMessageQueue.put(message);
-            } catch (InterruptedException e)
-            {
-                Thread.currentThread().interrupt();
-                LOGGER.info("Interrupted!", e);
-                throw new RuntimeException("Interrupted!", e);
-            }
-        });
-        new CargoUnloadedMessageReceiver().startReceivingUsing(message ->
-        {
-            try
-            {
-                cargoUnloadedMessageQueue.put(message);
-            } catch (InterruptedException e)
-            {
-                Thread.currentThread().interrupt();
-                LOGGER.info("Interrupted!", e);
-                throw new RuntimeException("Interrupted!", e);
-            }
-        });
-        new GPSTrackingMessageReceiver().startReceivingUsing(message ->
-        {
-            try
-            {
-                gpsMessageQueue.put(message);
-            } catch (InterruptedException e)
-            {
-                Thread.currentThread().interrupt();
-                LOGGER.info("Interrupted!", e);
-                throw new RuntimeException("Interrupted!", e);
-            }
-        });
+        joinThread(thread);
+    }
 
+    static class RepositoryStorageThread extends Thread
+    {
+        private final BlockingQueue<Message<CargoLoadedMessageContent>> messagesToStore;
+
+        RepositoryStorageThread(BlockingQueue<Message<CargoLoadedMessageContent>> messagesToStore, MessageLogger messageLogger)
+        {
+            this.messagesToStore = messagesToStore;
+            this.messageLogger = messageLogger;
+        }
+
+        private final MessageLogger messageLogger;
+
+        @Override
+        public void run()
+        {
+            {
+                Message<CargoLoadedMessageContent> message;
+                while (true)
+                {
+                    try
+                    {
+                        message = messagesToStore.take();
+                    } catch (InterruptedException e)
+                    {
+                        Thread.currentThread().interrupt();
+                        LOGGER.error("Interrupted!", e);
+                        throw new RuntimeException("Interrupted!", e);
+                    }
+                    messageLogger.logReceived(message);
+                    CARGO_LOADED_MESSAGE_REPOSITORY.save(message);
+                    LOGGER.info("Saved Cargo Loaded message: {}", message);
+                }
+            }
+        }
+    }
+
+    private static void joinThread(final Thread thread)
+    {
         try
         {
-            Thread.sleep(10000);
+            thread.join();
         } catch (InterruptedException e)
         {
             Thread.currentThread().interrupt();
-            LOGGER.error("Interrupted!");
-            throw new RuntimeException("Interrupted!", e);
+            throw new RuntimeException("Thread has been interrupted while waiting to finish receiving new message.", e);
         }
-
-        cargoLoadedRepositoryWorkerThread1.interrupt();
-        cargoLoadedRepositoryWorkerThread2.interrupt();
-        cargoLoadedRepositoryWorkerThread3.interrupt();
-        cargoUnloadedRepositoryWorkerThread.interrupt();
-        gpsRepositoryWorkerThread.interrupt();
     }
 }

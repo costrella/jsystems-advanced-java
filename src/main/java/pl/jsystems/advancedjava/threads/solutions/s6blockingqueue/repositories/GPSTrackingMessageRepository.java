@@ -3,8 +3,8 @@ package pl.jsystems.advancedjava.threads.solutions.s6blockingqueue.repositories;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pl.jsystems.advancedjava.threads.solutions.s6blockingqueue.contents.GPSTrackingMessageContent;
-import pl.jsystems.advancedjava.threads.solutions.s6blockingqueue.message.Message;
 import pl.jsystems.advancedjava.threads.solutions.s6blockingqueue.MessageRepository;
+import pl.jsystems.advancedjava.threads.solutions.s6blockingqueue.message.Message;
 
 import java.util.HashMap;
 import java.util.List;
@@ -33,7 +33,7 @@ public class GPSTrackingMessageRepository implements MessageRepository<GPSTracki
     @Override
     public void save(Message<GPSTrackingMessageContent> message)
     {
-        LOGGER.info("Saving GPS message: {}", message.id());
+        LOGGER.info("Saving GPS message: {}", message);
         MESSAGES.put(message.id(), message);
     }
 }

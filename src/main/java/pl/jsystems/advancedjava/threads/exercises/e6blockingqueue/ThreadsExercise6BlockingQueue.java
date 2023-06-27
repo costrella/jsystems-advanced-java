@@ -2,14 +2,13 @@ package pl.jsystems.advancedjava.threads.exercises.e6blockingqueue;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.jsystems.advancedjava.threads.exercises.e6blockingqueue.message.Message;
-import pl.jsystems.advancedjava.threads.exercises.e6blockingqueue.repositories.CargoLoadedMessageRepository;
 import pl.jsystems.advancedjava.threads.exercises.e6blockingqueue.contents.CargoLoadedMessageContent;
+import pl.jsystems.advancedjava.threads.exercises.e6blockingqueue.message.Message;
 import pl.jsystems.advancedjava.threads.exercises.e6blockingqueue.receivers.CargoLoadedMessageReceiver;
+import pl.jsystems.advancedjava.threads.exercises.e6blockingqueue.repositories.CargoLoadedMessageRepository;
 
 import java.time.Instant;
 import java.util.List;
-import java.util.function.Consumer;
 
 class ThreadsExercise6BlockingQueue
 {
@@ -40,35 +39,27 @@ class ThreadsExercise6BlockingQueue
 
     private static void receiveAndStore(MessageLogger messageLogger)
     {
-        CargoLoadedMessageRepositoryNotifier notifier = new CargoLoadedMessageRepositoryNotifier();
-        Consumer<Message<CargoLoadedMessageContent>> consumer = message ->
-        {
-            messageLogger.logReceived(message);
-            CARGO_LOADED_MESSAGE_REPOSITORY.save(message);
-            LOGGER.info("Saved Cargo Loaded message: {}", message);
-        };
+        Thread thread = new CargoLoadedMessageReceiver().startReceivingUsing(message ->
+                new Thread(() ->
+                {
+                    messageLogger.logReceived(message);
+                    CARGO_LOADED_MESSAGE_REPOSITORY.save(message);
+                    LOGGER.info("Saved Cargo Loaded message: {}", message);
+                }).start()
+        );
 
-        Thread repositoryWorkerThread1 = new CargoLoadedMessageRepositoryWorkerThread(notifier, consumer);
-        repositoryWorkerThread1.start();
-        Thread repositoryWorkerThread2 = new CargoLoadedMessageRepositoryWorkerThread(notifier, consumer);
-        repositoryWorkerThread2.start();
-        Thread repositoryWorkerThread3 = new CargoLoadedMessageRepositoryWorkerThread(notifier, consumer);
-        repositoryWorkerThread3.start();
+        joinThread(thread);
+    }
 
-        new CargoLoadedMessageReceiver().startReceivingUsing(notifier::notifyAbout);
-
+    private static void joinThread(final Thread thread)
+    {
         try
         {
-            Thread.sleep(10000);
+            thread.join();
         } catch (InterruptedException e)
         {
             Thread.currentThread().interrupt();
-            LOGGER.error("Interrupted!");
-            throw new RuntimeException("Interrupted!", e);
+            throw new RuntimeException("Thread has been interrupted while waiting to finish receiving new message.", e);
         }
-
-        repositoryWorkerThread1.interrupt();
-        repositoryWorkerThread2.interrupt();
-        repositoryWorkerThread3.interrupt();
     }
 }
