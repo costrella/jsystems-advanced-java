@@ -6,13 +6,20 @@ import java.time.Instant;
 import java.util.Objects;
 import java.util.UUID;
 
-public record Message<T extends MessageContent>(UUID id, T content, Instant sentAt) implements Comparable<Message<T>>
+public class Message<T extends MessageContent> implements Comparable<Message<T>>
 {
-    public Message
+    private final UUID id;
+    private final T content;
+    private final Instant sentAt;
+
+    public Message(UUID id, T content, Instant sentAt)
     {
         validate(id, "Id");
         validate(content, "Content");
         validate(sentAt, "Sent at");
+        this.id = id;
+        this.content = content;
+        this.sentAt = sentAt;
     }
 
     private void validate(Object content, String fieldName)
@@ -52,4 +59,20 @@ public record Message<T extends MessageContent>(UUID id, T content, Instant sent
     {
         return sentAt.compareTo(o.sentAt);
     }
+
+    public UUID id()
+    {
+        return id;
+    }
+
+    public T content()
+    {
+        return content;
+    }
+
+    public Instant sentAt()
+    {
+        return sentAt;
+    }
+
 }

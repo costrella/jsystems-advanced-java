@@ -1,25 +1,18 @@
-package pl.jsystems.advancedjava.reflection.solutions.s1basics.message;
+package pl.jsystems.advancedjava.reflection.solutions.s3buildstuff.message;
 
-import pl.jsystems.advancedjava.reflection.solutions.s1basics.contents.MessageContent;
+import pl.jsystems.advancedjava.reflection.solutions.s3buildstuff.contents.MessageContent;
 
 import java.time.Instant;
 import java.util.Objects;
 import java.util.UUID;
 
-public class Message<T extends MessageContent> implements Comparable<Message<T>>
+public record Message<T extends MessageContent>(UUID id, T content, Instant sentAt) implements Comparable<Message<T>>
 {
-    private final UUID id;
-    private final T content;
-    private final Instant sentAt;
-
-    public Message(UUID id, T content, Instant sentAt)
+    public Message
     {
         validate(id, "Id");
         validate(content, "Content");
         validate(sentAt, "Sent at");
-        this.id = id;
-        this.content = content;
-        this.sentAt = sentAt;
     }
 
     private void validate(Object content, String fieldName)
@@ -59,20 +52,4 @@ public class Message<T extends MessageContent> implements Comparable<Message<T>>
     {
         return sentAt.compareTo(o.sentAt);
     }
-
-    public UUID id()
-    {
-        return id;
-    }
-
-    public T content()
-    {
-        return content;
-    }
-
-    public Instant sentAt()
-    {
-        return sentAt;
-    }
-
 }
