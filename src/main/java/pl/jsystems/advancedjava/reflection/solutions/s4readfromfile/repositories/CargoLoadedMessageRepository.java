@@ -31,7 +31,7 @@ public class CargoLoadedMessageRepository implements MessageRepository<CargoLoad
     private static final Logger LOGGER = LoggerFactory.getLogger(CargoLoadedMessageRepository.class);
 
     private static final Map<UUID, Message<CargoLoadedMessageContent>> MESSAGES = new ConcurrentHashMap<>();
-    private static final Path MESSAGE_STORAGE_PATH_REF_USER_DIR = Paths.get("output/saved-messages");
+    private static final Path MESSAGE_STORAGE_PATH_REF_USER_DIR = Paths.get("output/saved-messages.json");
     private static final String MESSAGE_STORAGE_PATH_REF_CLASSPATH = "messages-to-start-with.json";
 
     private final ObjectMapper objectMapper;
