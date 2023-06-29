@@ -1,4 +1,4 @@
-package pl.jsystems.advancedjava.regex.examples.e1find;
+package pl.jsystems.advancedjava.regex;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
