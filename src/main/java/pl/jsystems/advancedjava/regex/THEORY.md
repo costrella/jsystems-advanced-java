@@ -145,7 +145,8 @@ Do deklarowania wyrażenia regularnego używamy klasy `Pattern`.
 `Pattern.compile` - pozwala nam na utworzenie wzorca (drzewa). 
 
 `Pattern.matches(String regex, CharSequence input)` - pozwala na szybkie sprawdzenie czy ciąg pasuje do wzorca. 
-Odpowiednik w `String.matches(String regex)`
+Odpowiednik w `String.matches(String regex)`. (!) - jeżeli wielokrotnie sprawdzamy różne teksty z tym samym wzorcem, 
+lepiej najpierw go skompilować!
 
 `pattern.split(String regex)` - pozwala na rozbicie ciągu znaków na części przy wykorzystaniu wyrażenia - np.
 `split("|")` - przy ciągu wejściowym "a|b|c" da nam tablicę z wynikami "a", "b" i "c". 
@@ -163,3 +164,4 @@ Odpowiednik w `String.matches(String regex)` i `String.matches(String regex, int
 odpowiednik w `String.replaceAll(String replacement)`
 
 `replaceFirst(String replacement` - zamień pierwsze znalezione wystąpienie podanym stringiem ('replacement')
+
