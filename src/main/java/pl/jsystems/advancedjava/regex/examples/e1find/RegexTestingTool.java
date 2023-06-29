@@ -17,30 +17,39 @@ public class RegexTestingTool
         new RegexTestingTool().run();
     }
 
-    void run() {
+    void run()
+    {
         Scanner scanner = new Scanner(System.in);
 
         while (true)
         {
             LOGGER.info("Enter regex:");
-            Pattern pattern = Pattern.compile(scanner.nextLine());
+            String regex = scanner.nextLine();
 
             LOGGER.info("Enter text to search:");
-            Matcher matcher = pattern.matcher(scanner.nextLine());
+            String input = scanner.nextLine();
 
-            boolean found = false;
+            Pattern pattern = Pattern.compile(regex);
+            Matcher matcher = pattern.matcher(input);
+            LOGGER.info("Matches? {}", matcher.matches());
+            LOGGER.info("Group count: {}", matcher.groupCount());
+            for (int groupIndex = 1; groupIndex < matcher.groupCount(); groupIndex++)
+            {
+                LOGGER.info("Group({}): {}", groupIndex, matcher.group(groupIndex));
+            }
+
+            matcher.reset();
+            int counter = 0;
             while (matcher.find())
             {
                 LOGGER.info("Found {} starting at index {} and ending at index {}.",
                         matcher.group(),
                         matcher.start(),
                         matcher.end());
-                found = true;
+                counter++;
             }
-            if (!found)
-            {
-                LOGGER.info("No match found.%n");
-            }
+
+            LOGGER.info("In total found {} results: ", counter);
         }
     }
 }
