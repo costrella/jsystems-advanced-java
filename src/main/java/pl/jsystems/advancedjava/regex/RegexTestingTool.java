@@ -31,11 +31,16 @@ public class RegexTestingTool
 
             Pattern pattern = Pattern.compile(regex);
             Matcher matcher = pattern.matcher(input);
-            LOGGER.info("Matches? {}", matcher.matches());
-            LOGGER.info("Group count: {}", matcher.groupCount());
-            for (int groupIndex = 1; groupIndex < matcher.groupCount(); groupIndex++)
-            {
-                LOGGER.info("Group({}): {}", groupIndex, matcher.group(groupIndex));
+
+            boolean inputMatches = matcher.matches();
+            LOGGER.info("Matches? {}", inputMatches);
+            int count = matcher.groupCount();
+            if (inputMatches) {
+                LOGGER.info("Group count: {}", count);
+                for (int groupIndex = 1; groupIndex <= count; groupIndex++)
+                {
+                    LOGGER.info("Group({}): {}", groupIndex, matcher.group(groupIndex));
+                }
             }
 
             matcher.reset();
@@ -49,7 +54,7 @@ public class RegexTestingTool
                 counter++;
             }
 
-            LOGGER.info("In total found {} results: ", counter);
+            LOGGER.info("In total found {} results.", counter);
         }
     }
 }
