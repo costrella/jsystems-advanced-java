@@ -81,7 +81,7 @@ zwyczajny' znak, bez dodatkowych funkcji.
 
 `\d` - jakakolwiek cyfra ('digit', stąd 'd') - inaczej `[0-9]` ()
 
-`\D` - jakikolwiek znak poza cyfrą - inaczej `[0-9]`
+`\D` - jakikolwiek znak poza cyfrą - inaczej `[^0-9]`
 
 `\w` - litery, znak używany w 'słowach' ('word', stąd 'w') - inaczej `[a-zA-Z_]`
 
@@ -122,7 +122,7 @@ Możemy łączyć grupy zakresy, np.:
 
 Możemy robić części wspólne zakresów:
 
-`[a-f&&c-g]` - małe litery od 'c' do 'f' (alternatywny zapis `[a-f&&[c-g]]`)
+`[a-f&&[c-g]]` - małe litery od 'c' do 'f' (alternatywny zapis `[a-f&&[c-g]]`)
 
 Możemy też odejmować zakresy:
 
@@ -131,10 +131,15 @@ Możemy też odejmować zakresy:
 #### Powtórzenia (w przykładach X jest przykładowym wyrażeniem, znakiem, grupą)
 
 `X?` - raz albo wcale
+
 `X*` - 0 lub wiele razy
+
 `X+` - jeden lub wiele razy
+
 `X{n}` - 'n' razy, liczba
+
 `X{n,}` - przynajmniej 'n' razy, liczba
+
 `X{n, m}` - 'n' razy, liczba
 
 ### Klasy w Javie
@@ -149,8 +154,8 @@ Odpowiednik w `String.matches(String regex)`. (!) - jeżeli wielokrotnie sprawdz
 lepiej najpierw go skompilować!
 
 `pattern.split(String regex)` - pozwala na rozbicie ciągu znaków na części przy wykorzystaniu wyrażenia - np.
-`split("|")` - przy ciągu wejściowym "a|b|c" da nam tablicę z wynikami "a", "b" i "c". 
-Odpowiednik w `String.matches(String regex)` i `String.matches(String regex, int limit)`.
+`split("|")` - przy ciągu wejściowym "a-b-c" da nam tablicę z wynikami "a", "b" i "c". 
+Odpowiednik w `String.split(String regex)`.
 
 `pattern.matcher()` - zwraca nam matcher, czyli klasę która ma informację o pasujących / znalezionych wynikach.
 

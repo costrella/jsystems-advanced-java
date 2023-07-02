@@ -10,6 +10,7 @@ import pl.jsystems.advancedjava.reflection.exercises.e4readfromfile.MessageRepos
 import pl.jsystems.advancedjava.reflection.exercises.e4readfromfile.contents.CargoLoadedMessageContent;
 import pl.jsystems.advancedjava.reflection.exercises.e4readfromfile.message.Message;
 
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -62,14 +63,14 @@ public class CargoLoadedMessageRepository implements MessageRepository<CargoLoad
     {
         Files.createDirectories(MESSAGE_STORAGE_PATH_REF_USER_DIR.getParent());
 
-        InputStream stream = null; //TODO
+        InputStream stream = new FileInputStream(MESSAGE_STORAGE_PATH_REF_USER_DIR.toFile());
 
         if (stream == null)
         {
             throw new FileNotFoundException("File not found! " + MESSAGE_STORAGE_PATH_REF_CLASSPATH);
         }
         var results = objectMapper
-                .readValue(stream, new TypeReference<List<Message<CargoLoadedMessageContent>>>() {});
+                .readValue(stream, new TypeReference<List<Message<CargoLoadedMessageContent>>>() { });
         MESSAGES.putAll(results.stream().collect(Collectors.toMap(Message::id, Function.identity())));
         LOGGER.info("Messages loaded! count: {}", MESSAGES.size());
     }
