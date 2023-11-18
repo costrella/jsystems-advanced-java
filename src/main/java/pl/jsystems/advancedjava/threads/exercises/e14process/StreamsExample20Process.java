@@ -4,9 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.BufferedInputStream;
-import java.io.BufferedWriter;
 import java.io.IOException;
-import java.util.Scanner;
 
 class StreamsExample20Process
 {
@@ -70,4 +68,3 @@ class StreamsExample20Process
         }
     }
 }
-

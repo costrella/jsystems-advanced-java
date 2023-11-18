@@ -3,9 +3,9 @@ package pl.jsystems.advancedjava.threads.exercises.e9synchronizedstate.receivers
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pl.jsystems.advancedjava.threads.exercises.e9synchronizedstate.MessageReceiver;
+import pl.jsystems.advancedjava.threads.exercises.e9synchronizedstate.contents.CargoUnloadedMessageContent;
 import pl.jsystems.advancedjava.threads.exercises.e9synchronizedstate.message.Message;
 import pl.jsystems.advancedjava.threads.exercises.e9synchronizedstate.message.MessageCreator;
-import pl.jsystems.advancedjava.threads.exercises.e9synchronizedstate.contents.CargoUnloadedMessageContent;
 
 import java.util.function.Consumer;
 import java.util.stream.IntStream;
@@ -21,7 +21,8 @@ public class CargoUnloadedMessageReceiver implements MessageReceiver<CargoUnload
         new ReceiverThread(messageConsumer).start();
     }
 
-    private class ReceiverThread extends Thread {
+    private class ReceiverThread extends Thread
+    {
 
         private final Consumer<Message<CargoUnloadedMessageContent>> messageConsumer;
 
@@ -31,7 +32,8 @@ public class CargoUnloadedMessageReceiver implements MessageReceiver<CargoUnload
         }
 
         @Override
-        public void run() {
+        public void run()
+        {
             IntStream.range(0, 11)
                     .mapToObj(ignored -> messageCreator.createMessageUsing(new CargoUnloadedMessageContent()))
                     .forEach(message ->

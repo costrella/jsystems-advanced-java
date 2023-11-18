@@ -2,10 +2,10 @@ package pl.jsystems.advancedjava.streams.exercises.e5distinct;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.jsystems.advancedjava.streams.exercises.e5distinct.contents.VehicleMessageContent;
-import pl.jsystems.advancedjava.streams.exercises.e5distinct.contents.MessageContent;
-import pl.jsystems.advancedjava.streams.exercises.e5distinct.message.Message;
 import pl.jsystems.advancedjava.streams.exercises.e5distinct.contents.CargoMessageContent;
+import pl.jsystems.advancedjava.streams.exercises.e5distinct.contents.MessageContent;
+import pl.jsystems.advancedjava.streams.exercises.e5distinct.contents.VehicleMessageContent;
+import pl.jsystems.advancedjava.streams.exercises.e5distinct.message.Message;
 
 import java.time.Instant;
 import java.util.ArrayList;

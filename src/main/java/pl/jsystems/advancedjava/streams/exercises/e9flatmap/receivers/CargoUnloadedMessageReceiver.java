@@ -1,7 +1,7 @@
 package pl.jsystems.advancedjava.streams.exercises.e9flatmap.receivers;
 
-import pl.jsystems.advancedjava.streams.exercises.e9flatmap.contents.CargoUnloadedMessageContent;
 import pl.jsystems.advancedjava.streams.exercises.e9flatmap.MessageReceiver;
+import pl.jsystems.advancedjava.streams.exercises.e9flatmap.contents.CargoUnloadedMessageContent;
 import pl.jsystems.advancedjava.streams.exercises.e9flatmap.message.Message;
 import pl.jsystems.advancedjava.streams.exercises.e9flatmap.message.MessageCreator;
 

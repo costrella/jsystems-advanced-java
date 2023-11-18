@@ -2,8 +2,8 @@ package pl.jsystems.advancedjava.streams.solutions.s5distinct;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.jsystems.advancedjava.streams.solutions.s5distinct.message.Message;
 import pl.jsystems.advancedjava.streams.solutions.s5distinct.contents.CargoLoadedMessageContent;
+import pl.jsystems.advancedjava.streams.solutions.s5distinct.message.Message;
 import pl.jsystems.advancedjava.streams.solutions.s5distinct.receivers.CargoLoadedMessageReceiver;
 import pl.jsystems.advancedjava.streams.solutions.s5distinct.receivers.CargoUnloadedMessageReceiver;
 import pl.jsystems.advancedjava.streams.solutions.s5distinct.receivers.GPSTrackingMessageReceiver;
@@ -60,7 +60,8 @@ class StreamsExercise5Distinct
     {
         Set<UUID> vehicleIds = ConcurrentHashMap.newKeySet();
 
-        return message -> {
+        return message ->
+        {
             boolean result = vehicleIds.add(message.content().getVehicleId());
             LOGGER.info("res" + result);
             LOGGER.info("ids" + vehicleIds);

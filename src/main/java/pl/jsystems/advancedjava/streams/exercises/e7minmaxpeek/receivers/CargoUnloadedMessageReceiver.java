@@ -1,9 +1,9 @@
 package pl.jsystems.advancedjava.streams.exercises.e7minmaxpeek.receivers;
 
 import pl.jsystems.advancedjava.streams.exercises.e7minmaxpeek.MessageReceiver;
+import pl.jsystems.advancedjava.streams.exercises.e7minmaxpeek.contents.CargoUnloadedMessageContent;
 import pl.jsystems.advancedjava.streams.exercises.e7minmaxpeek.message.Message;
 import pl.jsystems.advancedjava.streams.exercises.e7minmaxpeek.message.MessageCreator;
-import pl.jsystems.advancedjava.streams.exercises.e7minmaxpeek.contents.CargoUnloadedMessageContent;
 
 import java.util.function.Consumer;
 

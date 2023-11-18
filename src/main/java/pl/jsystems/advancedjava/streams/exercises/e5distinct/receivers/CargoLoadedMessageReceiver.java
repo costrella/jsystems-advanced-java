@@ -1,9 +1,9 @@
 package pl.jsystems.advancedjava.streams.exercises.e5distinct.receivers;
 
 import pl.jsystems.advancedjava.streams.exercises.e5distinct.MessageReceiver;
+import pl.jsystems.advancedjava.streams.exercises.e5distinct.contents.CargoLoadedMessageContent;
 import pl.jsystems.advancedjava.streams.exercises.e5distinct.message.Message;
 import pl.jsystems.advancedjava.streams.exercises.e5distinct.message.MessageCreator;
-import pl.jsystems.advancedjava.streams.exercises.e5distinct.contents.CargoLoadedMessageContent;
 
 import java.util.function.Consumer;
 

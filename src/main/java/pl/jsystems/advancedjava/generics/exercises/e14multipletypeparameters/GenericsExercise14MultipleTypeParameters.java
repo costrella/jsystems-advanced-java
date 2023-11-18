@@ -3,7 +3,6 @@ package pl.jsystems.advancedjava.generics.exercises.e14multipletypeparameters;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
 import java.util.List;
 
 class GenericsExercise14MultipleTypeParameters

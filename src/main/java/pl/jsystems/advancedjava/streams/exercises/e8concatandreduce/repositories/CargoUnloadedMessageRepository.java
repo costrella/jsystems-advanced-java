@@ -3,8 +3,8 @@ package pl.jsystems.advancedjava.streams.exercises.e8concatandreduce.repositorie
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pl.jsystems.advancedjava.streams.exercises.e8concatandreduce.MessageRepository;
-import pl.jsystems.advancedjava.streams.exercises.e8concatandreduce.message.Message;
 import pl.jsystems.advancedjava.streams.exercises.e8concatandreduce.contents.CargoUnloadedMessageContent;
+import pl.jsystems.advancedjava.streams.exercises.e8concatandreduce.message.Message;
 
 import java.util.HashMap;
 import java.util.List;

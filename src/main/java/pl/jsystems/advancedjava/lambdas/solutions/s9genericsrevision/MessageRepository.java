@@ -1,7 +1,7 @@
 package pl.jsystems.advancedjava.lambdas.solutions.s9genericsrevision;
 
-import pl.jsystems.advancedjava.lambdas.solutions.s9genericsrevision.message.Message;
 import pl.jsystems.advancedjava.lambdas.solutions.s9genericsrevision.contents.MessageContent;
+import pl.jsystems.advancedjava.lambdas.solutions.s9genericsrevision.message.Message;
 
 import java.util.List;
 import java.util.UUID;

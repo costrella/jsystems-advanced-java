@@ -2,9 +2,9 @@ package pl.jsystems.advancedjava.threads.exercises.e13future.repositories;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import pl.jsystems.advancedjava.threads.exercises.e13future.MessageRepository;
 import pl.jsystems.advancedjava.threads.exercises.e13future.contents.GPSTrackingMessageContent;
 import pl.jsystems.advancedjava.threads.exercises.e13future.message.Message;
-import pl.jsystems.advancedjava.threads.exercises.e13future.MessageRepository;
 
 import java.util.List;
 import java.util.Map;

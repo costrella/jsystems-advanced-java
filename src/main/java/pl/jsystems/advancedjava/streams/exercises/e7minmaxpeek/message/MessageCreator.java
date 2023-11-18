@@ -17,11 +17,12 @@ public class MessageCreator
     // temp solution to test / work with distinct
     private final List<UUID> ids = List.of(UUID.randomUUID(), UUID.randomUUID(), UUID.randomUUID());
 
-    public <CONTENT extends MessageContent> Message<CONTENT> createMessageUsing(CONTENT content) {
+    public <CONTENT extends MessageContent> Message<CONTENT> createMessageUsing(CONTENT content)
+    {
         int delayInMinutes = RandomGenerator.getDefault().nextInt(120);
 
         Message<CONTENT> message = new Message<>(
-                ids.get(RandomGenerator.getDefault().nextInt(0,3)),
+                ids.get(RandomGenerator.getDefault().nextInt(0, 3)),
                 content,
                 Instant.now().minus(delayInMinutes, ChronoUnit.MINUTES));
 

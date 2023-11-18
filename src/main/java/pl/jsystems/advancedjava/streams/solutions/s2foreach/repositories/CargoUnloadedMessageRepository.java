@@ -2,9 +2,9 @@ package pl.jsystems.advancedjava.streams.solutions.s2foreach.repositories;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import pl.jsystems.advancedjava.streams.solutions.s2foreach.MessageRepository;
 import pl.jsystems.advancedjava.streams.solutions.s2foreach.contents.CargoUnloadedMessageContent;
 import pl.jsystems.advancedjava.streams.solutions.s2foreach.message.Message;
-import pl.jsystems.advancedjava.streams.solutions.s2foreach.MessageRepository;
 
 import java.util.HashMap;
 import java.util.List;

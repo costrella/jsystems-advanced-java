@@ -2,9 +2,9 @@ package pl.jsystems.advancedjava.threads.solutions.s2joiningthreads.repositories
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import pl.jsystems.advancedjava.threads.solutions.s2joiningthreads.MessageRepository;
 import pl.jsystems.advancedjava.threads.solutions.s2joiningthreads.contents.GPSTrackingMessageContent;
 import pl.jsystems.advancedjava.threads.solutions.s2joiningthreads.message.Message;
-import pl.jsystems.advancedjava.threads.solutions.s2joiningthreads.MessageRepository;
 
 import java.util.HashMap;
 import java.util.List;

@@ -1,9 +1,9 @@
 package pl.jsystems.advancedjava.threads.exercises.e1creatingthreads.receivers;
 
 import pl.jsystems.advancedjava.threads.exercises.e1creatingthreads.MessageReceiver;
+import pl.jsystems.advancedjava.threads.exercises.e1creatingthreads.contents.CargoUnloadedMessageContent;
 import pl.jsystems.advancedjava.threads.exercises.e1creatingthreads.message.Message;
 import pl.jsystems.advancedjava.threads.exercises.e1creatingthreads.message.MessageCreator;
-import pl.jsystems.advancedjava.threads.exercises.e1creatingthreads.contents.CargoUnloadedMessageContent;
 
 import java.util.function.Consumer;
 import java.util.stream.IntStream;

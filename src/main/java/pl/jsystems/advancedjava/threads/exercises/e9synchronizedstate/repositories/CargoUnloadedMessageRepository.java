@@ -2,9 +2,9 @@ package pl.jsystems.advancedjava.threads.exercises.e9synchronizedstate.repositor
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import pl.jsystems.advancedjava.threads.exercises.e9synchronizedstate.MessageRepository;
 import pl.jsystems.advancedjava.threads.exercises.e9synchronizedstate.contents.CargoUnloadedMessageContent;
 import pl.jsystems.advancedjava.threads.exercises.e9synchronizedstate.message.Message;
-import pl.jsystems.advancedjava.threads.exercises.e9synchronizedstate.MessageRepository;
 
 import java.util.HashMap;
 import java.util.List;

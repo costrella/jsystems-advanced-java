@@ -1,9 +1,9 @@
 package pl.jsystems.advancedjava.streams.exercises.e3map.receivers;
 
-import pl.jsystems.advancedjava.streams.exercises.e3map.contents.GPSTrackingMessageContent;
-import pl.jsystems.advancedjava.streams.exercises.e3map.message.MessageCreator;
 import pl.jsystems.advancedjava.streams.exercises.e3map.MessageReceiver;
+import pl.jsystems.advancedjava.streams.exercises.e3map.contents.GPSTrackingMessageContent;
 import pl.jsystems.advancedjava.streams.exercises.e3map.message.Message;
+import pl.jsystems.advancedjava.streams.exercises.e3map.message.MessageCreator;
 
 import java.util.function.Consumer;
 

@@ -1,7 +1,7 @@
 package pl.jsystems.advancedjava.streams.exercises.e1basics;
 
-import pl.jsystems.advancedjava.streams.exercises.e1basics.message.Message;
 import pl.jsystems.advancedjava.streams.exercises.e1basics.contents.MessageContent;
+import pl.jsystems.advancedjava.streams.exercises.e1basics.message.Message;
 
 import java.util.List;
 import java.util.UUID;

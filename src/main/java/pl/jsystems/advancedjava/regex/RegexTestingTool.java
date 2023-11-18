@@ -35,7 +35,8 @@ public class RegexTestingTool
             boolean inputMatches = matcher.matches();
             LOGGER.info("Matches? {}", inputMatches);
             int count = matcher.groupCount();
-            if (inputMatches) {
+            if (inputMatches)
+            {
                 LOGGER.info("Group count: {}", count);
                 for (int groupIndex = 1; groupIndex <= count; groupIndex++)
                 {

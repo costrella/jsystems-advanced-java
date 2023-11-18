@@ -47,7 +47,8 @@ class GenericsExercise7UpperBoundWildcards
     private double sumOf(List<? extends Number> numbers)
     {
         double sum = 0;
-        for (Number number : numbers) {
+        for (Number number : numbers)
+        {
             sum += number.doubleValue();
         }
         return sum;
@@ -56,8 +57,10 @@ class GenericsExercise7UpperBoundWildcards
     private double minOf(List<? extends Number> numbers)
     {
         double min = Double.MAX_VALUE;
-        for (Number number : numbers) {
-            if (number.doubleValue() < min) {
+        for (Number number : numbers)
+        {
+            if (number.doubleValue() < min)
+            {
                 min = number.doubleValue();
             }
         }

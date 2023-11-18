@@ -30,7 +30,7 @@ class CargoLoadedMessageRepositoryNotifier
         do
         {
             waitingForNotification();
-        } while(queuedMessages.size() == 0);
+        } while (queuedMessages.size() == 0);
         return queuedMessages.remove(0);
     }
 

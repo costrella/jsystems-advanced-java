@@ -2,7 +2,9 @@ package pl.jsystems.advancedjava.threads.exercises.e10atomicoperations;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import pl.jsystems.advancedjava.threads.exercises.e10atomicoperations.contents.CargoLoadedMessageContent;
 import pl.jsystems.advancedjava.threads.exercises.e10atomicoperations.contents.CargoUnloadedMessageContent;
+import pl.jsystems.advancedjava.threads.exercises.e10atomicoperations.contents.GPSTrackingMessageContent;
 import pl.jsystems.advancedjava.threads.exercises.e10atomicoperations.contents.MessageContent;
 import pl.jsystems.advancedjava.threads.exercises.e10atomicoperations.message.Message;
 import pl.jsystems.advancedjava.threads.exercises.e10atomicoperations.receivers.CargoLoadedMessageReceiver;
@@ -11,8 +13,6 @@ import pl.jsystems.advancedjava.threads.exercises.e10atomicoperations.receivers.
 import pl.jsystems.advancedjava.threads.exercises.e10atomicoperations.repositories.CargoLoadedMessageRepository;
 import pl.jsystems.advancedjava.threads.exercises.e10atomicoperations.repositories.CargoUnloadedMessageRepository;
 import pl.jsystems.advancedjava.threads.exercises.e10atomicoperations.repositories.GPSTrackingMessageRepository;
-import pl.jsystems.advancedjava.threads.exercises.e10atomicoperations.contents.CargoLoadedMessageContent;
-import pl.jsystems.advancedjava.threads.exercises.e10atomicoperations.contents.GPSTrackingMessageContent;
 
 import java.time.Instant;
 import java.util.ArrayList;
@@ -20,7 +20,6 @@ import java.util.List;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.function.Consumer;
-import java.util.stream.Stream;
 
 class ThreadsExercise10AtomicOperations
 {
@@ -148,4 +147,3 @@ class ThreadsExercise10AtomicOperations
         };
     }
 }
-

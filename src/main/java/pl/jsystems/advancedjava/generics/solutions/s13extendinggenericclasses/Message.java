@@ -4,7 +4,8 @@ import java.time.Instant;
 import java.util.Objects;
 import java.util.UUID;
 
-record Message<T extends MessageContent>(UUID id, T content, Instant sentAt) implements Comparable<Message<? extends MessageContent>>
+record Message<T extends MessageContent>(UUID id, T content,
+                                         Instant sentAt) implements Comparable<Message<? extends MessageContent>>
 {
     Message
     {

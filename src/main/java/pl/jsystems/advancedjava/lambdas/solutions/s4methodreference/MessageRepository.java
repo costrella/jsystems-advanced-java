@@ -1,7 +1,7 @@
 package pl.jsystems.advancedjava.lambdas.solutions.s4methodreference;
 
-import pl.jsystems.advancedjava.lambdas.solutions.s4methodreference.message.Message;
 import pl.jsystems.advancedjava.lambdas.solutions.s4methodreference.contents.MessageContent;
+import pl.jsystems.advancedjava.lambdas.solutions.s4methodreference.message.Message;
 
 import java.util.List;
 import java.util.UUID;

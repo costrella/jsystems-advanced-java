@@ -75,6 +75,7 @@ class ThreadsExample11Deadlocks
         }
 
     }
+
     private class MyWorkerThread2 extends Thread
     {
 
@@ -113,6 +114,7 @@ class ThreadsExample11Deadlocks
         }
 
     }
+
     private static void sleepForAWhile()
     {
         try

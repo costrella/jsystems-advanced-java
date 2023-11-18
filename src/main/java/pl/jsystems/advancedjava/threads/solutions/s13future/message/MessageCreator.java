@@ -15,7 +15,8 @@ public class MessageCreator
 
     // temp solution to test / work with distinct
 
-    public <CONTENT extends MessageContent> Message<CONTENT> createMessageUsing(CONTENT content) {
+    public <CONTENT extends MessageContent> Message<CONTENT> createMessageUsing(CONTENT content)
+    {
         int delayInDays = RandomGenerator.getDefault().nextInt(3);
 
         Message<CONTENT> message = new Message<>(

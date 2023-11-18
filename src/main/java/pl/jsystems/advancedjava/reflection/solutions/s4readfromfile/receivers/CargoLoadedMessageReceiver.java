@@ -3,10 +3,10 @@ package pl.jsystems.advancedjava.reflection.solutions.s4readfromfile.receivers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pl.jsystems.advancedjava.reflection.solutions.s4readfromfile.ForDependencyInjection;
+import pl.jsystems.advancedjava.reflection.solutions.s4readfromfile.MessageReceiver;
 import pl.jsystems.advancedjava.reflection.solutions.s4readfromfile.contents.CargoLoadedMessageContent;
 import pl.jsystems.advancedjava.reflection.solutions.s4readfromfile.message.Message;
 import pl.jsystems.advancedjava.reflection.solutions.s4readfromfile.message.MessageCreator;
-import pl.jsystems.advancedjava.reflection.solutions.s4readfromfile.MessageReceiver;
 
 import java.util.concurrent.Executor;
 import java.util.function.Consumer;
@@ -18,7 +18,8 @@ public class CargoLoadedMessageReceiver implements MessageReceiver<CargoLoadedMe
 
     private final MessageCreator messageCreator;
 
-    public CargoLoadedMessageReceiver(MessageCreator messageCreator) {
+    public CargoLoadedMessageReceiver(MessageCreator messageCreator)
+    {
         this.messageCreator = messageCreator;
     }
 

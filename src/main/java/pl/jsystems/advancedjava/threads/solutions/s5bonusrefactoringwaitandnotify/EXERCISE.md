@@ -11,5 +11,5 @@
    powinien tylko i wyłącznie wywoływać metodę na 'monitorze'.
 4. *Czekanie na zakończenie wątku 'odbiornika' nie ma teraz dużo sensu, bo jego wiadomości
    będą przetwarzane jeszcze po tym jak on zakończy działanie - usuń tę część kodu.
-5. *Zamiast powyższego, w metodzie `receiveAndStore` dodaj 10s oczekiwania i potem 
-    wzbudź (`interrupt`) utworzone wątki - aplikacja powinna się zatrzymać.
+5. *Zamiast powyższego, w metodzie `receiveAndStore` dodaj 10s oczekiwania i potem
+   wzbudź (`interrupt`) utworzone wątki - aplikacja powinna się zatrzymać.

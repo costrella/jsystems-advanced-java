@@ -12,5 +12,7 @@ public interface CargoMessageContent extends MessageContent
 
     List<CargoElement> getCargoElements();
 
-    record CargoElement(UUID id, BigDecimal weight) {}
+    record CargoElement(UUID id, BigDecimal weight)
+    {
+    }
 }

@@ -3,9 +3,7 @@ package pl.jsystems.advancedjava.streams.exercises.e8concatandreduce;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pl.jsystems.advancedjava.streams.exercises.e8concatandreduce.contents.CargoLoadedMessageContent;
-import pl.jsystems.advancedjava.streams.exercises.e8concatandreduce.contents.CargoLoadingMessageContent;
 import pl.jsystems.advancedjava.streams.exercises.e8concatandreduce.contents.CargoUnloadedMessageContent;
-import pl.jsystems.advancedjava.streams.exercises.e8concatandreduce.contents.VehicleMessageContent;
 import pl.jsystems.advancedjava.streams.exercises.e8concatandreduce.message.Message;
 import pl.jsystems.advancedjava.streams.exercises.e8concatandreduce.receivers.CargoLoadedMessageReceiver;
 import pl.jsystems.advancedjava.streams.exercises.e8concatandreduce.receivers.CargoUnloadedMessageReceiver;
@@ -15,7 +13,6 @@ import pl.jsystems.advancedjava.streams.exercises.e8concatandreduce.repositories
 import pl.jsystems.advancedjava.streams.exercises.e8concatandreduce.repositories.GPSTrackingMessageRepository;
 
 import java.util.List;
-import java.util.stream.Stream;
 
 class StreamsExercise8ConcatAndReduce
 {

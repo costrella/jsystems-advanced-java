@@ -2,8 +2,8 @@ package pl.jsystems.advancedjava.threads.solutions.s7bonusrefactoring.receivers;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.jsystems.advancedjava.threads.solutions.s7bonusrefactoring.contents.CargoUnloadedMessageContent;
 import pl.jsystems.advancedjava.threads.solutions.s7bonusrefactoring.MessageReceiver;
+import pl.jsystems.advancedjava.threads.solutions.s7bonusrefactoring.contents.CargoUnloadedMessageContent;
 import pl.jsystems.advancedjava.threads.solutions.s7bonusrefactoring.message.Message;
 import pl.jsystems.advancedjava.threads.solutions.s7bonusrefactoring.message.MessageCreator;
 
@@ -21,7 +21,8 @@ public class CargoUnloadedMessageReceiver implements MessageReceiver<CargoUnload
         new ReceiverThread(messageConsumer).start();
     }
 
-    private class ReceiverThread extends Thread {
+    private class ReceiverThread extends Thread
+    {
 
         private final Consumer<Message<CargoUnloadedMessageContent>> messageConsumer;
 
@@ -31,7 +32,8 @@ public class CargoUnloadedMessageReceiver implements MessageReceiver<CargoUnload
         }
 
         @Override
-        public void run() {
+        public void run()
+        {
             IntStream.range(0, 11)
                     .mapToObj(ignored -> messageCreator.createMessageUsing(new CargoUnloadedMessageContent()))
                     .forEach(message ->

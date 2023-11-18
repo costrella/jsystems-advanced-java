@@ -3,8 +3,6 @@ package pl.jsystems.advancedjava.generics.exercises.e3genericmethods;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.math.BigDecimal;
-
 class GenericsExercise3GenericMethods
 {
     private static final Logger LOGGER = LoggerFactory.getLogger(GenericsExercise3GenericMethods.class);

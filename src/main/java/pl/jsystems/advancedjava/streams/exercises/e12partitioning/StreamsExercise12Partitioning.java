@@ -3,7 +3,6 @@ package pl.jsystems.advancedjava.streams.exercises.e12partitioning;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pl.jsystems.advancedjava.streams.exercises.e12partitioning.contents.CargoLoadedMessageContent;
-import pl.jsystems.advancedjava.streams.exercises.e12partitioning.contents.CargoUnloadedMessageContent;
 import pl.jsystems.advancedjava.streams.exercises.e12partitioning.message.Message;
 import pl.jsystems.advancedjava.streams.exercises.e12partitioning.receivers.CargoLoadedMessageReceiver;
 import pl.jsystems.advancedjava.streams.exercises.e12partitioning.receivers.CargoUnloadedMessageReceiver;
@@ -12,16 +11,7 @@ import pl.jsystems.advancedjava.streams.exercises.e12partitioning.repositories.C
 import pl.jsystems.advancedjava.streams.exercises.e12partitioning.repositories.CargoUnloadedMessageRepository;
 import pl.jsystems.advancedjava.streams.exercises.e12partitioning.repositories.GPSTrackingMessageRepository;
 
-import java.math.BigDecimal;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.ZoneId;
-import java.util.Comparator;
 import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.UUID;
-import java.util.stream.Collectors;
 
 class StreamsExercise12Partitioning
 {
@@ -48,7 +38,6 @@ class StreamsExercise12Partitioning
 
         // todo - stuff...
     }
-
 
 
     private static void receiveAndStore(MessageLogger messageLogger)

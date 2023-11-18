@@ -3,9 +3,6 @@ package pl.jsystems.advancedjava.generics.examples.e11boundedtypeparameters;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Comparator;
-import java.util.concurrent.atomic.LongAdder;
-
 class GenericsExample11BoundedTypeParameters
 {
     private static final Logger LOGGER = LoggerFactory.getLogger(GenericsExample11BoundedTypeParameters.class);

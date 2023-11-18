@@ -2,10 +2,10 @@ package pl.jsystems.advancedjava.streams.solutions.s12partitioning;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.jsystems.advancedjava.streams.solutions.s12partitioning.message.Message;
 import pl.jsystems.advancedjava.streams.solutions.s12partitioning.contents.CargoMessageContent;
 import pl.jsystems.advancedjava.streams.solutions.s12partitioning.contents.MessageContent;
 import pl.jsystems.advancedjava.streams.solutions.s12partitioning.contents.VehicleMessageContent;
+import pl.jsystems.advancedjava.streams.solutions.s12partitioning.message.Message;
 
 import java.time.Instant;
 import java.util.ArrayList;

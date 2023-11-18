@@ -2,9 +2,9 @@ package pl.jsystems.advancedjava.threads.solutions.s3sleepandinterruption.reposi
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import pl.jsystems.advancedjava.threads.solutions.s3sleepandinterruption.MessageRepository;
 import pl.jsystems.advancedjava.threads.solutions.s3sleepandinterruption.contents.GPSTrackingMessageContent;
 import pl.jsystems.advancedjava.threads.solutions.s3sleepandinterruption.message.Message;
-import pl.jsystems.advancedjava.threads.solutions.s3sleepandinterruption.MessageRepository;
 
 import java.util.HashMap;
 import java.util.List;

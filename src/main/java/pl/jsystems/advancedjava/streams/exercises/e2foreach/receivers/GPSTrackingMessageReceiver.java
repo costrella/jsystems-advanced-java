@@ -1,9 +1,9 @@
 package pl.jsystems.advancedjava.streams.exercises.e2foreach.receivers;
 
-import pl.jsystems.advancedjava.streams.exercises.e2foreach.contents.GPSTrackingMessageContent;
-import pl.jsystems.advancedjava.streams.exercises.e2foreach.message.MessageCreator;
 import pl.jsystems.advancedjava.streams.exercises.e2foreach.MessageReceiver;
+import pl.jsystems.advancedjava.streams.exercises.e2foreach.contents.GPSTrackingMessageContent;
 import pl.jsystems.advancedjava.streams.exercises.e2foreach.message.Message;
+import pl.jsystems.advancedjava.streams.exercises.e2foreach.message.MessageCreator;
 
 import java.util.function.Consumer;
 

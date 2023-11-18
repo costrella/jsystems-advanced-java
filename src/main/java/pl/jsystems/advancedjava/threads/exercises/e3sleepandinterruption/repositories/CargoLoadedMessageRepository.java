@@ -2,9 +2,9 @@ package pl.jsystems.advancedjava.threads.exercises.e3sleepandinterruption.reposi
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import pl.jsystems.advancedjava.threads.exercises.e3sleepandinterruption.MessageRepository;
 import pl.jsystems.advancedjava.threads.exercises.e3sleepandinterruption.contents.CargoLoadedMessageContent;
 import pl.jsystems.advancedjava.threads.exercises.e3sleepandinterruption.message.Message;
-import pl.jsystems.advancedjava.threads.exercises.e3sleepandinterruption.MessageRepository;
 
 import java.util.HashMap;
 import java.util.List;

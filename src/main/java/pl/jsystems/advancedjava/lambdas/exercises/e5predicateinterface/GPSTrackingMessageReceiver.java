@@ -1,8 +1,8 @@
 package pl.jsystems.advancedjava.lambdas.exercises.e5predicateinterface;
 
 import pl.jsystems.advancedjava.lambdas.exercises.e5predicateinterface.contents.GPSTrackingMessageContent;
-import pl.jsystems.advancedjava.lambdas.exercises.e5predicateinterface.message.MessageCreator;
 import pl.jsystems.advancedjava.lambdas.exercises.e5predicateinterface.message.Message;
+import pl.jsystems.advancedjava.lambdas.exercises.e5predicateinterface.message.MessageCreator;
 
 import java.util.function.Consumer;
 

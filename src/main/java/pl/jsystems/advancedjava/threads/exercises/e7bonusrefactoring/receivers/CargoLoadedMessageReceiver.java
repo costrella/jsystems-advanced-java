@@ -2,8 +2,8 @@ package pl.jsystems.advancedjava.threads.exercises.e7bonusrefactoring.receivers;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.jsystems.advancedjava.threads.exercises.e7bonusrefactoring.contents.CargoLoadedMessageContent;
 import pl.jsystems.advancedjava.threads.exercises.e7bonusrefactoring.MessageReceiver;
+import pl.jsystems.advancedjava.threads.exercises.e7bonusrefactoring.contents.CargoLoadedMessageContent;
 import pl.jsystems.advancedjava.threads.exercises.e7bonusrefactoring.message.Message;
 import pl.jsystems.advancedjava.threads.exercises.e7bonusrefactoring.message.MessageCreator;
 

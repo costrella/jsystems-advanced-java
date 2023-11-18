@@ -2,8 +2,8 @@ package pl.jsystems.advancedjava.threads.exercises.e6bonusrefactoringblockingque
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.jsystems.advancedjava.threads.exercises.e6bonusrefactoringblockingqueue.message.Message;
 import pl.jsystems.advancedjava.threads.exercises.e6bonusrefactoringblockingqueue.contents.CargoLoadedMessageContent;
+import pl.jsystems.advancedjava.threads.exercises.e6bonusrefactoringblockingqueue.message.Message;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +30,7 @@ class CargoLoadedMessageRepositoryNotifier
         do
         {
             waitingForNotification();
-        } while(queuedMessages.size() == 0);
+        } while (queuedMessages.size() == 0);
         return queuedMessages.remove(0);
     }
 

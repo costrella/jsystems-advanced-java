@@ -70,7 +70,9 @@ public class CargoLoadedMessageRepository implements MessageRepository<CargoLoad
             throw new FileNotFoundException("File not found! " + MESSAGE_STORAGE_PATH_REF_CLASSPATH);
         }
         var results = objectMapper
-                .readValue(stream, new TypeReference<List<Message<CargoLoadedMessageContent>>>() { });
+                .readValue(stream, new TypeReference<List<Message<CargoLoadedMessageContent>>>()
+                {
+                });
         MESSAGES.putAll(results.stream().collect(Collectors.toMap(Message::id, Function.identity())));
         LOGGER.info("Messages loaded! count: {}", MESSAGES.size());
     }

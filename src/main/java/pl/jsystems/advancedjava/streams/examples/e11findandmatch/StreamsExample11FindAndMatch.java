@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
-import java.util.stream.Stream;
 
 class StreamsExample11FindAndMatch
 {

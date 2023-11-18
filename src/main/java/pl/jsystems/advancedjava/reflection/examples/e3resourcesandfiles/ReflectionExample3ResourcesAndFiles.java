@@ -5,10 +5,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.concurrent.locks.ReentrantLock;
 
 class ReflectionExample3ResourcesAndFiles
 {
@@ -71,4 +68,3 @@ class ReflectionExample3ResourcesAndFiles
         LOGGER.info("{}", new String(new FileInputStream(Paths.get("README.md").toFile()).readAllBytes()));
     }
 }
-

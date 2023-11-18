@@ -33,7 +33,8 @@ class MessageLogger
     {
         List<String> messageDetails = new ArrayList<>();
 
-        for (MessageDetailsExtractor extractor: extractors) {
+        for (MessageDetailsExtractor extractor : extractors)
+        {
             extractor.extractInto(messageDetails, message.content());
         }
 

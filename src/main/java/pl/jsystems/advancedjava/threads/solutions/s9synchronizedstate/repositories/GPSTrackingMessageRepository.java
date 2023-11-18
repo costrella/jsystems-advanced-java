@@ -2,9 +2,9 @@ package pl.jsystems.advancedjava.threads.solutions.s9synchronizedstate.repositor
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import pl.jsystems.advancedjava.threads.solutions.s9synchronizedstate.MessageRepository;
 import pl.jsystems.advancedjava.threads.solutions.s9synchronizedstate.contents.GPSTrackingMessageContent;
 import pl.jsystems.advancedjava.threads.solutions.s9synchronizedstate.message.Message;
-import pl.jsystems.advancedjava.threads.solutions.s9synchronizedstate.MessageRepository;
 
 import java.util.HashMap;
 import java.util.List;

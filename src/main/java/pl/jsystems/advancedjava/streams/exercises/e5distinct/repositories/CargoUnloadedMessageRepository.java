@@ -3,8 +3,8 @@ package pl.jsystems.advancedjava.streams.exercises.e5distinct.repositories;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pl.jsystems.advancedjava.streams.exercises.e5distinct.MessageRepository;
-import pl.jsystems.advancedjava.streams.exercises.e5distinct.message.Message;
 import pl.jsystems.advancedjava.streams.exercises.e5distinct.contents.CargoUnloadedMessageContent;
+import pl.jsystems.advancedjava.streams.exercises.e5distinct.message.Message;
 
 import java.util.HashMap;
 import java.util.List;

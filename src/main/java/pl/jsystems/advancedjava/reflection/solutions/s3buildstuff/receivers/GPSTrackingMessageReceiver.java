@@ -3,10 +3,10 @@ package pl.jsystems.advancedjava.reflection.solutions.s3buildstuff.receivers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pl.jsystems.advancedjava.reflection.solutions.s3buildstuff.ForDependencyInjection;
+import pl.jsystems.advancedjava.reflection.solutions.s3buildstuff.MessageReceiver;
 import pl.jsystems.advancedjava.reflection.solutions.s3buildstuff.contents.GPSTrackingMessageContent;
 import pl.jsystems.advancedjava.reflection.solutions.s3buildstuff.message.Message;
 import pl.jsystems.advancedjava.reflection.solutions.s3buildstuff.message.MessageCreator;
-import pl.jsystems.advancedjava.reflection.solutions.s3buildstuff.MessageReceiver;
 
 import java.util.concurrent.Executor;
 import java.util.function.Consumer;
@@ -18,7 +18,8 @@ public class GPSTrackingMessageReceiver implements MessageReceiver<GPSTrackingMe
 
     private final MessageCreator messageCreator;
 
-    public GPSTrackingMessageReceiver(MessageCreator messageCreator) {
+    public GPSTrackingMessageReceiver(MessageCreator messageCreator)
+    {
         this.messageCreator = messageCreator;
     }
 

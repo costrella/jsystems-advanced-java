@@ -1,9 +1,9 @@
 package pl.jsystems.advancedjava.streams.solutions.s6optional.receivers;
 
 import pl.jsystems.advancedjava.streams.solutions.s6optional.MessageReceiver;
+import pl.jsystems.advancedjava.streams.solutions.s6optional.contents.CargoLoadedMessageContent;
 import pl.jsystems.advancedjava.streams.solutions.s6optional.message.Message;
 import pl.jsystems.advancedjava.streams.solutions.s6optional.message.MessageCreator;
-import pl.jsystems.advancedjava.streams.solutions.s6optional.contents.CargoLoadedMessageContent;
 
 import java.util.function.Consumer;
 

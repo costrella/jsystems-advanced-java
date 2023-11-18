@@ -5,7 +5,6 @@ import org.slf4j.LoggerFactory;
 
 import java.time.Instant;
 import java.util.Objects;
-import java.util.function.Function;
 import java.util.function.Supplier;
 
 class LambdasExample11TypedLambdaParameters
@@ -17,7 +16,8 @@ class LambdasExample11TypedLambdaParameters
         PromptPrinter printer = new PromptPrinter();
         Instant startTime = Instant.now();
 
-        Supplier<String> endTextSupplier = () -> {
+        Supplier<String> endTextSupplier = () ->
+        {
             long timePassed = Instant.now().toEpochMilli() - startTime.toEpochMilli();
             timePassed = timePassed / 1000;
             return "Ending! We've talked for: " + timePassed + " seconds!";

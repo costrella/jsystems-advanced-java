@@ -1,8 +1,8 @@
 package pl.jsystems.advancedjava.lambdas.solutions.s4methodreference;
 
+import pl.jsystems.advancedjava.lambdas.solutions.s4methodreference.contents.GPSTrackingMessageContent;
 import pl.jsystems.advancedjava.lambdas.solutions.s4methodreference.message.Message;
 import pl.jsystems.advancedjava.lambdas.solutions.s4methodreference.message.MessageCreator;
-import pl.jsystems.advancedjava.lambdas.solutions.s4methodreference.contents.GPSTrackingMessageContent;
 
 import java.util.function.Consumer;
 

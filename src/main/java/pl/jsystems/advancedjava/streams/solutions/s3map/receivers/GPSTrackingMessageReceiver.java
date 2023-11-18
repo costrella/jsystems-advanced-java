@@ -1,9 +1,9 @@
 package pl.jsystems.advancedjava.streams.solutions.s3map.receivers;
 
-import pl.jsystems.advancedjava.streams.solutions.s3map.contents.GPSTrackingMessageContent;
-import pl.jsystems.advancedjava.streams.solutions.s3map.message.MessageCreator;
 import pl.jsystems.advancedjava.streams.solutions.s3map.MessageReceiver;
+import pl.jsystems.advancedjava.streams.solutions.s3map.contents.GPSTrackingMessageContent;
 import pl.jsystems.advancedjava.streams.solutions.s3map.message.Message;
+import pl.jsystems.advancedjava.streams.solutions.s3map.message.MessageCreator;
 
 import java.util.function.Consumer;
 

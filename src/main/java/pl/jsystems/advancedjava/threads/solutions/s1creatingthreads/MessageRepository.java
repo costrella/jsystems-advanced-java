@@ -1,7 +1,7 @@
 package pl.jsystems.advancedjava.threads.solutions.s1creatingthreads;
 
-import pl.jsystems.advancedjava.threads.solutions.s1creatingthreads.message.Message;
 import pl.jsystems.advancedjava.threads.solutions.s1creatingthreads.contents.MessageContent;
+import pl.jsystems.advancedjava.threads.solutions.s1creatingthreads.message.Message;
 
 import java.util.List;
 import java.util.Optional;

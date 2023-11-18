@@ -13,19 +13,19 @@ np:
 
 `80-210`
 
-itd... możemy porównać łańuch znaków z wyrażeniem regularnym (regex) - `\d\d-\d\d\d` lub `\d{2}-\d{3}` 
+itd... możemy porównać łańuch znaków z wyrażeniem regularnym (regex) - `\d\d-\d\d\d` lub `\d{2}-\d{3}`
 Trzeba jednak zwrócić uwagę, że nie wszystkie kombinacje istnieją w Polsce - więc tu tylko sprawdzamy format,
 a nie poprawność samego kodu!
 
 Innym przykładem mogą być sygnatury dokumentów - np. faktur VAT danej firmy, itd, itp.
 
-Oprócz tego, możemy używać wyrażeń regularnych do wyciągania danych (części testowanego wyrażenia) 
+Oprócz tego, możemy używać wyrażeń regularnych do wyciągania danych (części testowanego wyrażenia)
 z określonego łańcucha znaków.
 
 #### Kiedy nie stosować?
 
 Obsługa wyrażeń regularnych jest dosyć pracochłonna dla procesora. Trzeba zbudować drzewo opisujące wszystkie możliwe
-konfiguracje opisane przez dany wzorzec, a kombinacji tych może być bardzo dużo. Np. jaki regex dla daty 
+konfiguracje opisane przez dany wzorzec, a kombinacji tych może być bardzo dużo. Np. jaki regex dla daty
 w formacie: "dd-mmm-YYYY", "dd/mmm/YYYY" lub "dd.mmm.YYYY"
 
 `^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]|(?:Jan|Mar|May|Jul|Aug|Oct|Dec)))\1|(?:(?:29|30)(\/|-|\.)(?:0?[1,3-9]|1[0-2]|(?:Jan|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec))\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)(?:0?2|(?:Feb))\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9]|(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep))|(?:1[0-2]|(?:Oct|Nov|Dec)))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$`
@@ -34,10 +34,9 @@ w formacie: "dd-mmm-YYYY", "dd/mmm/YYYY" lub "dd.mmm.YYYY"
 Dla formatu "dd-mmm-YYYY" nie wygląda to dużo lepiej:
 `^(?:(?:31-(?:0?[13578]|1[02]))\1|(?:(?:29|30)-(?:0?[1,3-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29-(?:0?2|(?:Feb))\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])-(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$`
 
-Dodatkowo przeglądanie dużych łańcuchów, jeżeli nasz wzorzec jest dosyć 'ogólny', może spowodować, 
-że będziemy znajdować bardzo dużo wyników i 'przeskanowanie' tego łańcucha, 
+Dodatkowo przeglądanie dużych łańcuchów, jeżeli nasz wzorzec jest dosyć 'ogólny', może spowodować,
+że będziemy znajdować bardzo dużo wyników i 'przeskanowanie' tego łańcucha,
 a także zebranie wyników może być kosztowne.
-
 
 #### Znaki w wyrażeniach regularnych
 
@@ -55,7 +54,8 @@ ale nie do "bbb"
 
 `$` - znak końca testowanego łańcucha (często linii).
 
-`[ ]` - klasa zawierająca znaki. Patrz niżej. Przykład `[abc]` pasuje do "a", "b" lub "c", `[ab]+` pasuje do "aaa", "aba"
+`[ ]` - klasa zawierająca znaki. Patrz niżej. Przykład `[abc]` pasuje do "a", "b" lub "c", `[ab]+` pasuje do "aaa", "
+aba"
 
 `[^ ]` - klasa wykluczająca znaki. Przykład `[abc]` pasuje do "def", "7890", "7890def"
 
@@ -105,8 +105,8 @@ zwyczajny' znak, bez dodatkowych funkcji.
 
 #### Zakresy
 
-W ramach grup możemy określać zakresy - tak jak pokazane to było na przykładach wyżej. 
-Zakresy definiowane są przez pierwszy znak, znak '-', końcowy znak, np. 
+W ramach grup możemy określać zakresy - tak jak pokazane to było na przykładach wyżej.
+Zakresy definiowane są przez pierwszy znak, znak '-', końcowy znak, np.
 
 `[a-c]` oznacza zakres znaków od 'a', 'b' lub 'c'.
 
@@ -145,16 +145,17 @@ Możemy też odejmować zakresy:
 ### Klasy w Javie
 
 #### Pattern
-Do deklarowania wyrażenia regularnego używamy klasy `Pattern`. 
 
-`Pattern.compile` - pozwala nam na utworzenie wzorca (drzewa). 
+Do deklarowania wyrażenia regularnego używamy klasy `Pattern`.
 
-`Pattern.matches(String regex, CharSequence input)` - pozwala na szybkie sprawdzenie czy ciąg pasuje do wzorca. 
-Odpowiednik w `String.matches(String regex)`. (!) - jeżeli wielokrotnie sprawdzamy różne teksty z tym samym wzorcem, 
+`Pattern.compile` - pozwala nam na utworzenie wzorca (drzewa).
+
+`Pattern.matches(String regex, CharSequence input)` - pozwala na szybkie sprawdzenie czy ciąg pasuje do wzorca.
+Odpowiednik w `String.matches(String regex)`. (!) - jeżeli wielokrotnie sprawdzamy różne teksty z tym samym wzorcem,
 lepiej najpierw go skompilować!
 
 `pattern.split(String regex)` - pozwala na rozbicie ciągu znaków na części przy wykorzystaniu wyrażenia - np.
-`split("-")` - przy ciągu wejściowym "a-b-c" da nam tablicę z wynikami "a", "b" i "c". 
+`split("-")` - przy ciągu wejściowym "a-b-c" da nam tablicę z wynikami "a", "b" i "c".
 Odpowiednik w `String.split(String regex)`.
 
 `pattern.matcher()` - zwraca nam matcher, czyli obiekt który ma informację o pasujących / znalezionych wynikach.

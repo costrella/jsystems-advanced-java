@@ -31,7 +31,8 @@ class MessageLogger
     void logReceived(Message<? extends MessageContent> message)
     {
         int currentCounter;
-        synchronized(this) {
+        synchronized (this)
+        {
             currentCounter = ++counter;
         }
 

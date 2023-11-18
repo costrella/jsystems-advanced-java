@@ -36,7 +36,8 @@ class NewUserInputNotifier
     void processNewLetter(char input)
     {
         LOGGER.info("NOTIFYING SOMEONE ABOUT NEW INPUT: {}", input);
-        synchronized (this) {
+        synchronized (this)
+        {
             inputsToBeProcessed.add(input);
             notifyAll();
         }
@@ -45,8 +46,10 @@ class NewUserInputNotifier
     void processLetters(String input)
     {
         LOGGER.info("Multiple inputs provided, adding one by one!: {}", input);
-        synchronized (this) {
-            for (Character character : input.toCharArray()) {
+        synchronized (this)
+        {
+            for (Character character : input.toCharArray())
+            {
                 processNewLetter(character);
             }
         }

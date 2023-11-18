@@ -1,9 +1,9 @@
 package pl.jsystems.advancedjava.streams.solutions.s12partitioning.receivers;
 
 import pl.jsystems.advancedjava.streams.solutions.s12partitioning.MessageReceiver;
+import pl.jsystems.advancedjava.streams.solutions.s12partitioning.contents.CargoUnloadedMessageContent;
 import pl.jsystems.advancedjava.streams.solutions.s12partitioning.message.Message;
 import pl.jsystems.advancedjava.streams.solutions.s12partitioning.message.MessageCreator;
-import pl.jsystems.advancedjava.streams.solutions.s12partitioning.contents.CargoUnloadedMessageContent;
 
 import java.util.function.Consumer;
 import java.util.stream.IntStream;

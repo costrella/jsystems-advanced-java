@@ -18,7 +18,8 @@ public class GPSTrackingMessageReceiver implements MessageReceiver<GPSTrackingMe
 
     private final MessageCreator messageCreator;
 
-    public GPSTrackingMessageReceiver(MessageCreator messageCreator) {
+    public GPSTrackingMessageReceiver(MessageCreator messageCreator)
+    {
         this.messageCreator = messageCreator;
     }
 

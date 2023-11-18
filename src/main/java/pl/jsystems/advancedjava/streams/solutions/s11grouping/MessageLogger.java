@@ -2,10 +2,10 @@ package pl.jsystems.advancedjava.streams.solutions.s11grouping;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.jsystems.advancedjava.streams.solutions.s11grouping.message.Message;
 import pl.jsystems.advancedjava.streams.solutions.s11grouping.contents.CargoMessageContent;
 import pl.jsystems.advancedjava.streams.solutions.s11grouping.contents.MessageContent;
 import pl.jsystems.advancedjava.streams.solutions.s11grouping.contents.VehicleMessageContent;
+import pl.jsystems.advancedjava.streams.solutions.s11grouping.message.Message;
 
 import java.time.Instant;
 import java.util.ArrayList;

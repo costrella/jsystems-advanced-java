@@ -12,8 +12,6 @@ import pl.jsystems.advancedjava.streams.solutions.s7minmaxpeek.repositories.Carg
 import pl.jsystems.advancedjava.streams.solutions.s7minmaxpeek.repositories.GPSTrackingMessageRepository;
 
 import java.math.BigDecimal;
-import java.time.Instant;
-import java.util.Comparator;
 import java.util.List;
 
 class StreamsExercise7MinMaxPeek

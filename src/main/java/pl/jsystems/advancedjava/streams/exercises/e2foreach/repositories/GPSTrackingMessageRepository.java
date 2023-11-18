@@ -2,9 +2,9 @@ package pl.jsystems.advancedjava.streams.exercises.e2foreach.repositories;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import pl.jsystems.advancedjava.streams.exercises.e2foreach.MessageRepository;
 import pl.jsystems.advancedjava.streams.exercises.e2foreach.contents.GPSTrackingMessageContent;
 import pl.jsystems.advancedjava.streams.exercises.e2foreach.message.Message;
-import pl.jsystems.advancedjava.streams.exercises.e2foreach.MessageRepository;
 
 import java.util.HashMap;
 import java.util.List;

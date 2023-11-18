@@ -2,8 +2,8 @@ package pl.jsystems.advancedjava.lambdas.solutions.s4methodreference;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.jsystems.advancedjava.lambdas.solutions.s4methodreference.message.Message;
 import pl.jsystems.advancedjava.lambdas.solutions.s4methodreference.contents.GPSTrackingMessageContent;
+import pl.jsystems.advancedjava.lambdas.solutions.s4methodreference.message.Message;
 
 import java.util.HashMap;
 import java.util.List;

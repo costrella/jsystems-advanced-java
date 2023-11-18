@@ -2,10 +2,10 @@ package pl.jsystems.advancedjava.streams.exercises.e4sorting;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import pl.jsystems.advancedjava.streams.exercises.e4sorting.contents.CargoMessageContent;
 import pl.jsystems.advancedjava.streams.exercises.e4sorting.contents.MessageContent;
 import pl.jsystems.advancedjava.streams.exercises.e4sorting.contents.VehicleMessageContent;
 import pl.jsystems.advancedjava.streams.exercises.e4sorting.message.Message;
-import pl.jsystems.advancedjava.streams.exercises.e4sorting.contents.CargoMessageContent;
 
 import java.time.Instant;
 import java.util.ArrayList;

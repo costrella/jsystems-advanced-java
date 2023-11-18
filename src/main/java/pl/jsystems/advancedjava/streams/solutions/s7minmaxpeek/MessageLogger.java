@@ -2,10 +2,10 @@ package pl.jsystems.advancedjava.streams.solutions.s7minmaxpeek;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.jsystems.advancedjava.streams.solutions.s7minmaxpeek.contents.VehicleMessageContent;
-import pl.jsystems.advancedjava.streams.solutions.s7minmaxpeek.message.Message;
 import pl.jsystems.advancedjava.streams.solutions.s7minmaxpeek.contents.CargoMessageContent;
 import pl.jsystems.advancedjava.streams.solutions.s7minmaxpeek.contents.MessageContent;
+import pl.jsystems.advancedjava.streams.solutions.s7minmaxpeek.contents.VehicleMessageContent;
+import pl.jsystems.advancedjava.streams.solutions.s7minmaxpeek.message.Message;
 
 import java.time.Instant;
 import java.util.ArrayList;

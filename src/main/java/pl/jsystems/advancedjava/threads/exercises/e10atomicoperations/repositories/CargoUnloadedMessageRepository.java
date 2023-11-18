@@ -2,9 +2,9 @@ package pl.jsystems.advancedjava.threads.exercises.e10atomicoperations.repositor
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import pl.jsystems.advancedjava.threads.exercises.e10atomicoperations.MessageRepository;
 import pl.jsystems.advancedjava.threads.exercises.e10atomicoperations.contents.CargoUnloadedMessageContent;
 import pl.jsystems.advancedjava.threads.exercises.e10atomicoperations.message.Message;
-import pl.jsystems.advancedjava.threads.exercises.e10atomicoperations.MessageRepository;
 
 import java.util.HashMap;
 import java.util.List;

@@ -31,12 +31,15 @@ class StreamsExample20Process
         process.destroy();
 
         sleepForABit();
-        if (process.isAlive()) {
+        if (process.isAlive())
+        {
             LOGGER.info("Process still alive!");
             process.destroyForcibly();
             sleepForABit();
             LOGGER.info("Process ended ? with status {}", process.exitValue());
-        } else {
+        }
+        else
+        {
             LOGGER.info("Process ended with status {}", process.exitValue());
         }
 
@@ -106,4 +109,3 @@ class StreamsExample20Process
         }
     }
 }
-

@@ -49,19 +49,19 @@ class MessageLogger
     private static class MessageDetailsExtractor
     {
         private final Predicate<MessageContent> isKnownContent;
-        private final BiConsumer<List<String>, MessageContent> extractor;
+        private final BiConsumer<List<String>, ? extends MessageContent> extractor;
 
         MessageDetailsExtractor(Predicate<MessageContent> isKnownContent, BiConsumer<List<String>, ? extends MessageContent> extractor)
         {
             this.isKnownContent = isKnownContent;
-            this.extractor = (BiConsumer<List<String>, MessageContent>) extractor;
+            this.extractor = extractor;
         }
 
         private void extractInto(List<String> messageDetails, MessageContent content)
         {
             if (isKnownContent.test(content))
             {
-                extractor.accept(messageDetails, content);
+                ((BiConsumer<List<String>, MessageContent>) extractor).accept(messageDetails, content);
             }
         }
     }

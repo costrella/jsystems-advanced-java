@@ -4,9 +4,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pl.jsystems.advancedjava.reflection.exercises.e4readfromfile.ForDependencyInjection;
 import pl.jsystems.advancedjava.reflection.exercises.e4readfromfile.MessageReceiver;
+import pl.jsystems.advancedjava.reflection.exercises.e4readfromfile.contents.CargoUnloadedMessageContent;
 import pl.jsystems.advancedjava.reflection.exercises.e4readfromfile.message.Message;
 import pl.jsystems.advancedjava.reflection.exercises.e4readfromfile.message.MessageCreator;
-import pl.jsystems.advancedjava.reflection.exercises.e4readfromfile.contents.CargoUnloadedMessageContent;
 
 import java.util.concurrent.Executor;
 import java.util.function.Consumer;
@@ -18,7 +18,8 @@ public class CargoUnloadedMessageReceiver implements MessageReceiver<CargoUnload
 
     private final MessageCreator messageCreator;
 
-    public CargoUnloadedMessageReceiver(MessageCreator messageCreator) {
+    public CargoUnloadedMessageReceiver(MessageCreator messageCreator)
+    {
         this.messageCreator = messageCreator;
     }
 
@@ -41,7 +42,8 @@ public class CargoUnloadedMessageReceiver implements MessageReceiver<CargoUnload
         @Override
         public void run()
         {
-            while (true) {
+            while (true)
+            {
                 var message = messageCreator.createMessageUsing(new CargoUnloadedMessageContent());
                 LOGGER.info("Sending new message: {}", message.id());
                 messageConsumer.accept(message);

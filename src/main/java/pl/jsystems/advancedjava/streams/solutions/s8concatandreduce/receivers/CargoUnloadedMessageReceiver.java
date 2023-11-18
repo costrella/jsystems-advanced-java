@@ -1,9 +1,9 @@
 package pl.jsystems.advancedjava.streams.solutions.s8concatandreduce.receivers;
 
 import pl.jsystems.advancedjava.streams.solutions.s8concatandreduce.MessageReceiver;
+import pl.jsystems.advancedjava.streams.solutions.s8concatandreduce.contents.CargoUnloadedMessageContent;
 import pl.jsystems.advancedjava.streams.solutions.s8concatandreduce.message.Message;
 import pl.jsystems.advancedjava.streams.solutions.s8concatandreduce.message.MessageCreator;
-import pl.jsystems.advancedjava.streams.solutions.s8concatandreduce.contents.CargoUnloadedMessageContent;
 
 import java.util.function.Consumer;
 

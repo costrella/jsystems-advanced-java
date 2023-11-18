@@ -1,7 +1,7 @@
 package pl.jsystems.advancedjava.streams.solutions.s3map.receivers;
 
-import pl.jsystems.advancedjava.streams.solutions.s3map.contents.CargoUnloadedMessageContent;
 import pl.jsystems.advancedjava.streams.solutions.s3map.MessageReceiver;
+import pl.jsystems.advancedjava.streams.solutions.s3map.contents.CargoUnloadedMessageContent;
 import pl.jsystems.advancedjava.streams.solutions.s3map.message.Message;
 import pl.jsystems.advancedjava.streams.solutions.s3map.message.MessageCreator;
 

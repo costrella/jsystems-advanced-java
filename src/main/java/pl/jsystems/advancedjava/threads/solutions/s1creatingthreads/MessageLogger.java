@@ -2,10 +2,10 @@ package pl.jsystems.advancedjava.threads.solutions.s1creatingthreads;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.jsystems.advancedjava.threads.solutions.s1creatingthreads.message.Message;
 import pl.jsystems.advancedjava.threads.solutions.s1creatingthreads.contents.CargoMessageContent;
 import pl.jsystems.advancedjava.threads.solutions.s1creatingthreads.contents.MessageContent;
 import pl.jsystems.advancedjava.threads.solutions.s1creatingthreads.contents.VehicleMessageContent;
+import pl.jsystems.advancedjava.threads.solutions.s1creatingthreads.message.Message;
 
 import java.time.Instant;
 import java.util.ArrayList;

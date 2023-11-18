@@ -1,8 +1,8 @@
 package pl.jsystems.advancedjava.lambdas.solutions.s6biconsumer;
 
 import pl.jsystems.advancedjava.lambdas.solutions.s6biconsumer.contents.GPSTrackingMessageContent;
-import pl.jsystems.advancedjava.lambdas.solutions.s6biconsumer.message.MessageCreator;
 import pl.jsystems.advancedjava.lambdas.solutions.s6biconsumer.message.Message;
+import pl.jsystems.advancedjava.lambdas.solutions.s6biconsumer.message.MessageCreator;
 
 import java.util.function.Consumer;
 

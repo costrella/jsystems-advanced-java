@@ -46,7 +46,8 @@ class NewUserInputNotifier
         {
             inputsToBeProcessed.add(input);
             notifyAll();
-            synchronized(auditLogProcessor) {
+            synchronized (auditLogProcessor)
+            {
                 LOGGER.info("INFORMING AUDIT LOG PROCESSOR ABOUT STUFF GOING ON HERE!");
                 auditLogProcessor.notifyAll();
             }

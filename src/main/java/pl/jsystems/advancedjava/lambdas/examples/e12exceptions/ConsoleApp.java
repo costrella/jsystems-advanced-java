@@ -48,10 +48,12 @@ class ConsoleApp
         try
         {
             LOGGER.info(endTextSupplier.get());
-        } catch (IllegalStateException e) {
+        } catch (IllegalStateException e)
+        {
             LOGGER.error("You made your computer angry! It says: {}", e.getMessage());
             LOGGER.warn("You better apologise!");
-            while(!"I'm so sorry!!!".equals(input)) {
+            while (!"I'm so sorry!!!".equals(input))
+            {
                 input = scanner.nextLine();
             }
             LOGGER.info("There you go - that's much better!");

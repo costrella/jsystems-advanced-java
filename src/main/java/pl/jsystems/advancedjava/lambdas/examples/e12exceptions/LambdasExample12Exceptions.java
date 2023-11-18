@@ -16,8 +16,10 @@ class LambdasExample12Exceptions
         PromptPrinter printer = new PromptPrinter();
         Instant startTime = Instant.now();
 
-        MyOwnSupplier<String> startTextSupplier = () -> {
-            if (Instant.now().toEpochMilli() % 2L != 0) {
+        MyOwnSupplier<String> startTextSupplier = () ->
+        {
+            if (Instant.now().toEpochMilli() % 2L != 0)
+            {
                 throw new Exception("We can only start at even milliseconds epoch time!");
             }
             return "Let's start!";
@@ -39,7 +41,8 @@ class LambdasExample12Exceptions
         new ConsoleApp(printer::displayPromptFor, startTextSupplier, endTextSupplier).startConsoleApp();
     }
 
-    interface MyOwnSupplier<T> {
+    interface MyOwnSupplier<T>
+    {
         T get() throws Exception;
     }
 

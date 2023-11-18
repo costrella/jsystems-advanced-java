@@ -50,7 +50,7 @@ class StreamsExercise12Partitioning
 
         Map<Boolean, Double> averageLoadingTimeFromTodayAndBefore = cargoLoadedMessages.stream()
                 .collect(Collectors.partitioningBy(message ->
-                                LocalDate.ofInstant(message.sentAt(), ZoneId.systemDefault()).isEqual(LocalDate.now()),
+                                        LocalDate.ofInstant(message.sentAt(), ZoneId.systemDefault()).isEqual(LocalDate.now()),
                                 Collectors.averagingDouble(message -> message.content().getLoadingTimeTakenInSeconds())
                         )
                 );

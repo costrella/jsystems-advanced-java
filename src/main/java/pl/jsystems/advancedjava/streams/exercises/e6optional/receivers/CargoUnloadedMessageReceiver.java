@@ -1,7 +1,7 @@
 package pl.jsystems.advancedjava.streams.exercises.e6optional.receivers;
 
-import pl.jsystems.advancedjava.streams.exercises.e6optional.contents.CargoUnloadedMessageContent;
 import pl.jsystems.advancedjava.streams.exercises.e6optional.MessageReceiver;
+import pl.jsystems.advancedjava.streams.exercises.e6optional.contents.CargoUnloadedMessageContent;
 import pl.jsystems.advancedjava.streams.exercises.e6optional.message.Message;
 import pl.jsystems.advancedjava.streams.exercises.e6optional.message.MessageCreator;
 

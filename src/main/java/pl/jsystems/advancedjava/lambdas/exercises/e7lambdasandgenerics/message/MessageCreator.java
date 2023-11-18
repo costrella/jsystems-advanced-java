@@ -13,7 +13,8 @@ public class MessageCreator
 {
     private static final Logger LOGGER = LoggerFactory.getLogger(MessageCreator.class);
 
-    public <CONTENT extends MessageContent> Message<CONTENT> createMessageUsing(CONTENT content) {
+    public <CONTENT extends MessageContent> Message<CONTENT> createMessageUsing(CONTENT content)
+    {
         int delayInMinutes = RandomGenerator.getDefault().nextInt(120);
         Message<CONTENT> message = new Message<>(
                 UUID.randomUUID(),

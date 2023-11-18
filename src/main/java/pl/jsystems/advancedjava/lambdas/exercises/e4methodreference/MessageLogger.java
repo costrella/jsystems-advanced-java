@@ -2,10 +2,10 @@ package pl.jsystems.advancedjava.lambdas.exercises.e4methodreference;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.jsystems.advancedjava.lambdas.exercises.e4methodreference.contents.VehicleMessageContent;
-import pl.jsystems.advancedjava.lambdas.exercises.e4methodreference.message.Message;
 import pl.jsystems.advancedjava.lambdas.exercises.e4methodreference.contents.CargoMessageContent;
 import pl.jsystems.advancedjava.lambdas.exercises.e4methodreference.contents.MessageContent;
+import pl.jsystems.advancedjava.lambdas.exercises.e4methodreference.contents.VehicleMessageContent;
+import pl.jsystems.advancedjava.lambdas.exercises.e4methodreference.message.Message;
 
 import java.time.Instant;
 

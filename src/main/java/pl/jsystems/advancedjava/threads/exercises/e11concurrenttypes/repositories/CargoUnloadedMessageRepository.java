@@ -2,9 +2,9 @@ package pl.jsystems.advancedjava.threads.exercises.e11concurrenttypes.repositori
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import pl.jsystems.advancedjava.threads.exercises.e11concurrenttypes.MessageRepository;
 import pl.jsystems.advancedjava.threads.exercises.e11concurrenttypes.contents.CargoUnloadedMessageContent;
 import pl.jsystems.advancedjava.threads.exercises.e11concurrenttypes.message.Message;
-import pl.jsystems.advancedjava.threads.exercises.e11concurrenttypes.MessageRepository;
 
 import java.util.HashMap;
 import java.util.List;

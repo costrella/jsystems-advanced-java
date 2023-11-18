@@ -33,7 +33,8 @@ class GenericsExercise12UnboundedWildcards
     {
         List<T> tmp = new ArrayList<>(input);
         input.clear();
-        for (int index = tmp.size() - 1; index >=0; index--) {
+        for (int index = tmp.size() - 1; index >= 0; index--)
+        {
             input.add(tmp.get(index));
         }
     }
@@ -41,7 +42,8 @@ class GenericsExercise12UnboundedWildcards
     <T> void otherReverseOrder(List<T> input)
     {
         int size = input.size() - 1;
-        for (int index = 0; index < size / 2; index++) {
+        for (int index = 0; index < size / 2; index++)
+        {
             T fromEnd = input.remove(size - index);
             T fromStart = input.remove(index);
             input.add(index, fromEnd);

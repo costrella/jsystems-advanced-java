@@ -2,8 +2,8 @@ package pl.jsystems.advancedjava.threads.exercises.e6blockingqueue.repositories;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.jsystems.advancedjava.threads.exercises.e6blockingqueue.contents.GPSTrackingMessageContent;
 import pl.jsystems.advancedjava.threads.exercises.e6blockingqueue.MessageRepository;
+import pl.jsystems.advancedjava.threads.exercises.e6blockingqueue.contents.GPSTrackingMessageContent;
 import pl.jsystems.advancedjava.threads.exercises.e6blockingqueue.message.Message;
 
 import java.util.HashMap;

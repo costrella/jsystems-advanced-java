@@ -26,7 +26,7 @@ public class CargoLoadedMessageReceiver implements MessageReceiver<CargoLoadedMe
                     {
                         LOGGER.info("Sending new message: {}", message.id());
                         messageConsumer.accept(message);
-                     //   waitABit();
+                        //   waitABit();
                     });
             LOGGER.info("Cargo Loaded message receiver job is done.");
         }).start();

@@ -3,10 +3,8 @@ package pl.jsystems.advancedjava.generics.examples.e14unboundedwildcards;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.random.RandomGenerator;
 
 class GenericsExample14UnboundedWildcards
 {
@@ -25,7 +23,8 @@ class GenericsExample14UnboundedWildcards
         LOGGER.info("'<?>' is an unbounded wildcard. It is equivalent to <? extends Object>, " +
                 "which means it's a behaves as upper bound.");
 
-        List<String> listOfStrings = List.of("Just", "Strings", "here", "!");;
+        List<String> listOfStrings = List.of("Just", "Strings", "here", "!");
+        ;
         List<?> listOfObjects = new ArrayList<>(listOfStrings);
         LOGGER.info("We can read from list of objects - for example first element of {} is {}",
                 listOfObjects, listOfObjects.get(0));
@@ -46,7 +45,8 @@ class GenericsExample14UnboundedWildcards
     private <T> void duplicateEntriesFor(List<T> listOfObjects)
     {
         int size = listOfObjects.size();
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < size; i++)
+        {
             T object = listOfObjects.get(i);
             listOfObjects.add(object);
         }

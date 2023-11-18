@@ -1,7 +1,7 @@
 ## Ćwiczenie 9.
 
 1. W obecnym stanie kodu, typ predykatu i typ funkcji wyciągającej treść wiadomości są ze sobą niezwiązane.
-   Powoduje to, wraz z rzutowaniem, kompilator nie jest w stanie wychwycić dla nas wszystkich błędów. 
+   Powoduje to, wraz z rzutowaniem, kompilator nie jest w stanie wychwycić dla nas wszystkich błędów.
 2. Spróbujmy to poprawić poprzez zmianę klasy `MessageDetailsExtractor` tak,
    aby była parametryzowalna typem ograniczonym od góry `MessageContent`.
 3. Zastąp pole z 'predykatem' polem z klasą `Class` (`private final Class<T> contentType`).

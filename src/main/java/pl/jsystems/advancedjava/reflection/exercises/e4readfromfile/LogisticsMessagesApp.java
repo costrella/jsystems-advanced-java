@@ -2,17 +2,17 @@ package pl.jsystems.advancedjava.reflection.exercises.e4readfromfile;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.jsystems.advancedjava.reflection.exercises.e4readfromfile.receivers.CargoLoadedMessageReceiver;
-import pl.jsystems.advancedjava.reflection.exercises.e4readfromfile.repositories.CargoLoadedMessageRepository;
-import pl.jsystems.advancedjava.reflection.exercises.e4readfromfile.repositories.CargoUnloadedMessageRepository;
-import pl.jsystems.advancedjava.reflection.exercises.e4readfromfile.repositories.GPSTrackingMessageRepository;
 import pl.jsystems.advancedjava.reflection.exercises.e4readfromfile.contents.CargoLoadedMessageContent;
 import pl.jsystems.advancedjava.reflection.exercises.e4readfromfile.contents.CargoUnloadedMessageContent;
 import pl.jsystems.advancedjava.reflection.exercises.e4readfromfile.contents.GPSTrackingMessageContent;
 import pl.jsystems.advancedjava.reflection.exercises.e4readfromfile.contents.MessageContent;
 import pl.jsystems.advancedjava.reflection.exercises.e4readfromfile.message.Message;
+import pl.jsystems.advancedjava.reflection.exercises.e4readfromfile.receivers.CargoLoadedMessageReceiver;
 import pl.jsystems.advancedjava.reflection.exercises.e4readfromfile.receivers.CargoUnloadedMessageReceiver;
 import pl.jsystems.advancedjava.reflection.exercises.e4readfromfile.receivers.GPSTrackingMessageReceiver;
+import pl.jsystems.advancedjava.reflection.exercises.e4readfromfile.repositories.CargoLoadedMessageRepository;
+import pl.jsystems.advancedjava.reflection.exercises.e4readfromfile.repositories.CargoUnloadedMessageRepository;
+import pl.jsystems.advancedjava.reflection.exercises.e4readfromfile.repositories.GPSTrackingMessageRepository;
 
 import java.util.List;
 import java.util.concurrent.ArrayBlockingQueue;

@@ -34,7 +34,8 @@ public class CargoUnloadedMessageReceiver implements MessageReceiver<CargoUnload
         @Override
         public void run()
         {
-            while (true) {
+            while (true)
+            {
                 var message = messageCreator.createMessageUsing(new CargoUnloadedMessageContent());
                 LOGGER.info("Sending new message: {}", message.id());
                 messageConsumer.accept(message);

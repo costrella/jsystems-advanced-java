@@ -5,7 +5,6 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Scanner;
 import java.util.function.BiConsumer;
-import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 class ConsoleApp

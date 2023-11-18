@@ -2,7 +2,6 @@ package pl.jsystems.advancedjava.streams.exercises.e1basics.receivers;
 
 import pl.jsystems.advancedjava.streams.exercises.e1basics.MessageReceiver;
 import pl.jsystems.advancedjava.streams.exercises.e1basics.contents.CargoLoadedMessageContent;
-import pl.jsystems.advancedjava.streams.exercises.e1basics.contents.GPSTrackingMessageContent;
 import pl.jsystems.advancedjava.streams.exercises.e1basics.message.Message;
 import pl.jsystems.advancedjava.streams.exercises.e1basics.message.MessageCreator;
 

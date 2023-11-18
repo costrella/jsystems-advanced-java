@@ -6,7 +6,6 @@ import pl.jsystems.advancedjava.streams.exercises.e11grouping.contents.MessageCo
 
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
-import java.util.List;
 import java.util.UUID;
 import java.util.random.RandomGenerator;
 
@@ -16,7 +15,8 @@ public class MessageCreator
 
     // temp solution to test / work with distinct
 
-    public <CONTENT extends MessageContent> Message<CONTENT> createMessageUsing(CONTENT content) {
+    public <CONTENT extends MessageContent> Message<CONTENT> createMessageUsing(CONTENT content)
+    {
         int delayInDays = RandomGenerator.getDefault().nextInt(3);
 
         Message<CONTENT> message = new Message<>(

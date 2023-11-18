@@ -2,17 +2,17 @@ package pl.jsystems.advancedjava.threads.exercises.e13future;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import pl.jsystems.advancedjava.threads.exercises.e13future.contents.CargoLoadedMessageContent;
 import pl.jsystems.advancedjava.threads.exercises.e13future.contents.CargoUnloadedMessageContent;
+import pl.jsystems.advancedjava.threads.exercises.e13future.contents.GPSTrackingMessageContent;
+import pl.jsystems.advancedjava.threads.exercises.e13future.contents.MessageContent;
+import pl.jsystems.advancedjava.threads.exercises.e13future.message.Message;
 import pl.jsystems.advancedjava.threads.exercises.e13future.receivers.CargoLoadedMessageReceiver;
 import pl.jsystems.advancedjava.threads.exercises.e13future.receivers.CargoUnloadedMessageReceiver;
 import pl.jsystems.advancedjava.threads.exercises.e13future.receivers.GPSTrackingMessageReceiver;
 import pl.jsystems.advancedjava.threads.exercises.e13future.repositories.CargoLoadedMessageRepository;
 import pl.jsystems.advancedjava.threads.exercises.e13future.repositories.CargoUnloadedMessageRepository;
 import pl.jsystems.advancedjava.threads.exercises.e13future.repositories.GPSTrackingMessageRepository;
-import pl.jsystems.advancedjava.threads.exercises.e13future.contents.CargoLoadedMessageContent;
-import pl.jsystems.advancedjava.threads.exercises.e13future.contents.GPSTrackingMessageContent;
-import pl.jsystems.advancedjava.threads.exercises.e13future.contents.MessageContent;
-import pl.jsystems.advancedjava.threads.exercises.e13future.message.Message;
 
 import java.time.Instant;
 import java.util.List;
@@ -138,4 +138,3 @@ class ThreadsExercise13Future
         };
     }
 }
-

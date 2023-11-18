@@ -29,21 +29,30 @@ class LambdasExample5JustLambdas
         Consumer<String> thirdConsumer = (input) -> LOGGER.info("NEW INPUT {}!", input);
         new ConsoleApp(thirdConsumer).startConsoleApp();
 
-        Consumer<String> fourthConsumer = (input) -> {};
+        Consumer<String> fourthConsumer = (input) ->
+        {
+        };
         new ConsoleApp(fourthConsumer).startConsoleApp();
 
-        Runnable mostBasicLambda = () -> {};
+        Runnable mostBasicLambda = () ->
+        {
+        };
         LOGGER.info("Running most basic (noop) lambda.");
         mostBasicLambda.run();
         LOGGER.info("As if nothing happened...");
 
         // {} are not required and not advised for 1 line lambda expressions, unless it's noop lambda
         LOGGER.info("Running other runnable.");
-        Runnable otherRunnable = () -> {LOGGER.info("Someone called me!");};
+        Runnable otherRunnable = () ->
+        {
+            LOGGER.info("Someone called me!");
+        };
         otherRunnable.run();
 
         LOGGER.info("Running most basic (noop) lambda for as MyRunnable.");
-        MyRunnable mostBasicLambdaAgain = () -> {};
+        MyRunnable mostBasicLambdaAgain = () ->
+        {
+        };
         mostBasicLambdaAgain.run();
         LOGGER.info("And also - nothing happened.");
 

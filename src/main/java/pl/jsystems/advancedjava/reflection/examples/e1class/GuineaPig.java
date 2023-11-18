@@ -44,7 +44,8 @@ class GuineaPig
     void setSleeping(boolean sleeping)
     {
         isSleeping = sleeping;
-        if (!sleeping) {
+        if (!sleeping)
+        {
             hungry = true;
         }
     }

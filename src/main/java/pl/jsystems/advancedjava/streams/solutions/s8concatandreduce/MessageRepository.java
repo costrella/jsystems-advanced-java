@@ -1,7 +1,7 @@
 package pl.jsystems.advancedjava.streams.solutions.s8concatandreduce;
 
-import pl.jsystems.advancedjava.streams.solutions.s8concatandreduce.message.Message;
 import pl.jsystems.advancedjava.streams.solutions.s8concatandreduce.contents.MessageContent;
+import pl.jsystems.advancedjava.streams.solutions.s8concatandreduce.message.Message;
 
 import java.util.List;
 import java.util.Optional;

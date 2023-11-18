@@ -2,9 +2,9 @@ package pl.jsystems.advancedjava.threads.exercises.e12executors.repositories;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import pl.jsystems.advancedjava.threads.exercises.e12executors.MessageRepository;
 import pl.jsystems.advancedjava.threads.exercises.e12executors.contents.CargoUnloadedMessageContent;
 import pl.jsystems.advancedjava.threads.exercises.e12executors.message.Message;
-import pl.jsystems.advancedjava.threads.exercises.e12executors.MessageRepository;
 
 import java.util.List;
 import java.util.Map;

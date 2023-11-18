@@ -1,4 +1,5 @@
 ## Ćwiczenie 13.
+
 1. Zapoznaj się z klasami `CargoLoadedMessageContent` i `CargoUnloadedMessageContent`
    i ich strukturą dziedziczenia.
    Czego lepiej użyć do porównywania WIADOMOŚCI względem wielkości załadunku -

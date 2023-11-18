@@ -68,7 +68,8 @@ class GenericsExample13LowerBoundWildcard
 
     private void addRandomNumbersAtTheEndOf(List<? super Double> numbers, int amount)
     {
-        for (int i = 0; i < amount; i++) {
+        for (int i = 0; i < amount; i++)
+        {
             numbers.add(RandomGenerator.getDefault().nextDouble());
         }
     }

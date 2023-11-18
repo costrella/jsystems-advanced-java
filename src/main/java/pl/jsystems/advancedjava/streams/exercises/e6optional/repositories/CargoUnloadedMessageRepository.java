@@ -3,8 +3,8 @@ package pl.jsystems.advancedjava.streams.exercises.e6optional.repositories;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pl.jsystems.advancedjava.streams.exercises.e6optional.MessageRepository;
-import pl.jsystems.advancedjava.streams.exercises.e6optional.message.Message;
 import pl.jsystems.advancedjava.streams.exercises.e6optional.contents.CargoUnloadedMessageContent;
+import pl.jsystems.advancedjava.streams.exercises.e6optional.message.Message;
 
 import java.util.HashMap;
 import java.util.List;

@@ -76,7 +76,8 @@ class ThreadsExercise5WaitAndNotify
         }
     }
 
-    static class ValueHolder{
+    static class ValueHolder
+    {
         private Integer value;
 
         ValueHolder(Integer value)

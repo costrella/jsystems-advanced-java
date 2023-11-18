@@ -2,9 +2,9 @@ package pl.jsystems.advancedjava.reflection.solutions.s1basics.repositories;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import pl.jsystems.advancedjava.reflection.solutions.s1basics.MessageRepository;
 import pl.jsystems.advancedjava.reflection.solutions.s1basics.contents.CargoLoadedMessageContent;
 import pl.jsystems.advancedjava.reflection.solutions.s1basics.message.Message;
-import pl.jsystems.advancedjava.reflection.solutions.s1basics.MessageRepository;
 
 import java.util.List;
 import java.util.Map;

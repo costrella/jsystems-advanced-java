@@ -53,7 +53,9 @@ class ThreadsExample1CreatingThreads
     private static class MyThread extends Thread
     {
         private final Runnable runnable;
-        private MyThread(Runnable runnable) {
+
+        private MyThread(Runnable runnable)
+        {
             this.runnable = runnable;
         }
 

@@ -2,9 +2,9 @@ package pl.jsystems.advancedjava.threads.exercises.e2joiningthreads.repositories
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import pl.jsystems.advancedjava.threads.exercises.e2joiningthreads.MessageRepository;
 import pl.jsystems.advancedjava.threads.exercises.e2joiningthreads.contents.CargoUnloadedMessageContent;
 import pl.jsystems.advancedjava.threads.exercises.e2joiningthreads.message.Message;
-import pl.jsystems.advancedjava.threads.exercises.e2joiningthreads.MessageRepository;
 
 import java.util.HashMap;
 import java.util.List;

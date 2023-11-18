@@ -3,9 +3,9 @@ package pl.jsystems.advancedjava.reflection.exercises.e4readfromfile.repositorie
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pl.jsystems.advancedjava.reflection.exercises.e4readfromfile.ForDependencyInjection;
+import pl.jsystems.advancedjava.reflection.exercises.e4readfromfile.MessageRepository;
 import pl.jsystems.advancedjava.reflection.exercises.e4readfromfile.contents.GPSTrackingMessageContent;
 import pl.jsystems.advancedjava.reflection.exercises.e4readfromfile.message.Message;
-import pl.jsystems.advancedjava.reflection.exercises.e4readfromfile.MessageRepository;
 
 import java.util.List;
 import java.util.Map;

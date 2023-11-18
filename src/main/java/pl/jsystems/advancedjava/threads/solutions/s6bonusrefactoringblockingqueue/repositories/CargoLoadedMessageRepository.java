@@ -2,9 +2,9 @@ package pl.jsystems.advancedjava.threads.solutions.s6bonusrefactoringblockingque
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import pl.jsystems.advancedjava.threads.solutions.s6bonusrefactoringblockingqueue.MessageRepository;
 import pl.jsystems.advancedjava.threads.solutions.s6bonusrefactoringblockingqueue.contents.CargoLoadedMessageContent;
 import pl.jsystems.advancedjava.threads.solutions.s6bonusrefactoringblockingqueue.message.Message;
-import pl.jsystems.advancedjava.threads.solutions.s6bonusrefactoringblockingqueue.MessageRepository;
 
 import java.util.HashMap;
 import java.util.List;

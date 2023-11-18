@@ -3,12 +3,6 @@ package pl.jsystems.advancedjava.generics.examples.e10boundedtypeparameters;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.atomic.LongAccumulator;
-import java.util.concurrent.atomic.LongAdder;
-
 class GenericsExample10BoundedTypeParameters
 {
     private static final Logger LOGGER = LoggerFactory.getLogger(GenericsExample10BoundedTypeParameters.class);
@@ -33,7 +27,8 @@ class GenericsExample10BoundedTypeParameters
         // you'd think with type erasure you'll be able to cheat.
         // not this time though! T is replaced with Number now, not with Object
         // boxOfStrings.putInto("abc");
-        LOGGER.info("Box {} is designed to store Numbers only, no String will ever fit.", boxOfStrings);;
+        LOGGER.info("Box {} is designed to store Numbers only, no String will ever fit.", boxOfStrings);
+        ;
 
         // compiler warns us, that we may be putting a wrong type here,
         // because boxOfStrings is of raw type - but it's practically impossible
@@ -43,4 +38,3 @@ class GenericsExample10BoundedTypeParameters
         boxOfStrings.putInto(3);
     }
 }
-

@@ -2,10 +2,10 @@ package pl.jsystems.advancedjava.reflection.exercises.e3buildstuff.receivers;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import pl.jsystems.advancedjava.reflection.exercises.e3buildstuff.MessageReceiver;
+import pl.jsystems.advancedjava.reflection.exercises.e3buildstuff.contents.CargoUnloadedMessageContent;
 import pl.jsystems.advancedjava.reflection.exercises.e3buildstuff.message.Message;
 import pl.jsystems.advancedjava.reflection.exercises.e3buildstuff.message.MessageCreator;
-import pl.jsystems.advancedjava.reflection.exercises.e3buildstuff.contents.CargoUnloadedMessageContent;
-import pl.jsystems.advancedjava.reflection.exercises.e3buildstuff.MessageReceiver;
 
 import java.util.concurrent.Executor;
 import java.util.function.Consumer;
@@ -34,7 +34,8 @@ public class CargoUnloadedMessageReceiver implements MessageReceiver<CargoUnload
         @Override
         public void run()
         {
-            while (true) {
+            while (true)
+            {
                 var message = messageCreator.createMessageUsing(new CargoUnloadedMessageContent());
                 LOGGER.info("Sending new message: {}", message.id());
                 messageConsumer.accept(message);

@@ -3,9 +3,9 @@ package pl.jsystems.advancedjava.reflection.solutions.s3buildstuff.repositories;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pl.jsystems.advancedjava.reflection.solutions.s3buildstuff.ForDependencyInjection;
+import pl.jsystems.advancedjava.reflection.solutions.s3buildstuff.MessageRepository;
 import pl.jsystems.advancedjava.reflection.solutions.s3buildstuff.contents.CargoUnloadedMessageContent;
 import pl.jsystems.advancedjava.reflection.solutions.s3buildstuff.message.Message;
-import pl.jsystems.advancedjava.reflection.solutions.s3buildstuff.MessageRepository;
 
 import java.util.List;
 import java.util.Map;

@@ -22,8 +22,13 @@ class GenericsExercise11LowerBoundWildcard
         List<Object> listOfObjects = List.of("42", 42d);
 
         // TODO - make the below work
-        // addIfDoesntExist(42, listOfIntegers);
-        // addIfDoesntExist(42, listOfNumbers);
-        // addIfDoesntExist(42, listOfObjects);
+        addIfDoesntExist(42, listOfIntegers);
+        addIfDoesntExist(42, listOfNumbers);
+        addIfDoesntExist(42, listOfObjects);
+    }
+
+    private <T> void addIfDoesntExist(T newValue, List<T> list)
+    {
+        list.add(newValue);
     }
 }

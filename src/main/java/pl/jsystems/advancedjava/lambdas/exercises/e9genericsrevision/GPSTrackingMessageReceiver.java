@@ -1,8 +1,8 @@
 package pl.jsystems.advancedjava.lambdas.exercises.e9genericsrevision;
 
-import pl.jsystems.advancedjava.lambdas.exercises.e9genericsrevision.message.MessageCreator;
 import pl.jsystems.advancedjava.lambdas.exercises.e9genericsrevision.contents.GPSTrackingMessageContent;
 import pl.jsystems.advancedjava.lambdas.exercises.e9genericsrevision.message.Message;
+import pl.jsystems.advancedjava.lambdas.exercises.e9genericsrevision.message.MessageCreator;
 
 import java.util.function.Consumer;
 

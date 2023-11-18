@@ -3,8 +3,8 @@ package pl.jsystems.advancedjava.streams.solutions.s10collectingtomap.repositori
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pl.jsystems.advancedjava.streams.solutions.s10collectingtomap.MessageRepository;
-import pl.jsystems.advancedjava.streams.solutions.s10collectingtomap.message.Message;
 import pl.jsystems.advancedjava.streams.solutions.s10collectingtomap.contents.CargoUnloadedMessageContent;
+import pl.jsystems.advancedjava.streams.solutions.s10collectingtomap.message.Message;
 
 import java.util.HashMap;
 import java.util.List;

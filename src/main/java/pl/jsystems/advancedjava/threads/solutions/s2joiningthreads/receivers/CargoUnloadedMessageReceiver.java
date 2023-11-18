@@ -1,9 +1,9 @@
 package pl.jsystems.advancedjava.threads.solutions.s2joiningthreads.receivers;
 
 import pl.jsystems.advancedjava.threads.solutions.s2joiningthreads.MessageReceiver;
+import pl.jsystems.advancedjava.threads.solutions.s2joiningthreads.contents.CargoUnloadedMessageContent;
 import pl.jsystems.advancedjava.threads.solutions.s2joiningthreads.message.Message;
 import pl.jsystems.advancedjava.threads.solutions.s2joiningthreads.message.MessageCreator;
-import pl.jsystems.advancedjava.threads.solutions.s2joiningthreads.contents.CargoUnloadedMessageContent;
 
 import java.util.function.Consumer;
 import java.util.stream.IntStream;
@@ -32,7 +32,8 @@ public class CargoUnloadedMessageReceiver implements MessageReceiver<CargoUnload
         }
     }
 
-    private class ReceiverThread extends Thread {
+    private class ReceiverThread extends Thread
+    {
 
         private final Consumer<Message<CargoUnloadedMessageContent>> messageConsumer;
 
@@ -42,7 +43,8 @@ public class CargoUnloadedMessageReceiver implements MessageReceiver<CargoUnload
         }
 
         @Override
-        public void run() {
+        public void run()
+        {
             IntStream.range(0, 11)
                     .mapToObj(ignored -> messageCreator.createMessageUsing(new CargoUnloadedMessageContent()))
                     .forEach(message ->

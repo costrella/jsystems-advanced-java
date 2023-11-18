@@ -68,7 +68,8 @@ class GenericsExample8GenericsInheritance
         LOGGER.info("There is no 'is a' relationship, so it's not an inheritance.");
     }
 
-    void populateWithTemperatureReadingsFromStation(List<? super Double> resultList, Long stationId) {
+    void populateWithTemperatureReadingsFromStation(List<? super Double> resultList, Long stationId)
+    {
         List<Double> temperatureReadings = new ArrayList<>();
         resultList.add(temperatureReadings.get(0));
         resultList.add(temperatureReadings.get(1));

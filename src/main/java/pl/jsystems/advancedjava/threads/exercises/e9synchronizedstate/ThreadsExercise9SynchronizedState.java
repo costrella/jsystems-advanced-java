@@ -2,11 +2,11 @@ package pl.jsystems.advancedjava.threads.exercises.e9synchronizedstate;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.jsystems.advancedjava.threads.exercises.e9synchronizedstate.message.Message;
 import pl.jsystems.advancedjava.threads.exercises.e9synchronizedstate.contents.CargoLoadedMessageContent;
 import pl.jsystems.advancedjava.threads.exercises.e9synchronizedstate.contents.CargoUnloadedMessageContent;
 import pl.jsystems.advancedjava.threads.exercises.e9synchronizedstate.contents.GPSTrackingMessageContent;
 import pl.jsystems.advancedjava.threads.exercises.e9synchronizedstate.contents.MessageContent;
+import pl.jsystems.advancedjava.threads.exercises.e9synchronizedstate.message.Message;
 import pl.jsystems.advancedjava.threads.exercises.e9synchronizedstate.receivers.CargoLoadedMessageReceiver;
 import pl.jsystems.advancedjava.threads.exercises.e9synchronizedstate.receivers.CargoUnloadedMessageReceiver;
 import pl.jsystems.advancedjava.threads.exercises.e9synchronizedstate.receivers.GPSTrackingMessageReceiver;
@@ -145,4 +145,3 @@ class ThreadsExercise9SynchronizedState
         };
     }
 }
-

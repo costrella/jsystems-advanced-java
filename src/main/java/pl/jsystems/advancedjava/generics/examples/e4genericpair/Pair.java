@@ -15,7 +15,8 @@ class Pair<VALUE1, VALUE2>
 
     private void validate(Object value, String paramName)
     {
-        if (value == null) {
+        if (value == null)
+        {
             throw new IllegalArgumentException(paramName + " value cannot be null.");
         }
     }

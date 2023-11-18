@@ -27,7 +27,7 @@ public class GPSTrackingMessageReceiver implements MessageReceiver<GPSTrackingMe
                     {
                         LOGGER.info("Sending new message: {}", message.id());
                         messageConsumer.accept(message);
-                       // waitABit();
+                        // waitABit();
                     });
             LOGGER.info("GPS message receiver job is done.");
         };

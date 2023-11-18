@@ -3,12 +3,10 @@ package pl.jsystems.advancedjava.streams.examples.e7distinct;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentSkipListSet;
 import java.util.function.Predicate;
 
 class StreamsExample7Distinct
@@ -28,7 +26,7 @@ class StreamsExample7Distinct
         List<Integer> distinctIntegers = integers.stream().distinct().toList();
         LOGGER.info("Distinct list: {}", distinctIntegers);
 
-        List<Object> objects  = List.of(new Object(), new Object());
+        List<Object> objects = List.of(new Object(), new Object());
         LOGGER.info("Original object list: {}", objects);
 
         List<Object> distinctObjects = objects.stream().distinct().toList();
@@ -58,11 +56,13 @@ class StreamsExample7Distinct
         LOGGER.info("Distinct by ssn list: {}", distinctBySsn);
     }
 
-    record Person(String firstName, String lastName, String ssn) {
+    record Person(String firstName, String lastName, String ssn)
+    {
 
     }
 
-    record PersonWrapperWithFirstNameAsDistinctKey(Person person) {
+    record PersonWrapperWithFirstNameAsDistinctKey(Person person)
+    {
         @Override
         public boolean equals(Object o)
         {

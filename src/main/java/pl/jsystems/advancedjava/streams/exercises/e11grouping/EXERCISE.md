@@ -6,8 +6,8 @@
    dla poszczególnych dni - dowolnie zmapuj pole 'sentAt' na typ daty określający dzień.
 3. *Spróbuj to zrobić na różne sposoby (ale tylko z użyciem strumieni).
 4. Wyznacz średni czas rozładunku na każdy dzień.
-5. Korzystając ze strumieni i zmiennej `cargoLoadedMessages` znjadź wiadomość 
-z maksymalnym, minimalnym załadunkiem dla każdego z dni.
+5. Korzystając ze strumieni i zmiennej `cargoLoadedMessages` znjadź wiadomość
+   z maksymalnym, minimalnym załadunkiem dla każdego z dni.
 6. *Zrób to co wyżej, tylko zamiast zwracać mapy z wiadomościami, zwróc mapy z określonym ciężarem.
 7. *Korzystając ze strumieni i zmiennej `cargoUnloadedMessages`, wyznacz wszystkie pojazdy,
    które coś dostarczyły danego dnia.

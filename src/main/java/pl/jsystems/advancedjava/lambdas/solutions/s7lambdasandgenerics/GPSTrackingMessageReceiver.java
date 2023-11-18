@@ -1,8 +1,8 @@
 package pl.jsystems.advancedjava.lambdas.solutions.s7lambdasandgenerics;
 
 import pl.jsystems.advancedjava.lambdas.solutions.s7lambdasandgenerics.contents.GPSTrackingMessageContent;
-import pl.jsystems.advancedjava.lambdas.solutions.s7lambdasandgenerics.message.MessageCreator;
 import pl.jsystems.advancedjava.lambdas.solutions.s7lambdasandgenerics.message.Message;
+import pl.jsystems.advancedjava.lambdas.solutions.s7lambdasandgenerics.message.MessageCreator;
 
 import java.util.function.Consumer;
 

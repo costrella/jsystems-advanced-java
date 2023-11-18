@@ -2,8 +2,8 @@ package pl.jsystems.advancedjava.reflection.solutions.s1basics.receivers;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.jsystems.advancedjava.reflection.solutions.s1basics.contents.CargoUnloadedMessageContent;
 import pl.jsystems.advancedjava.reflection.solutions.s1basics.MessageReceiver;
+import pl.jsystems.advancedjava.reflection.solutions.s1basics.contents.CargoUnloadedMessageContent;
 import pl.jsystems.advancedjava.reflection.solutions.s1basics.message.Message;
 import pl.jsystems.advancedjava.reflection.solutions.s1basics.message.MessageCreator;
 
@@ -34,7 +34,8 @@ public class CargoUnloadedMessageReceiver implements MessageReceiver<CargoUnload
         @Override
         public void run()
         {
-            while (true) {
+            while (true)
+            {
                 var message = messageCreator.createMessageUsing(new CargoUnloadedMessageContent());
                 LOGGER.info("Sending new message: {}", message.id());
                 messageConsumer.accept(message);

@@ -2,8 +2,8 @@ package pl.jsystems.advancedjava.lambdas.exercises.e9genericsrevision;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.jsystems.advancedjava.lambdas.exercises.e9genericsrevision.message.Message;
 import pl.jsystems.advancedjava.lambdas.exercises.e9genericsrevision.contents.GPSTrackingMessageContent;
+import pl.jsystems.advancedjava.lambdas.exercises.e9genericsrevision.message.Message;
 
 import java.util.HashMap;
 import java.util.List;

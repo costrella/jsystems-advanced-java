@@ -2,7 +2,9 @@ package pl.jsystems.advancedjava.threads.solutions.s10atomicoperations;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import pl.jsystems.advancedjava.threads.solutions.s10atomicoperations.contents.CargoLoadedMessageContent;
 import pl.jsystems.advancedjava.threads.solutions.s10atomicoperations.contents.CargoUnloadedMessageContent;
+import pl.jsystems.advancedjava.threads.solutions.s10atomicoperations.contents.GPSTrackingMessageContent;
 import pl.jsystems.advancedjava.threads.solutions.s10atomicoperations.contents.MessageContent;
 import pl.jsystems.advancedjava.threads.solutions.s10atomicoperations.message.Message;
 import pl.jsystems.advancedjava.threads.solutions.s10atomicoperations.receivers.CargoLoadedMessageReceiver;
@@ -11,8 +13,6 @@ import pl.jsystems.advancedjava.threads.solutions.s10atomicoperations.receivers.
 import pl.jsystems.advancedjava.threads.solutions.s10atomicoperations.repositories.CargoLoadedMessageRepository;
 import pl.jsystems.advancedjava.threads.solutions.s10atomicoperations.repositories.CargoUnloadedMessageRepository;
 import pl.jsystems.advancedjava.threads.solutions.s10atomicoperations.repositories.GPSTrackingMessageRepository;
-import pl.jsystems.advancedjava.threads.solutions.s10atomicoperations.contents.CargoLoadedMessageContent;
-import pl.jsystems.advancedjava.threads.solutions.s10atomicoperations.contents.GPSTrackingMessageContent;
 
 import java.time.Instant;
 import java.util.ArrayList;
@@ -147,4 +147,3 @@ class ThreadsExercise10AtomicOperations
         };
     }
 }
-

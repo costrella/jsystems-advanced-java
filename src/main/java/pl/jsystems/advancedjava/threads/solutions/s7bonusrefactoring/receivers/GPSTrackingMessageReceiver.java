@@ -2,8 +2,8 @@ package pl.jsystems.advancedjava.threads.solutions.s7bonusrefactoring.receivers;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.jsystems.advancedjava.threads.solutions.s7bonusrefactoring.contents.GPSTrackingMessageContent;
 import pl.jsystems.advancedjava.threads.solutions.s7bonusrefactoring.MessageReceiver;
+import pl.jsystems.advancedjava.threads.solutions.s7bonusrefactoring.contents.GPSTrackingMessageContent;
 import pl.jsystems.advancedjava.threads.solutions.s7bonusrefactoring.message.Message;
 import pl.jsystems.advancedjava.threads.solutions.s7bonusrefactoring.message.MessageCreator;
 

@@ -11,10 +11,7 @@ import pl.jsystems.advancedjava.streams.exercises.e7minmaxpeek.repositories.Carg
 import pl.jsystems.advancedjava.streams.exercises.e7minmaxpeek.repositories.CargoUnloadedMessageRepository;
 import pl.jsystems.advancedjava.streams.exercises.e7minmaxpeek.repositories.GPSTrackingMessageRepository;
 
-import java.math.BigDecimal;
 import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
 
 class StreamsExercise7MinMaxPeek
 {

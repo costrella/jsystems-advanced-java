@@ -2,9 +2,9 @@ package pl.jsystems.advancedjava.threads.solutions.s10atomicoperations.repositor
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import pl.jsystems.advancedjava.threads.solutions.s10atomicoperations.MessageRepository;
 import pl.jsystems.advancedjava.threads.solutions.s10atomicoperations.contents.GPSTrackingMessageContent;
 import pl.jsystems.advancedjava.threads.solutions.s10atomicoperations.message.Message;
-import pl.jsystems.advancedjava.threads.solutions.s10atomicoperations.MessageRepository;
 
 import java.util.HashMap;
 import java.util.List;

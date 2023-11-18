@@ -39,7 +39,8 @@ class ReflectionExample2Classes
         Arrays.stream(GuineaPig.class.getDeclaredMethods())
                 .filter(method -> method.getName().equals("setSleeping"))
                 .findFirst()
-                .ifPresent(method -> {
+                .ifPresent(method ->
+                {
                     try
                     {
                         method.invoke(shyPig, true);
@@ -53,7 +54,8 @@ class ReflectionExample2Classes
         Arrays.stream(GuineaPig.class.getDeclaredFields())
                 .filter(field -> field.getName().equals("isHungry"))
                 .findFirst()
-                .ifPresent(field -> {
+                .ifPresent(field ->
+                {
                     try
                     {
                         // try to comment it out and see what happens!
@@ -69,7 +71,8 @@ class ReflectionExample2Classes
         Arrays.stream(GuineaPig.class.getDeclaredFields())
                 .filter(field -> field.getName().equals("name"))
                 .findFirst()
-                .ifPresent(field -> {
+                .ifPresent(field ->
+                {
                     try
                     {
                         // try to comment it out and see what happens!
@@ -83,4 +86,3 @@ class ReflectionExample2Classes
         LOGGER.info("Wow, just wow! {}", shyPig);
     }
 }
-

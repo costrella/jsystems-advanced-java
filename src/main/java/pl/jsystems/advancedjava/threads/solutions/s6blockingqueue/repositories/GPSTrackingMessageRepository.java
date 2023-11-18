@@ -2,8 +2,8 @@ package pl.jsystems.advancedjava.threads.solutions.s6blockingqueue.repositories;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.jsystems.advancedjava.threads.solutions.s6blockingqueue.contents.GPSTrackingMessageContent;
 import pl.jsystems.advancedjava.threads.solutions.s6blockingqueue.MessageRepository;
+import pl.jsystems.advancedjava.threads.solutions.s6blockingqueue.contents.GPSTrackingMessageContent;
 import pl.jsystems.advancedjava.threads.solutions.s6blockingqueue.message.Message;
 
 import java.util.HashMap;

@@ -6,7 +6,11 @@ import pl.jsystems.advancedjava.threads.exercises.e6bonusrefactoringblockingqueu
 import pl.jsystems.advancedjava.threads.exercises.e6bonusrefactoringblockingqueue.contents.CargoUnloadedMessageContent;
 import pl.jsystems.advancedjava.threads.exercises.e6bonusrefactoringblockingqueue.message.Message;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.UUID;
 
 public class CargoUnloadedMessageRepository implements MessageRepository<CargoUnloadedMessageContent>
 {

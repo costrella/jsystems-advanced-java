@@ -2,10 +2,10 @@ package pl.jsystems.advancedjava.streams.solutions.s8concatandreduce;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.jsystems.advancedjava.streams.solutions.s8concatandreduce.contents.VehicleMessageContent;
-import pl.jsystems.advancedjava.streams.solutions.s8concatandreduce.message.Message;
 import pl.jsystems.advancedjava.streams.solutions.s8concatandreduce.contents.CargoMessageContent;
 import pl.jsystems.advancedjava.streams.solutions.s8concatandreduce.contents.MessageContent;
+import pl.jsystems.advancedjava.streams.solutions.s8concatandreduce.contents.VehicleMessageContent;
+import pl.jsystems.advancedjava.streams.solutions.s8concatandreduce.message.Message;
 
 import java.time.Instant;
 import java.util.ArrayList;

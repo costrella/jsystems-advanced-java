@@ -1,7 +1,7 @@
 package pl.jsystems.advancedjava.streams.exercises.e5distinct;
 
-import pl.jsystems.advancedjava.streams.exercises.e5distinct.message.Message;
 import pl.jsystems.advancedjava.streams.exercises.e5distinct.contents.MessageContent;
+import pl.jsystems.advancedjava.streams.exercises.e5distinct.message.Message;
 
 import java.util.List;
 import java.util.UUID;

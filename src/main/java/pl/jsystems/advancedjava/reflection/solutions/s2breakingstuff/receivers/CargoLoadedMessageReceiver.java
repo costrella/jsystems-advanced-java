@@ -2,10 +2,10 @@ package pl.jsystems.advancedjava.reflection.solutions.s2breakingstuff.receivers;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import pl.jsystems.advancedjava.reflection.solutions.s2breakingstuff.MessageReceiver;
 import pl.jsystems.advancedjava.reflection.solutions.s2breakingstuff.contents.CargoLoadedMessageContent;
 import pl.jsystems.advancedjava.reflection.solutions.s2breakingstuff.message.Message;
 import pl.jsystems.advancedjava.reflection.solutions.s2breakingstuff.message.MessageCreator;
-import pl.jsystems.advancedjava.reflection.solutions.s2breakingstuff.MessageReceiver;
 
 import java.util.concurrent.Executor;
 import java.util.function.Consumer;

@@ -99,7 +99,7 @@ Operacje współbieżne często muszą się ze sobą komunikować. Aby w tym pom
 
 #### join()
 
-Metoda join wywołana w wątku A na obiekcie wątku B spowoduje, 
+Metoda join wywołana w wątku A na obiekcie wątku B spowoduje,
 że wątek A będzie czekał na to aż wątek B zakończy pracę.
 Jest to najbardziej podstawowa metoda synchronizacji wątków.
 
@@ -120,23 +120,25 @@ Java udostępnia wiele klas służących synchronizacji wątków - w zależnośc
 [Paczka java.util.concurrent - API](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/package-summary.html)
 [Paczka java.util.concurrent.locks - API](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/locks/package-summary.html)
 
-Klasy z tych paczek obudowują podstawowe narzędzie - takie jak bloki synchronizowalne, zmienne `volatile`, 
+Klasy z tych paczek obudowują podstawowe narzędzie - takie jak bloki synchronizowalne, zmienne `volatile`,
 udostępniając bardziej wysokopoziomowe / łatwiejsze w obsłudze narzędzia.
 
 #### Interrupted exception
 
-Wyjątek rodzaju `checked`, wyrzucany przez wątek wtedy, gdy ktoś chce mu przeszkodzić wątkowi, zapewne zakończyć jego prace.
+Wyjątek rodzaju `checked`, wyrzucany przez wątek wtedy, gdy ktoś chce mu przeszkodzić wątkowi, zapewne zakończyć jego
+prace.
 Aby przeszkodzić wątkowi można na obiekcie go reprezentującym wywołać metodę `interrupt`.
 Taki wątek będzie miał wtedy flagę `interrupted` ustawioną na `true`.
 
-Gdy wirtualna maszyna będzie sprawdzać stan wątku i zobaczy taką flagę - 
-wyczyści ją i wyrzuci wyjątek `InterruptedException`. Taki wyjątek nie jest wyrzucany 
+Gdy wirtualna maszyna będzie sprawdzać stan wątku i zobaczy taką flagę -
+wyczyści ją i wyrzuci wyjątek `InterruptedException`. Taki wyjątek nie jest wyrzucany
 w przypadku oczekiwania na wejście do bloku synchronized (kto miałby go wyrzucić, złapać?)
 
-Wątek który przechwyci taki wyjątek powinien założyć (oczywiście to zależy), że ktoś przeszkodził innemu wątkowi. 
+Wątek który przechwyci taki wyjątek powinien założyć (oczywiście to zależy), że ktoś przeszkodził innemu wątkowi.
 Powinien sam siebie oznaczyc jako `interrupted` i wyrzucić wyjątek `Runtime`, aby przerwać działanie.
 
 ### Executors / ExecutorService / Executor / Future
+
 Są to klasy ułatwiające tworzenie puli wątków. Dzięki nim można utworzyć, zamknąć wątki.
 Można dodawać nowe wywołania do puli wątków nie martwiąc się, że ich zabraknie.
 Można planować zadania na przyszłość (`ScheduledExecutorService`), można odczytywać wartości

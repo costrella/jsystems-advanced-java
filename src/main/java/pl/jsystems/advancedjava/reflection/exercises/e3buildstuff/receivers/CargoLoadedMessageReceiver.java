@@ -2,10 +2,10 @@ package pl.jsystems.advancedjava.reflection.exercises.e3buildstuff.receivers;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import pl.jsystems.advancedjava.reflection.exercises.e3buildstuff.MessageReceiver;
 import pl.jsystems.advancedjava.reflection.exercises.e3buildstuff.contents.CargoLoadedMessageContent;
 import pl.jsystems.advancedjava.reflection.exercises.e3buildstuff.message.Message;
 import pl.jsystems.advancedjava.reflection.exercises.e3buildstuff.message.MessageCreator;
-import pl.jsystems.advancedjava.reflection.exercises.e3buildstuff.MessageReceiver;
 
 import java.util.concurrent.Executor;
 import java.util.function.Consumer;

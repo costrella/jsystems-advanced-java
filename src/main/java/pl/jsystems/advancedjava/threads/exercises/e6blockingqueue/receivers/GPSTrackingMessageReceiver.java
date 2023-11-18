@@ -1,7 +1,7 @@
 package pl.jsystems.advancedjava.threads.exercises.e6blockingqueue.receivers;
 
-import pl.jsystems.advancedjava.threads.exercises.e6blockingqueue.contents.GPSTrackingMessageContent;
 import pl.jsystems.advancedjava.threads.exercises.e6blockingqueue.MessageReceiver;
+import pl.jsystems.advancedjava.threads.exercises.e6blockingqueue.contents.GPSTrackingMessageContent;
 import pl.jsystems.advancedjava.threads.exercises.e6blockingqueue.message.Message;
 import pl.jsystems.advancedjava.threads.exercises.e6blockingqueue.message.MessageCreator;
 

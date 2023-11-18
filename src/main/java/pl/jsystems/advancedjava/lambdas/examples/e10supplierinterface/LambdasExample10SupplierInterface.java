@@ -15,7 +15,8 @@ class LambdasExample10SupplierInterface
     {
         PromptPrinter printer = new PromptPrinter();
         Instant startTime = Instant.now();
-        Supplier<String> endTextSupplier = () -> {
+        Supplier<String> endTextSupplier = () ->
+        {
             long timePassed = Instant.now().toEpochMilli() - startTime.toEpochMilli();
             timePassed = timePassed / 1000;
             return "Ending! We've talked for: " + timePassed + " seconds!";

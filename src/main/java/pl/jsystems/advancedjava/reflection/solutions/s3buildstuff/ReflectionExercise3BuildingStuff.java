@@ -72,9 +72,12 @@ class ReflectionExercise3BuildingStuff
 
         LOGGER.info("Starting point candidates: {}", mainObjectCandidates);
 
-        if (mainObjectCandidates.size() > 1) {
+        if (mainObjectCandidates.size() > 1)
+        {
             throw new IllegalStateException("More than 1 candidates to start the app!");
-        } else if (mainObjectCandidates.size() < 1) {
+        }
+        else if (mainObjectCandidates.size() < 1)
+        {
             throw new IllegalStateException("No candidates found to start the app!");
         }
 
@@ -139,4 +142,3 @@ class ReflectionExercise3BuildingStuff
         }
     }
 }
-

@@ -2,11 +2,10 @@ package pl.jsystems.advancedjava.threads.solutions.s11concurrenttypes.repositori
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import pl.jsystems.advancedjava.threads.solutions.s11concurrenttypes.MessageRepository;
 import pl.jsystems.advancedjava.threads.solutions.s11concurrenttypes.contents.GPSTrackingMessageContent;
 import pl.jsystems.advancedjava.threads.solutions.s11concurrenttypes.message.Message;
-import pl.jsystems.advancedjava.threads.solutions.s11concurrenttypes.MessageRepository;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;

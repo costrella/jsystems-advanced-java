@@ -11,11 +11,7 @@ import pl.jsystems.advancedjava.streams.exercises.e10collectingtomap.repositorie
 import pl.jsystems.advancedjava.streams.exercises.e10collectingtomap.repositories.CargoUnloadedMessageRepository;
 import pl.jsystems.advancedjava.streams.exercises.e10collectingtomap.repositories.GPSTrackingMessageRepository;
 
-import java.math.BigDecimal;
 import java.util.List;
-import java.util.Map;
-import java.util.UUID;
-import java.util.stream.Collectors;
 
 class StreamsExercise10CollectingToMap
 {

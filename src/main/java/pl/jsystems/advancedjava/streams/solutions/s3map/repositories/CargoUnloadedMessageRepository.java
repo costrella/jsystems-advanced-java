@@ -2,9 +2,9 @@ package pl.jsystems.advancedjava.streams.solutions.s3map.repositories;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import pl.jsystems.advancedjava.streams.solutions.s3map.MessageRepository;
 import pl.jsystems.advancedjava.streams.solutions.s3map.contents.CargoUnloadedMessageContent;
 import pl.jsystems.advancedjava.streams.solutions.s3map.message.Message;
-import pl.jsystems.advancedjava.streams.solutions.s3map.MessageRepository;
 
 import java.util.HashMap;
 import java.util.List;

@@ -2,9 +2,9 @@ package pl.jsystems.advancedjava.threads.solutions.s5bonusrefactoringwaitandnoti
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import pl.jsystems.advancedjava.threads.solutions.s5bonusrefactoringwaitandnotify.MessageRepository;
 import pl.jsystems.advancedjava.threads.solutions.s5bonusrefactoringwaitandnotify.contents.CargoUnloadedMessageContent;
 import pl.jsystems.advancedjava.threads.solutions.s5bonusrefactoringwaitandnotify.message.Message;
-import pl.jsystems.advancedjava.threads.solutions.s5bonusrefactoringwaitandnotify.MessageRepository;
 
 import java.util.HashMap;
 import java.util.List;

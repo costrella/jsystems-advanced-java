@@ -2,9 +2,9 @@ package pl.jsystems.advancedjava.reflection.exercises.e2breakingstuff.repositori
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import pl.jsystems.advancedjava.reflection.exercises.e2breakingstuff.MessageRepository;
 import pl.jsystems.advancedjava.reflection.exercises.e2breakingstuff.contents.GPSTrackingMessageContent;
 import pl.jsystems.advancedjava.reflection.exercises.e2breakingstuff.message.Message;
-import pl.jsystems.advancedjava.reflection.exercises.e2breakingstuff.MessageRepository;
 
 import java.util.List;
 import java.util.Map;

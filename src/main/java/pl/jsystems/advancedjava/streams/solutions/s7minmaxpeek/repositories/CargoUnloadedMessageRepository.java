@@ -3,8 +3,8 @@ package pl.jsystems.advancedjava.streams.solutions.s7minmaxpeek.repositories;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pl.jsystems.advancedjava.streams.solutions.s7minmaxpeek.MessageRepository;
-import pl.jsystems.advancedjava.streams.solutions.s7minmaxpeek.message.Message;
 import pl.jsystems.advancedjava.streams.solutions.s7minmaxpeek.contents.CargoUnloadedMessageContent;
+import pl.jsystems.advancedjava.streams.solutions.s7minmaxpeek.message.Message;
 
 import java.util.HashMap;
 import java.util.List;

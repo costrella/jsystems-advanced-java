@@ -2,8 +2,6 @@ package pl.jsystems.advancedjava.generics.exercises.e15revision;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.jsystems.advancedjava.generics.exercises.e15revision.contents.GPSTrackingMessageContent;
-import pl.jsystems.advancedjava.generics.exercises.e15revision.message.Message;
 
 class GenericsExercise15LogisticsApp
 {

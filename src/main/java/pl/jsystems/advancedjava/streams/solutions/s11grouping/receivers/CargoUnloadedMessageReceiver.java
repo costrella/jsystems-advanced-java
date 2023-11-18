@@ -1,9 +1,9 @@
 package pl.jsystems.advancedjava.streams.solutions.s11grouping.receivers;
 
 import pl.jsystems.advancedjava.streams.solutions.s11grouping.MessageReceiver;
+import pl.jsystems.advancedjava.streams.solutions.s11grouping.contents.CargoUnloadedMessageContent;
 import pl.jsystems.advancedjava.streams.solutions.s11grouping.message.Message;
 import pl.jsystems.advancedjava.streams.solutions.s11grouping.message.MessageCreator;
-import pl.jsystems.advancedjava.streams.solutions.s11grouping.contents.CargoUnloadedMessageContent;
 
 import java.util.function.Consumer;
 import java.util.stream.IntStream;

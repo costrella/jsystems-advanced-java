@@ -1,8 +1,8 @@
 package pl.jsystems.advancedjava.lambdas.exercises.e8functioninterface;
 
 import pl.jsystems.advancedjava.lambdas.exercises.e8functioninterface.contents.GPSTrackingMessageContent;
-import pl.jsystems.advancedjava.lambdas.exercises.e8functioninterface.message.MessageCreator;
 import pl.jsystems.advancedjava.lambdas.exercises.e8functioninterface.message.Message;
+import pl.jsystems.advancedjava.lambdas.exercises.e8functioninterface.message.MessageCreator;
 
 import java.util.function.Consumer;
 

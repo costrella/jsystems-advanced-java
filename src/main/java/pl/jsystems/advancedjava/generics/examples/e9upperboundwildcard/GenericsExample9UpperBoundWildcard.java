@@ -69,7 +69,8 @@ class GenericsExample9UpperBoundWildcard
         double max = Double.MIN_VALUE;
         for (Number number : listOfNumbers)
         {
-            if (number.doubleValue() > max) {
+            if (number.doubleValue() > max)
+            {
                 max = number.doubleValue();
             }
         }
@@ -86,11 +87,11 @@ class GenericsExample9UpperBoundWildcard
         double max = Double.MIN_VALUE;
         for (Number number : listOfNumbers)
         {
-            if (number.doubleValue() > max) {
+            if (number.doubleValue() > max)
+            {
                 max = number.doubleValue();
             }
         }
         return max;
     }
 }
-

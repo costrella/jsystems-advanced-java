@@ -1,7 +1,7 @@
 package pl.jsystems.advancedjava.threads.solutions.s5bonusrefactoringwaitandnotify;
 
-import pl.jsystems.advancedjava.threads.solutions.s5bonusrefactoringwaitandnotify.message.Message;
 import pl.jsystems.advancedjava.threads.solutions.s5bonusrefactoringwaitandnotify.contents.MessageContent;
+import pl.jsystems.advancedjava.threads.solutions.s5bonusrefactoringwaitandnotify.message.Message;
 
 import java.util.function.Consumer;
 

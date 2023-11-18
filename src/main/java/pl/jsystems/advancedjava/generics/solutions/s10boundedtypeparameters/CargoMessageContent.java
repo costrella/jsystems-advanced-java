@@ -6,5 +6,6 @@ import java.util.UUID;
 interface CargoMessageContent extends MessageContent
 {
     UUID getCargoUUID();
+
     BigDecimal getCargoLoadInKgs();
 }

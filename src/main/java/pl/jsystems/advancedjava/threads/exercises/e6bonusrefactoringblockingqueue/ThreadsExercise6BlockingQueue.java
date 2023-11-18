@@ -2,10 +2,10 @@ package pl.jsystems.advancedjava.threads.exercises.e6bonusrefactoringblockingque
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.jsystems.advancedjava.threads.exercises.e6bonusrefactoringblockingqueue.message.Message;
-import pl.jsystems.advancedjava.threads.exercises.e6bonusrefactoringblockingqueue.repositories.CargoLoadedMessageRepository;
 import pl.jsystems.advancedjava.threads.exercises.e6bonusrefactoringblockingqueue.contents.CargoLoadedMessageContent;
+import pl.jsystems.advancedjava.threads.exercises.e6bonusrefactoringblockingqueue.message.Message;
 import pl.jsystems.advancedjava.threads.exercises.e6bonusrefactoringblockingqueue.receivers.CargoLoadedMessageReceiver;
+import pl.jsystems.advancedjava.threads.exercises.e6bonusrefactoringblockingqueue.repositories.CargoLoadedMessageRepository;
 
 import java.time.Instant;
 import java.util.List;

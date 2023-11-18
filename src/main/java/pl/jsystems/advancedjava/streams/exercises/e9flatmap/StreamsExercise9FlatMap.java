@@ -6,15 +6,13 @@ import pl.jsystems.advancedjava.streams.exercises.e9flatmap.contents.CargoLoaded
 import pl.jsystems.advancedjava.streams.exercises.e9flatmap.contents.CargoLoadingMessageContent;
 import pl.jsystems.advancedjava.streams.exercises.e9flatmap.contents.CargoUnloadedMessageContent;
 import pl.jsystems.advancedjava.streams.exercises.e9flatmap.message.Message;
+import pl.jsystems.advancedjava.streams.exercises.e9flatmap.receivers.CargoLoadedMessageReceiver;
 import pl.jsystems.advancedjava.streams.exercises.e9flatmap.receivers.CargoUnloadedMessageReceiver;
 import pl.jsystems.advancedjava.streams.exercises.e9flatmap.receivers.GPSTrackingMessageReceiver;
-import pl.jsystems.advancedjava.streams.exercises.e9flatmap.receivers.CargoLoadedMessageReceiver;
 import pl.jsystems.advancedjava.streams.exercises.e9flatmap.repositories.CargoLoadedMessageRepository;
 import pl.jsystems.advancedjava.streams.exercises.e9flatmap.repositories.CargoUnloadedMessageRepository;
 import pl.jsystems.advancedjava.streams.exercises.e9flatmap.repositories.GPSTrackingMessageRepository;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.util.List;
 import java.util.stream.Stream;
 

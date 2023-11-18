@@ -1,7 +1,7 @@
 package pl.jsystems.advancedjava.streams.exercises.e11grouping;
 
-import pl.jsystems.advancedjava.streams.exercises.e11grouping.message.Message;
 import pl.jsystems.advancedjava.streams.exercises.e11grouping.contents.MessageContent;
+import pl.jsystems.advancedjava.streams.exercises.e11grouping.message.Message;
 
 import java.util.List;
 import java.util.Optional;

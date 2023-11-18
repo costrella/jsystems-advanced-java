@@ -2,7 +2,9 @@ package pl.jsystems.advancedjava.threads.solutions.s11concurrenttypes;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import pl.jsystems.advancedjava.threads.solutions.s11concurrenttypes.contents.CargoLoadedMessageContent;
 import pl.jsystems.advancedjava.threads.solutions.s11concurrenttypes.contents.CargoUnloadedMessageContent;
+import pl.jsystems.advancedjava.threads.solutions.s11concurrenttypes.contents.GPSTrackingMessageContent;
 import pl.jsystems.advancedjava.threads.solutions.s11concurrenttypes.contents.MessageContent;
 import pl.jsystems.advancedjava.threads.solutions.s11concurrenttypes.message.Message;
 import pl.jsystems.advancedjava.threads.solutions.s11concurrenttypes.receivers.CargoLoadedMessageReceiver;
@@ -11,8 +13,6 @@ import pl.jsystems.advancedjava.threads.solutions.s11concurrenttypes.receivers.G
 import pl.jsystems.advancedjava.threads.solutions.s11concurrenttypes.repositories.CargoLoadedMessageRepository;
 import pl.jsystems.advancedjava.threads.solutions.s11concurrenttypes.repositories.CargoUnloadedMessageRepository;
 import pl.jsystems.advancedjava.threads.solutions.s11concurrenttypes.repositories.GPSTrackingMessageRepository;
-import pl.jsystems.advancedjava.threads.solutions.s11concurrenttypes.contents.CargoLoadedMessageContent;
-import pl.jsystems.advancedjava.threads.solutions.s11concurrenttypes.contents.GPSTrackingMessageContent;
 
 import java.time.Instant;
 import java.util.ArrayList;
@@ -147,4 +147,3 @@ class ThreadsExercise11ConcurrentTypes
         };
     }
 }
-

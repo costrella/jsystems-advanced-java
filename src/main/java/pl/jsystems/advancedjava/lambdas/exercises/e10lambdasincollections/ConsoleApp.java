@@ -20,7 +20,7 @@ class ConsoleApp
         LOGGER.info("Starting new app.");
         Scanner scanner = new Scanner(System.in);
 
-        while(true)
+        while (true)
         {
             String input = scanner.nextLine();
             // todo stuff
@@ -29,4 +29,3 @@ class ConsoleApp
         LOGGER.info("Stopping app.");
     }
 }
-

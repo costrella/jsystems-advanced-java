@@ -22,7 +22,7 @@ class GenericsExample5GenericMethods
         LOGGER.info("Other pair created using generic method: {}", someOtherPair);
         Pair<Integer, String> anotherPair = createPair(42, "42");
         LOGGER.info("Yet another pair created using generic method: {}", anotherPair);
-        
+
         LOGGER.info("We're expecting exception here!");
         createPair(null, "42");
     }

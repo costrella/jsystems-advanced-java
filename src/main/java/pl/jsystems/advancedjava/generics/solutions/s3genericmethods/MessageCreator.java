@@ -16,7 +16,8 @@ class MessageCreator
         return message;
     }
 
-    <CONTENT> Message<UUID, CONTENT> createMessageUsing(CONTENT content) {
+    <CONTENT> Message<UUID, CONTENT> createMessageUsing(CONTENT content)
+    {
         Message<UUID, CONTENT> message = new Message<>(UUID.randomUUID(), content);
         LOGGER.info("Created message with UUID: {}", message);
         return message;

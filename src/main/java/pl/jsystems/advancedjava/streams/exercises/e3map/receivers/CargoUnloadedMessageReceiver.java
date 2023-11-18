@@ -1,7 +1,7 @@
 package pl.jsystems.advancedjava.streams.exercises.e3map.receivers;
 
-import pl.jsystems.advancedjava.streams.exercises.e3map.contents.CargoUnloadedMessageContent;
 import pl.jsystems.advancedjava.streams.exercises.e3map.MessageReceiver;
+import pl.jsystems.advancedjava.streams.exercises.e3map.contents.CargoUnloadedMessageContent;
 import pl.jsystems.advancedjava.streams.exercises.e3map.message.Message;
 import pl.jsystems.advancedjava.streams.exercises.e3map.message.MessageCreator;
 

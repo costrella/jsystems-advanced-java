@@ -3,8 +3,8 @@ package pl.jsystems.advancedjava.streams.solutions.s6optional.repositories;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pl.jsystems.advancedjava.streams.solutions.s6optional.MessageRepository;
-import pl.jsystems.advancedjava.streams.solutions.s6optional.message.Message;
 import pl.jsystems.advancedjava.streams.solutions.s6optional.contents.CargoLoadedMessageContent;
+import pl.jsystems.advancedjava.streams.solutions.s6optional.message.Message;
 
 import java.util.ArrayList;
 import java.util.HashMap;

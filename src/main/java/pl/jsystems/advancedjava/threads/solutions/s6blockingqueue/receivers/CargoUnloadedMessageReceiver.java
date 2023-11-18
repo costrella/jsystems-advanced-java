@@ -32,7 +32,8 @@ public class CargoUnloadedMessageReceiver implements MessageReceiver<CargoUnload
         }
     }
 
-    private class ReceiverThread extends Thread {
+    private class ReceiverThread extends Thread
+    {
 
         private final Consumer<Message<CargoUnloadedMessageContent>> messageConsumer;
 
@@ -42,7 +43,8 @@ public class CargoUnloadedMessageReceiver implements MessageReceiver<CargoUnload
         }
 
         @Override
-        public void run() {
+        public void run()
+        {
             IntStream.range(0, 11)
                     .mapToObj(ignored -> messageCreator.createMessageUsing(new CargoUnloadedMessageContent()))
                     .forEach(message ->

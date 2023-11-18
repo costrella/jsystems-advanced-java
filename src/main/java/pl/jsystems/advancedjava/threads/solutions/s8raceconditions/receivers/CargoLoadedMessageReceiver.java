@@ -2,8 +2,8 @@ package pl.jsystems.advancedjava.threads.solutions.s8raceconditions.receivers;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.jsystems.advancedjava.threads.solutions.s8raceconditions.contents.CargoLoadedMessageContent;
 import pl.jsystems.advancedjava.threads.solutions.s8raceconditions.MessageReceiver;
+import pl.jsystems.advancedjava.threads.solutions.s8raceconditions.contents.CargoLoadedMessageContent;
 import pl.jsystems.advancedjava.threads.solutions.s8raceconditions.message.Message;
 import pl.jsystems.advancedjava.threads.solutions.s8raceconditions.message.MessageCreator;
 

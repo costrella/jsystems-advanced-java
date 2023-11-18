@@ -2,8 +2,8 @@ package pl.jsystems.advancedjava.threads.exercises.e12executors.receivers;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.jsystems.advancedjava.threads.exercises.e12executors.contents.CargoUnloadedMessageContent;
 import pl.jsystems.advancedjava.threads.exercises.e12executors.MessageReceiver;
+import pl.jsystems.advancedjava.threads.exercises.e12executors.contents.CargoUnloadedMessageContent;
 import pl.jsystems.advancedjava.threads.exercises.e12executors.message.Message;
 import pl.jsystems.advancedjava.threads.exercises.e12executors.message.MessageCreator;
 
@@ -21,7 +21,8 @@ public class CargoUnloadedMessageReceiver implements MessageReceiver<CargoUnload
         new ReceiverThread(messageConsumer).start();
     }
 
-    private class ReceiverThread extends Thread {
+    private class ReceiverThread extends Thread
+    {
 
         private final Consumer<Message<CargoUnloadedMessageContent>> messageConsumer;
 
@@ -31,14 +32,15 @@ public class CargoUnloadedMessageReceiver implements MessageReceiver<CargoUnload
         }
 
         @Override
-        public void run() {
+        public void run()
+        {
             IntStream.range(0, 100)
                     .mapToObj(ignored -> messageCreator.createMessageUsing(new CargoUnloadedMessageContent()))
                     .forEach(message ->
                     {
                         LOGGER.info("Sending new message: {}", message.id());
                         messageConsumer.accept(message);
-                      //  waitABit();
+                        //  waitABit();
                     });
             LOGGER.info("Cargo Unloaded message receiver job is done.");
         }
