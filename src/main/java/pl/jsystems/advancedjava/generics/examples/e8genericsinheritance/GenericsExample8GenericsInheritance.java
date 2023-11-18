@@ -44,7 +44,7 @@ class GenericsExample8GenericsInheritance
         child2.add(BigDecimal.ONE);
 
         LOGGER.info("========");
-        LOGGER.info("No let's consider List<Integer> vs List<Number>. What can those do?");
+        LOGGER.info("Now, let's consider List<Integer> vs List<Number>. What can those do?");
         LOGGER.info("First - list of Numbers");
         List<Number> listOfNumbers = new ArrayList<>();
         listOfNumbers.add(1);
@@ -63,9 +63,30 @@ class GenericsExample8GenericsInheritance
         LOGGER.info("List<Integer> can read integers - so it extends List<Number> in that sense.");
         LOGGER.info("List<Integer> does not accept other types of Numbers, only Integers.");
         LOGGER.info("List<Integer> narrows functionality of List<Number> in that sense.");
-        LOGGER.info("If List<Number> weren't able to add other numeric types, then List<Integer> could extend it.");
+        LOGGER.info("If List<Number> wasn't able to add other numeric types, then List<Integer> could extend it.");
         LOGGER.info("List<Integer> 'is a' list of ONLY Integers. List<Integer> 'is not a' List of any number, List<Number>.");
         LOGGER.info("There is no 'is a' relationship, so it's not an inheritance.");
+    }
+
+    void populateWithTemperatureReadingsFromStation(List<? super Double> resultList, Long stationId) {
+        List<Double> temperatureReadings = new ArrayList<>();
+        resultList.add(temperatureReadings.get(0));
+        resultList.add(temperatureReadings.get(1));
+        resultList.add(temperatureReadings.get(2));
+    }
+
+    void someMethod()
+    {
+        Long someStationId = 1L;
+        List<Number> temperatureReadingsHolder = new ArrayList<>();
+        populateWithTemperatureReadingsFromStation(temperatureReadingsHolder, someStationId);
+    }
+
+    void someOtherMethod()
+    {
+        Long someStationId = 2L;
+        List<Double> temperatureReadingsHolder = new ArrayList<>();
+        populateWithTemperatureReadingsFromStation(temperatureReadingsHolder, someStationId);
     }
 
     private static class Parent
@@ -92,4 +113,3 @@ class GenericsExample8GenericsInheritance
         }
     }
 }
-

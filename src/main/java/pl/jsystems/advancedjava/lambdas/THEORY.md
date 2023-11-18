@@ -65,7 +65,7 @@ którą implementują oraz zmiennej do której wyrażenie jest przypisywane.
 
 Np.:
 ```
-MyConsumer<List<String>> myConsumer = input -> LOGGER.info("Got something: {}", input);
+Consumer<List<String>> myConsumer = input -> LOGGER.info("Got something: {}", input);
 ```
 Kompilator wie, że `input` jest zmienną typu `List<String>` na podstawie typu zmiennej `myConsumer`;
 

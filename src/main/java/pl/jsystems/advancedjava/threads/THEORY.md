@@ -11,7 +11,7 @@ value = 0;
 ...
 ...
 value = 42;
-isSet = true;
+isSet = []()true;
 ```
 
 na:
@@ -89,11 +89,11 @@ Istnieją klasy - np. `ConcurrentHashMap` czy `CopyOnWriteArrayList`, które zap
 że ich zawartość będzie zsynchronizowana między wątkami `thread safe`.
 Warto korzystać z takich klas, gdy mają do nich dostęp różne wątki.
 Należy zapoznać się z dokumentacją każdej z nich, gdyż ich użycie może mieć wpływ na wydajność,
-np. `CopyOnWriteArrayList` przy każdym zapisie kopie listę.
+np. `CopyOnWriteArrayList` przy każdym zapisie kopiuje listę.
 
 [Paczka java.util.concurrent - API](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/package-summary.html)
 
-### Synchronizacja wątków
+### Synchronizacja czasu
 
 Operacje współbieżne często muszą się ze sobą komunikować. Aby w tym pomóc Java udostępnia szereg narzędzi.
 
@@ -126,15 +126,15 @@ udostępniając bardziej wysokopoziomowe / łatwiejsze w obsłudze narzędzia.
 #### Interrupted exception
 
 Wyjątek rodzaju `checked`, wyrzucany przez wątek wtedy, gdy ktoś chce mu przeszkodzić wątkowi, zapewne zakończyć jego prace.
-Aby przedzkodzić wątkowi można na obiekcie go reprezentującym wywołać metodę `interrupt`.
+Aby przeszkodzić wątkowi można na obiekcie go reprezentującym wywołać metodę `interrupt`.
 Taki wątek będzie miał wtedy flagę `interrupted` ustawioną na `true`.
 
 Gdy wirtualna maszyna będzie sprawdzać stan wątku i zobaczy taką flagę - 
-wyczyści ją i wyrzuci wyjatek `InterruptedException`. Taki wyjątek nie jest wyrzucany 
+wyczyści ją i wyrzuci wyjątek `InterruptedException`. Taki wyjątek nie jest wyrzucany 
 w przypadku oczekiwania na wejście do bloku synchronized (kto miałby go wyrzucić, złapać?)
 
 Wątek który przechwyci taki wyjątek powinien założyć (oczywiście to zależy), że ktoś przeszkodził innemu wątkowi. 
-Powinien sam siebie oznaczyc jako `Interrupted` i wyrzucić wyjątek `Runtime`, aby przerwać działanie.
+Powinien sam siebie oznaczyc jako `interrupted` i wyrzucić wyjątek `Runtime`, aby przerwać działanie.
 
 ### Executors / ExecutorService / Executor / Future
 Są to klasy ułatwiające tworzenie puli wątków. Dzięki nim można utworzyć, zamknąć wątki.

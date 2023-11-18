@@ -79,7 +79,7 @@ zwyczajny' znak, bez dodatkowych funkcji.
 
 #### Predefiniowane klasy (zwróć uwagę na znak '\')
 
-`\d` - jakakolwiek cyfra ('digit', stąd 'd') - inaczej `[0-9]` ()
+`\d` - jakakolwiek cyfra ('digit', stąd 'd') - inaczej `[0-9]`
 
 `\D` - jakikolwiek znak poza cyfrą - inaczej `[^0-9]`
 
@@ -140,7 +140,7 @@ Możemy też odejmować zakresy:
 
 `X{n,}` - przynajmniej 'n' razy, liczba
 
-`X{n, m}` - 'n' razy, liczba
+`X{n, m}` - od 'n' do 'm' razy, liczba
 
 ### Klasy w Javie
 
@@ -154,10 +154,10 @@ Odpowiednik w `String.matches(String regex)`. (!) - jeżeli wielokrotnie sprawdz
 lepiej najpierw go skompilować!
 
 `pattern.split(String regex)` - pozwala na rozbicie ciągu znaków na części przy wykorzystaniu wyrażenia - np.
-`split("|")` - przy ciągu wejściowym "a-b-c" da nam tablicę z wynikami "a", "b" i "c". 
+`split("-")` - przy ciągu wejściowym "a-b-c" da nam tablicę z wynikami "a", "b" i "c". 
 Odpowiednik w `String.split(String regex)`.
 
-`pattern.matcher()` - zwraca nam matcher, czyli klasę która ma informację o pasujących / znalezionych wynikach.
+`pattern.matcher()` - zwraca nam matcher, czyli obiekt który ma informację o pasujących / znalezionych wynikach.
 
 #### Matcher (najczęsciej używane)
 

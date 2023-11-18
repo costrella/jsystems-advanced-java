@@ -2,7 +2,7 @@
 
 ### Runtime exceptions vs compile-time exceptions
 Przed 5-tą wersją Javy, język nie posiadał typów generycznych.
-Główny powodem ich prowadzenia była chęć zmniejszenia liczby błędów w czasie wykonywania programów (Runtime Exceptions), poprzez wcześniejsze ich wykrywanie - tj. sprawdzanie oczekiwanych typów w czasie kompilacji.
+Głównym powodem ich wprowadzenia była chęć zmniejszenia liczby błędów w czasie wykonywania programów (Runtime Exceptions), poprzez wcześniejsze ich wykrywanie - tj. sprawdzanie oczekiwanych typów w czasie kompilacji.
 
 ### Java 5 - założenia
 Java zawsze zakładała wsteczną kompatybilność. Przy wprowadzaniu typów generycznych założono kompatybilność kodu źródłowego oraz kodu binarnego.

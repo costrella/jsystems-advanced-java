@@ -19,13 +19,13 @@ class GenericsExample6NestedGenerics
 
     private void run()
     {
-        LOGGER.info("Creating box with strings");
+        LOGGER.info("Creating a list of strings");
         List<String> values = new ArrayList<>();
         values.add("first string");
         values.add("second string");
 
         Message<UUID, List<String>> message = new Message<>(UUID.randomUUID(), values);
-        LOGGER.info("Message with list of strings: {}", message);
+        LOGGER.info("Message with a list of strings: {}", message);
         message.content().add("third string");
         LOGGER.info("Someone has been peeking! We now have more strings {}", message);
 

@@ -10,7 +10,7 @@ class GenericsExample2RawListUsage
 {
     private static final Logger LOGGER = LoggerFactory.getLogger(GenericsExample2RawListUsage.class);
 
-    // !NOTE - this is how things worked before Java 5. There was no generics then.
+    // !NOTE - this is how things worked before Java 5. There were no generics then.
     // Adding generics allowed for finding bugs earlier - at compilation time rather than runtime.
     // We now know the type of generic types and for example - cannot add unexpected types to list.
     // We should not be worried now about reading from the list (or other generic objects).
