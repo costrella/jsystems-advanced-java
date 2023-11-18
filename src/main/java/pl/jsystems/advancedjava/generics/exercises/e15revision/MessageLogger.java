@@ -20,8 +20,7 @@ class MessageLogger
         // we're logging the vehicle info, not the cargo info.
         // Alternatively, we could log the message twice.
         // Maybe, later on, we'll find a way of doing it better way to handle this.
-        // BTW if we used 'preview' mode, we could do a new and fancy switch pattern matching approach here.
-        // Please look at the bottom of the file to see how it could look like.
+        // BTW in Java 21 we can use a new fancy switch pattern matching feature
         if (message.content() instanceof VehicleMessageContent)
         {
             //noinspection unchecked
