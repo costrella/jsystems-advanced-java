@@ -4,12 +4,14 @@ import pl.jsystems.advancedjava.lambdas.exercises.e1consumerinterface.contents.G
 import pl.jsystems.advancedjava.lambdas.exercises.e1consumerinterface.message.Message;
 import pl.jsystems.advancedjava.lambdas.exercises.e1consumerinterface.message.MessageCreator;
 
+import java.util.function.Consumer;
+
 class GPSTrackingMessageReceiver implements MessageReceiver<GPSTrackingMessageContent>
 {
     private final MessageCreator messageCreator = new MessageCreator();
 
     @Override
-    public Message<GPSTrackingMessageContent> getLatestReceivedMessage()
+    public Message<GPSTrackingMessageContent> startReceivingUsing(Consumer<Message<GPSTrackingMessageContent>> messageConsumer)
     {
         Message<GPSTrackingMessageContent> newMessage = null;
         for (int i = 0; i < 10; i++)
@@ -18,6 +20,7 @@ class GPSTrackingMessageReceiver implements MessageReceiver<GPSTrackingMessageCo
             newMessage = messageCreator.createMessageUsing(new GPSTrackingMessageContent());
 
             // TODO: handle it somehow...
+            messageConsumer.accept(newMessage);
 
         }
         return newMessage;
