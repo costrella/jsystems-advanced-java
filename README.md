@@ -11,7 +11,7 @@ Każde ćwiczenie jest bazowane na poprzednich, tak więc np. branch `lambda-exe
 ma w sobie cały kod z branchy `lambda-example1`, `lambda-exercise1`, `lambda-solution1`, `lambda-example2`
 oraz kod z wszystkich poprzedzających zagadnień (np. 'generics'), ich przykładów, ćwiczeń, rozwiązań.
 
-Istnieje też branch `walkthrough` zawierający kod z całego zakresu szkolenia.
+Na branchu main znajduje się kod z całego zakresu szkolenia.
 
 Skrótowy program szkolenia:
 1. Typy generyczne,
